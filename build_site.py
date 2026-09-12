@@ -7,7 +7,7 @@ import os, io, time
 # Bumped on every build so browsers never serve a stale stylesheet or script.
 BUILD_ID = int(time.time())
 
-OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "site")
+OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "docs")
 
 PHONE_DISPLAY = "+91 76766 43606"
 PHONE_TEL = "+917676643606"

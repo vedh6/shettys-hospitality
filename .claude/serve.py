@@ -1,5 +1,5 @@
 import os, sys, functools, http.server, socketserver
-root = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "site")
+root = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "docs")
 root = os.path.abspath(root)
 os.chdir(root)
 Handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=root)

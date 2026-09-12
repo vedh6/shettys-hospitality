@@ -403,7 +403,8 @@ a{ color:inherit; }
 .field--half{ grid-column:span 1; }
 .field label{ font-size:.68rem; letter-spacing:.16em; text-transform:uppercase; color:var(--sage); font-weight:600; }
 .field input,.field select,.field textarea{
-  font-family:inherit; font-size:.98rem; color:var(--ink);
+  /* 16px minimum, or iOS Safari zooms the page when a field is tapped */
+  font-family:inherit; font-size:16px; color:var(--ink);
   background:transparent; border:0;
   border-bottom:1px solid color-mix(in srgb, var(--sage) 45%, transparent);
   padding:.65em 0; border-radius:0;
