@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+
+# Source media — too large for git, keep these in cloud storage
+*.MOV
+*.mov
+Shetty’s Hospitality.pdf
+
+# Working previews
+pages-overview.jpg

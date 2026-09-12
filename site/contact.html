@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contact — Shetty&rsquo;s Hospitality, Mangalore</title>
+<meta name="description" content="Talk to Shetty's Hospitality about a homestay, a celebration at home, temple travel or transport in Mangalore." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..700&family=Karla:ital,wght@0,300..700;1,300..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css?v=1789197544" />
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="page">
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav">
+  <div class="nav__in">
+    <a class="brand" href="index.html" aria-label="Shetty&rsquo;s Hospitality, home">
+      <span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="20" fill="currentColor"/><path d="M20 10.6c.66 0 1.2.54 1.2 1.2v.9c2.9.56 5.05 3.1 5.05 6.15v3.6l1.5 2.35a.7.7 0 0 1-.59 1.08H12.84a.7.7 0 0 1-.59-1.08l1.5-2.35v-3.6c0-3.04 2.15-5.59 5.05-6.15v-.9c0-.66.54-1.2 1.2-1.2Z" fill="#F5F2EA"/><path d="M17.6 27.6h4.8a2.4 2.4 0 0 1-4.8 0Z" fill="#F5F2EA"/></svg></span>
+      <span class="brand__type">
+        <span class="brand__name">Shetty&rsquo;s Hospitality</span>
+        <span class="brand__tag">Simplifying hospitality</span>
+      </span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="stays.html">Stays</a>
+      <a href="celebrations.html">Celebrations</a>
+      <a href="journeys.html">Journeys</a>
+      <a href="about.html">About</a>
+    </nav>
+    <a class="btn btn--sm" href="contact.html">Plan a stay</a>
+    <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navDrawer" aria-label="Open menu">
+      <span></span><span></span>
+    </button>
+  </div>
+  <div class="nav__drawer" id="navDrawer" hidden>
+    <a href="index.html">Home</a>
+    <a href="stays.html">Stays</a>
+    <a href="celebrations.html">Celebrations</a>
+    <a href="journeys.html">Journeys</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Plan a stay</a>
+  </div>
+</header>
+<main id="main">
+
+<section class="section plan">
+  <div class="plan__grid">
+    <div class="plan__copy">
+      <p class="eyebrow">Plan with us</p>
+      <h1>Tell us the dates.<br>We&rsquo;ll take it from there.</h1>
+      <p>
+        Send this and we&rsquo;ll come back with a plan and a price &mdash; usually the same day.
+        No deposit to ask a question.
+      </p>
+      <ul class="contact">
+        <li><span>Phone &amp; WhatsApp</span><a href="tel:+917676643606">+91 76766 43606</a></li>
+        <li><span>Email</span><a href="mailto:info@shettyshospitality.com">info@shettyshospitality.com</a></li>
+        <li><span>Instagram</span><a href="https://www.instagram.com/shettys_hospitality/" target="_blank" rel="noopener">@shettys_hospitality</a></li>
+        <li><span>Where</span><p>Mangalore, Dakshina Kannada, Karnataka</p></li>
+        <li><span>Hours</span><p>Every day, 8am to 9pm IST</p></li>
+      </ul>
+    </div>
+
+    <form class="form" id="planForm" novalidate>
+      <div class="field">
+        <label for="f-name">Your name</label>
+        <input id="f-name" name="name" type="text" autocomplete="name" required />
+      </div>
+      <div class="field field--half">
+        <label for="f-phone">Phone</label>
+        <input id="f-phone" name="phone" type="tel" autocomplete="tel" required />
+      </div>
+      <div class="field field--half">
+        <label for="f-email">Email</label>
+        <input id="f-email" name="email" type="email" autocomplete="email" />
+      </div>
+      <div class="field field--half">
+        <label for="f-what">What do you need</label>
+        <select id="f-what" name="what">
+          <option>A homestay</option>
+          <option>A celebration at home</option>
+          <option>A temple journey</option>
+          <option>Cars and transfers</option>
+          <option>All of it</option>
+        </select>
+      </div>
+      <div class="field field--half">
+        <label for="f-dates">Dates</label>
+        <input id="f-dates" name="dates" type="text" placeholder="e.g. 12&ndash;16 Nov" />
+      </div>
+      <div class="field">
+        <label for="f-notes">Anything we should know</label>
+        <textarea id="f-notes" name="notes" rows="4" placeholder="Group size, elders travelling, temples on the list, food preferences"></textarea>
+      </div>
+      <button class="btn" type="submit">Send enquiry</button>
+      <p class="form__note" id="formNote" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<section class="promise">
+  <p class="eyebrow eyebrow--light">Our promise</p>
+  <p class="promise__words reveal"><span>Reliable.</span> <span>Coordinated.</span> <span>Complete.</span></p>
+  <p class="promise__by">A vision by Rithesh Shetty</p>
+</section>
+</main>
+<footer class="foot">
+  <div class="foot__in">
+    <div class="foot__brand">
+      <span class="brand__mark brand__mark--sm" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="20" fill="currentColor"/><path d="M20 10.6c.66 0 1.2.54 1.2 1.2v.9c2.9.56 5.05 3.1 5.05 6.15v3.6l1.5 2.35a.7.7 0 0 1-.59 1.08H12.84a.7.7 0 0 1-.59-1.08l1.5-2.35v-3.6c0-3.04 2.15-5.59 5.05-6.15v-.9c0-.66.54-1.2 1.2-1.2Z" fill="#F5F2EA"/><path d="M17.6 27.6h4.8a2.4 2.4 0 0 1-4.8 0Z" fill="#F5F2EA"/></svg></span>
+      <p>Shetty&rsquo;s Hospitality<br><span>Simplifying hospitality.</span></p>
+    </div>
+    <div class="foot__cols">
+      <div>
+        <h4>Pages</h4>
+        <a href="stays.html">Stays</a>
+        <a href="celebrations.html">Celebrations</a>
+        <a href="journeys.html">Journeys</a>
+        <a href="about.html">About</a>
+      </div>
+      <div>
+        <h4>Reach us</h4>
+        <a href="tel:+917676643606">+91 76766 43606</a>
+        <a href="mailto:info@shettyshospitality.com">info@shettyshospitality.com</a>
+        <a href="https://wa.me/917676643606" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://www.instagram.com/shettys_hospitality/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+      <div>
+        <h4>Where</h4>
+        <p>Mangalore<br>Dakshina Kannada<br>Karnataka, India</p>
+      </div>
+    </div>
+    <p class="foot__legal">&copy; <span id="yr">2026</span> Shetty&rsquo;s Hospitality, Mangalore. A vision by Rithesh Shetty.</p>
+  </div>
+</footer>
+<script src="assets/js/main.js?v=1789197544"></script>
+</body>
+</html>

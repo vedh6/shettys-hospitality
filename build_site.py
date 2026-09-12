@@ -1,0 +1,771 @@
+# -*- coding: utf-8 -*-
+"""Generates the static pages for shettyshospitality.com.
+Edit the CONTENT below and re-run:  python3 build_site.py
+"""
+import os, io, time
+
+# Bumped on every build so browsers never serve a stale stylesheet or script.
+BUILD_ID = int(time.time())
+
+OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "site")
+
+PHONE_DISPLAY = "+91 76766 43606"
+PHONE_TEL = "+917676643606"
+PHONE_WA = "917676643606"
+EMAIL = "info@shettyshospitality.com"
+INSTAGRAM = "https://www.instagram.com/shettys_hospitality/"
+
+NAV = [
+    ("index.html",        "Home"),
+    ("stays.html",        "Stays"),
+    ("celebrations.html", "Celebrations"),
+    ("journeys.html",     "Journeys"),
+    ("about.html",        "About"),
+]
+
+BELL = ("<svg viewBox=\"0 0 40 40\" fill=\"none\"><circle cx=\"20\" cy=\"20\" r=\"20\" fill=\"currentColor\"/>"
+        "<path d=\"M20 10.6c.66 0 1.2.54 1.2 1.2v.9c2.9.56 5.05 3.1 5.05 6.15v3.6l1.5 2.35a.7.7 0 0 1-.59 1.08H12.84"
+        "a.7.7 0 0 1-.59-1.08l1.5-2.35v-3.6c0-3.04 2.15-5.59 5.05-6.15v-.9c0-.66.54-1.2 1.2-1.2Z\" fill=\"#F5F2EA\"/>"
+        "<path d=\"M17.6 27.6h4.8a2.4 2.4 0 0 1-4.8 0Z\" fill=\"#F5F2EA\"/></svg>")
+
+
+def head(page, title, desc):
+    body_class = "home" if page == "index.html" else "page"
+    return f"""<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{title}</title>
+<meta name="description" content="{desc}" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..700&family=Karla:ital,wght@0,300..700;1,300..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css?v={BUILD_ID}" />
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="{body_class}">
+<a class="skip" href="#main">Skip to content</a>
+"""
+
+
+def header(page):
+    links, drawer = [], []
+    for href, label in NAV:
+        cur = ' aria-current="page"' if href == page else ''
+        links.append(f'      <a href="{href}"{cur}>{label}</a>')
+        drawer.append(f'    <a href="{href}"{cur}>{label}</a>')
+    return f"""<header class="nav">
+  <div class="nav__in">
+    <a class="brand" href="index.html" aria-label="Shetty&rsquo;s Hospitality, home">
+      <span class="brand__mark" aria-hidden="true">{BELL}</span>
+      <span class="brand__type">
+        <span class="brand__name">Shetty&rsquo;s Hospitality</span>
+        <span class="brand__tag">Simplifying hospitality</span>
+      </span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+{chr(10).join(links)}
+    </nav>
+    <a class="btn btn--sm" href="contact.html">Plan a stay</a>
+    <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navDrawer" aria-label="Open menu">
+      <span></span><span></span>
+    </button>
+  </div>
+  <div class="nav__drawer" id="navDrawer" hidden>
+{chr(10).join(drawer)}
+    <a href="contact.html">Plan a stay</a>
+  </div>
+</header>
+"""
+
+
+FOOTER = f"""<footer class="foot">
+  <div class="foot__in">
+    <div class="foot__brand">
+      <span class="brand__mark brand__mark--sm" aria-hidden="true">{BELL}</span>
+      <p>Shetty&rsquo;s Hospitality<br><span>Simplifying hospitality.</span></p>
+    </div>
+    <div class="foot__cols">
+      <div>
+        <h4>Pages</h4>
+        <a href="stays.html">Stays</a>
+        <a href="celebrations.html">Celebrations</a>
+        <a href="journeys.html">Journeys</a>
+        <a href="about.html">About</a>
+      </div>
+      <div>
+        <h4>Reach us</h4>
+        <a href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a>
+        <a href="mailto:{EMAIL}">{EMAIL}</a>
+        <a href="https://wa.me/{PHONE_WA}" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="{INSTAGRAM}" target="_blank" rel="noopener">Instagram</a>
+      </div>
+      <div>
+        <h4>Where</h4>
+        <p>Mangalore<br>Dakshina Kannada<br>Karnataka, India</p>
+      </div>
+    </div>
+    <p class="foot__legal">&copy; <span id="yr">2026</span> Shetty&rsquo;s Hospitality, Mangalore. A vision by Rithesh Shetty.</p>
+  </div>
+</footer>
+<script src="assets/js/main.js?v={BUILD_ID}"></script>
+</body>
+</html>
+"""
+
+
+def cta(title, body, label="Plan a stay", href="contact.html"):
+    return f"""<section class="cta">
+  <div class="cta__in reveal">
+    <h2>{title}</h2>
+    <p>{body}</p>
+    <div class="cta__row">
+      <a class="btn btn--light" href="{href}">{label}</a>
+      <a class="btn btn--outline" href="tel:{PHONE_TEL}">Call {PHONE_DISPLAY}</a>
+    </div>
+  </div>
+</section>
+"""
+
+
+def phero(eyebrow, title, lede, meta=None, image=None, alt="", variant="beside"):
+    """Page mastheads. Each inner page opens differently, so the site does not read
+    like the same template four times:
+      beside  — copy left, image right (About)
+      below   — copy, then a full-bleed landscape image (Stays)
+      overlay — copy set over a full-bleed darkened image (Celebrations)
+      mirror  — image left, copy right, meta running full width beneath (Journeys)
+    """
+    m = ""
+    if meta:
+        items = "".join(f"<div><dt>{k}</dt><dd>{v}</dd></div>" for k, v in meta)
+        m = f'<dl class="phero__meta">{items}</dl>'
+
+    fig = ""
+    if image:
+        fig = (f'<figure class="phero__figure">'
+               f'<img src="assets/img/pages/{image}?v={BUILD_ID}" alt="{alt}" />'
+               f'</figure>')
+
+    copy = f"""<div class="phero__copy">
+      <p class="eyebrow{' eyebrow--light' if variant == 'overlay' else ''}">{eyebrow}</p>
+      <h1>{title}</h1>
+      <p class="lede">{lede}</p>
+      {m if variant != 'mirror' else ''}
+    </div>"""
+
+    if variant == "below":
+        return f"""<section class="phero phero--below">
+  <div class="phero__in">
+    {copy}
+  </div>
+  {fig}
+</section>
+"""
+
+    if variant == "overlay":
+        return f"""<section class="phero phero--overlay">
+  {fig}
+  <div class="phero__scrim" aria-hidden="true"></div>
+  <div class="phero__in">
+    {copy}
+  </div>
+</section>
+"""
+
+    if variant == "mirror":
+        return f"""<section class="phero phero--mirror">
+  <div class="phero__in">
+    {fig}
+    {copy}
+  </div>
+  {m}
+  <div class="ridge" aria-hidden="true"></div>
+</section>
+"""
+
+    return f"""<section class="phero">
+  <div class="phero__in">
+    {copy}
+    {fig}
+  </div>
+  <div class="ridge" aria-hidden="true"></div>
+</section>
+"""
+
+
+PAGES = {}
+
+# ------------------------------------------------------------------ HOME
+PAGES["index.html"] = dict(
+title="Shetty&rsquo;s Hospitality — Homestays &amp; celebrations in Mangalore",
+desc="Managed homestays, private celebrations, temple journeys and rides across Mangalore. One contact for the whole stay.",
+body=f"""
+<section class="vhero">
+  <video class="vhero__media" autoplay muted loop playsinline preload="auto"
+         poster="assets/img/hero-poster.jpg" aria-hidden="true"
+         data-portrait="assets/video/hero-portrait.mp4">
+    <source src="assets/video/hero.mp4" type="video/mp4" />
+  </video>
+  <div class="vhero__scrim" aria-hidden="true"></div>
+
+  <div class="vhero__in">
+    <p class="eyebrow eyebrow--light">Mangalore &middot; Homestays &amp; celebrations</p>
+    <h1>A house that already <em>knows</em> you&rsquo;re coming.</h1>
+    <p class="lede">
+      We keep homes across Mangalore &mdash; and we keep them ready. Beds made, kitchen stocked,
+      driver briefed, temple slots held. You call one number, and the rest of the trip stops
+      being your job.
+    </p>
+
+    <div class="vhero__cta">
+      <a class="pill" href="contact.html">
+        <span class="pill__label">Plan a stay</span>
+        <span class="pill__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span>
+      </a>
+      <a class="btn btn--outline" href="celebrations.html">Host a celebration</a>
+    </div>
+
+    <dl class="vhero__facts">
+      <div><dt>Based in</dt><dd>Mangalore, Karnataka</dd></div>
+      <div><dt>One contact for</dt><dd>Stay, rides, temples, table</dd></div>
+      <div><dt>Reply within</dt><dd>A few hours, every day</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="section">
+  <header class="section__head reveal">
+    <p class="eyebrow">What we look after</p>
+    <h2>Five things, one phone number.</h2>
+    <p class="section__lede">
+      Mangalore has no shortage of good drivers, good cooks and good houses. What it lacks is
+      someone holding them together. That is the whole job.
+    </p>
+  </header>
+
+  <ul class="cards">
+    <li class="card reveal">
+      <img class="card__bg" src="assets/img/cards/stays.jpg?v={BUILD_ID}" alt="A managed homestay interior in Mangalore" loading="lazy" />
+      <h3><a href="stays.html">Shetty&rsquo;s Stays</a></h3>
+      <p>Homestays and service apartments we manage ourselves &mdash; same linen, same checklist,
+      same standard every time you arrive.</p>
+      <ul class="card__list">
+        <li>Whole houses and apartments across the city</li>
+        <li>Cleaned, stocked and inspected before you land</li>
+        <li>Cook, housekeeping and airport pickup on request</li>
+      </ul>
+      <p class="card__meta">Nightly &middot; Weekly &middot; Long stay</p>
+    </li>
+    <li class="card reveal">
+      <img class="card__bg" src="assets/img/cards/celebrations.jpg?v={BUILD_ID}" alt="A Mangalore house decorated for a family celebration" loading="lazy" />
+      <h3><a href="celebrations.html">Celebrations at home</a></h3>
+      <p>Naming ceremonies, birthdays, house-warmings and small weddings, hosted in your own
+      house instead of a hall.</p>
+      <ul class="card__list">
+        <li>Menus tasted before you commit to them</li>
+        <li>Decor, seating, lighting and sound sized to the room</li>
+        <li>Staff on the day, and the clearing up after</li>
+      </ul>
+      <p class="card__meta">15 to 150 guests</p>
+    </li>
+    <li class="card reveal">
+      <img class="card__bg" src="assets/img/cards/rides.jpg?v={BUILD_ID}" alt="A car and driver waiting on a Mangalore roadside" loading="lazy" />
+      <h3><a href="journeys.html#rides">Shetty&rsquo;s Rides</a></h3>
+      <p>Drivers we know by name, cars we have sat in, and a fare agreed before you get in.</p>
+      <ul class="card__list">
+        <li>Airport pickups at any hour, driver&rsquo;s number sent ahead</li>
+        <li>Day cars in the city or out, sedan to tempo traveller</li>
+        <li>Outstation runs to Udupi, Coorg and Chikmagalur</li>
+      </ul>
+      <p class="card__meta">Fixed pricing</p>
+    </li>
+    <li class="card reveal">
+      <img class="card__bg" src="assets/img/cards/temples.jpg?v={BUILD_ID}" alt="An early morning road through coastal Karnataka on the way to a temple" loading="lazy" />
+      <h3><a href="journeys.html#temples">Temple journeys</a></h3>
+      <p>The drive is the easy part. Knowing which queue to join and when the doors close is
+      what we handle.</p>
+      <ul class="card__list">
+        <li>Darshan timings and sevas booked ahead</li>
+        <li>Dharmasthala, Kukke, Udupi, Kateel and Kadri</li>
+        <li>Circuits sequenced so elders are not exhausted</li>
+      </ul>
+      <p class="card__meta">Day trips &amp; multi-day</p>
+    </li>
+    <li class="card reveal">
+      <img class="card__bg" src="assets/img/cards/hidden.jpg?v={BUILD_ID}" alt="A quiet local corner of coastal Mangalore" loading="lazy" />
+      <h3><a href="journeys.html#hidden">Hidden Mangalore</a></h3>
+      <p>The parts of the coast that never make it onto a list, led by someone who actually
+      lives here.</p>
+      <ul class="card__list">
+        <li>Kori rotti and neer dosa where locals eat</li>
+        <li>The fish market at first light, Someshwara at low tide</li>
+        <li>Heritage walks, tile factories, Yakshagana in season</li>
+      </ul>
+      <p class="card__meta">Half day, with a host</p>
+    </li>
+    <li class="card card--ask reveal">
+      <img class="card__bg" src="assets/img/cards/plan.jpg?v={BUILD_ID}" alt="A calm table set for planning a trip" loading="lazy" />
+      <h3>Not sure yet?</h3>
+      <p>Most people call us with dates and a rough idea. We build the rest around it, and
+      there is no charge for asking.</p>
+      <ul class="card__list">
+        <li>Tell us who&rsquo;s travelling and when</li>
+        <li>We come back with one plan and one price</li>
+        <li>Change it as much as you like before you commit</li>
+      </ul>
+      <p class="card__meta"><a class="link" href="contact.html">Tell us what you need <span aria-hidden="true">&rarr;</span></a></p>
+    </li>
+  </ul>
+</section>
+
+<section class="promise">
+  <p class="eyebrow eyebrow--light">Our promise</p>
+  <p class="promise__words reveal"><span>Reliable.</span> <span>Coordinated.</span> <span>Complete.</span></p>
+  <p class="promise__by">A vision by Rithesh Shetty</p>
+</section>
+
+<section class="section split">
+  <figure class="split__media reveal">
+    <div class="ph" data-ph="Photograph: living room, morning">
+      <img src="assets/img/detail-wide.jpg" alt="Interior of a managed homestay" />
+    </div>
+  </figure>
+  <div class="split__copy reveal">
+    <p class="eyebrow">Why one contact matters</p>
+    <h2>Nobody wants four vendors on speaker.</h2>
+    <p>
+      The usual trip means a booking site, a driver who calls at midnight, a cook who cancels,
+      and a temple queue nobody warned you about. We put one person between you and all of it,
+      and that person stays with you from the first call to the last drop.
+    </p>
+    <ul class="ticks">
+      <li>One plan, one price, one number to call</li>
+      <li>Verified drivers, cooks and caretakers we work with regularly</li>
+      <li>Someone on the ground in Mangalore, not a call centre</li>
+      <li>The same standard whether you stay two nights or two months</li>
+    </ul>
+    <a class="link" href="about.html">How we work <span aria-hidden="true">&rarr;</span></a>
+  </div>
+</section>
+
+{cta("Tell us the dates. We&rsquo;ll take it from there.",
+     "Send an enquiry and we&rsquo;ll come back with a plan and a price, usually the same day. No deposit to ask a question.",
+     "Send an enquiry")}
+""")
+
+# ------------------------------------------------------------------ STAYS
+PAGES["stays.html"] = dict(
+title="Stays — Shetty&rsquo;s Hospitality, Mangalore",
+desc="Managed homestays and service apartments in Mangalore. Cleaned before every arrival, stocked kitchen, cook on request, airport pickup arranged.",
+body=phero("Shetty&rsquo;s Stays", "Homes, not room numbers.",
+  "Every house on our list is one we manage. We know which geyser is slow, which room catches the "
+  "afternoon sun, and how long the drive to the airport really takes at 6am.",
+  [("Stay length", "One night to several months"), ("Group size", "2 to 20 guests"), ("Ready", "Cleaned before every arrival")],
+  image="stays.jpg", alt="A bedroom in one of our managed homes", variant="below") + f"""
+<section class="section split">
+  <figure class="split__media reveal">
+    <div class="ph" data-ph="Photograph: bedroom or living room">
+      <img src="assets/img/detail-wide.jpg" alt="Interior of a managed homestay" />
+    </div>
+  </figure>
+  <div class="split__copy reveal">
+    <p class="eyebrow">In every house</p>
+    <h2>The list we check before you arrive.</h2>
+    <ul class="ticks">
+      <li>Cleaned and inspected before every arrival</li>
+      <li>Fresh linen and towels, beds made</li>
+      <li>Stocked kitchen and filtered water</li>
+      <li>Wi-Fi, hot water, backup power where available</li>
+      <li>Parking, and a caretaker who answers the phone</li>
+      <li>Airport pickup arranged with the booking</li>
+    </ul>
+    <a class="link" href="contact.html">Check dates <span aria-hidden="true">&rarr;</span></a>
+  </div>
+</section>
+
+<section class="section">
+  <header class="section__head reveal">
+    <p class="eyebrow">Kinds of stay</p>
+    <h2>Pick the one that sounds like your trip.</h2>
+  </header>
+  <ul class="cards cards--3">
+    <li class="card reveal">
+      <h3>The short visit</h3>
+      <p>A few nights for a wedding, a hospital visit or a temple trip. Arrival any hour, car waiting, breakfast sorted.</p>
+      <p class="card__meta">1&ndash;4 nights</p>
+    </li>
+    <li class="card reveal">
+      <h3>The homecoming</h3>
+      <p>For families and NRIs back for a season. A whole house, a cook who knows your food, and help with the errands nobody enjoys.</p>
+      <p class="card__meta">1 week to 3 months</p>
+    </li>
+    <li class="card reveal">
+      <h3>The work stay</h3>
+      <p>Service apartments for project teams and corporate guests. Invoiced monthly, serviced weekly, same standard in each unit.</p>
+      <p class="card__meta">Corporate billing</p>
+    </li>
+  </ul>
+</section>
+
+<section class="section">
+  <header class="section__head reveal">
+    <p class="eyebrow">Add on request</p>
+    <h2>Things people ask for, and get.</h2>
+  </header>
+  <ul class="chips reveal">
+    <li>Cook, Mangalorean or your family&rsquo;s usual</li>
+    <li>Daily housekeeping</li>
+    <li>Airport pickup at any hour</li>
+    <li>Car and driver for the stay</li>
+    <li>Crib, high chair, extra mattresses</li>
+    <li>Grocery stocking before arrival</li>
+    <li>Elder-friendly ground floor rooms</li>
+    <li>Laundry and ironing</li>
+  </ul>
+</section>
+
+{cta("Send us your dates and we&rsquo;ll send back the houses.",
+     "Tell us how many of you there are and roughly where you want to be. We&rsquo;ll reply with what&rsquo;s free and what it costs.",
+     "Check availability")}
+""")
+
+# ------------------------------------------------------------------ CELEBRATIONS
+PAGES["celebrations.html"] = dict(
+title="Celebrations at home — Shetty&rsquo;s Hospitality, Mangalore",
+desc="Naming ceremonies, house-warmings, birthdays and intimate weddings hosted at home in Mangalore. Kitchen, decor, staff and clean-up handled.",
+body=phero("Celebrations at home", "The house fills up.<br>You get to enjoy it.",
+  "A house party is only relaxing for the people who did not plan it. We take the planning &mdash; the cooks, "
+  "the pandal, the chairs, the flowers, the parking, the plates going back to the rental at midnight &mdash; "
+  "and hand you back the evening.",
+  [("Guests", "15 to 150"), ("Notice", "Two weeks is comfortable"), ("On the day", "A coordinator, start to finish")],
+  image="celebrations.jpg", alt="Banana leaves being laid for a family meal at home", variant="overlay") + f"""
+<section class="section">
+  <header class="section__head reveal">
+    <p class="eyebrow">Occasions</p>
+    <h2>What we usually get called for.</h2>
+  </header>
+  <ul class="occasions occasions--light reveal">
+    <li>
+      <span>Naming &amp; cradle ceremonies</span>
+      <p>Morning functions that start early and fill the house with elders and small children.
+      We plan for both: chairs with backs, shade where people wait, and a menu that leans sweet
+      and is ready when the ceremony ends rather than an hour after.</p>
+    </li>
+    <li>
+      <span>House-warming</span>
+      <p>Griha pravesha at whatever hour the priest gives you, which is often before light.
+      We handle what the pooja needs, keep the kitchen running from dawn, and turn the house
+      around for a full lunch once the ritual is done.</p>
+    </li>
+    <li>
+      <span>Birthdays &amp; anniversaries</span>
+      <p>Evening parties, usually smaller. A first birthday and a sixtieth need very different
+      rooms, so we scale the seating, the sound and the food to the actual guest list instead of
+      a package.</p>
+    </li>
+    <li>
+      <span>Intimate weddings &amp; roce</span>
+      <p>Roce, mehendi, haldi and small weddings held at home rather than in a hall. These run
+      across days and involve family doing things themselves, so we work around the household
+      instead of taking it over.</p>
+    </li>
+    <li>
+      <span>Family reunions &amp; NRI homecomings</span>
+      <p>Several families under one roof for a week, with different diets, different sleep
+      schedules and a lot of catching up. Meals stay flexible, the kitchen keeps going, and
+      nobody is cooking for twenty on their holiday.</p>
+    </li>
+    <li>
+      <span>Corporate offsites &amp; dinners</span>
+      <p>Team dinners and small offsites in a house instead of a banquet room. Fixed timings,
+      a quiet setup that stays out of the way, and a single invoice at the end for your
+      accounts team.</p>
+    </li>
+  </ul>
+</section>
+
+<section class="section band">
+  <div class="band__in">
+    <header class="section__head section__head--left reveal">
+      <p class="eyebrow eyebrow--light">What we bring</p>
+      <h2>Three parts, all of them ours to worry about.</h2>
+    </header>
+    <div class="incl reveal">
+      <div><h4>Kitchen</h4><p>Mangalorean, Udupi or North Indian menus with cooks we work with regularly. Tasting before you commit, and enough food that nobody counts.</p></div>
+      <div><h4>Setting</h4><p>Decor, seating, lighting and sound scaled to the house &mdash; not a banquet hall dropped into a living room.</p></div>
+      <div><h4>Hands</h4><p>Service staff, a coordinator on the day, and a team that stays until the house is back to normal.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <header class="section__head reveal">
+    <p class="eyebrow">How the day runs</p>
+    <h2>You have one person to look for.</h2>
+  </header>
+  <ol class="steps">
+    <li class="reveal"><span class="steps__n">01</span><h3>A walkthrough</h3><p>We see the house, count the seats, find the power points and work out where the food goes.</p></li>
+    <li class="reveal"><span class="steps__n">02</span><h3>A written plan</h3><p>Menu, decor, staff, timings and a single price. Changes are fine until the week before.</p></li>
+    <li class="reveal"><span class="steps__n">03</span><h3>Setup morning</h3><p>Our team arrives early. By the time guests come, the house looks like it was always meant to look that way.</p></li>
+    <li class="reveal"><span class="steps__n">04</span><h3>And after</h3><p>Clearing, rentals returned, rubbish out. You wake up to your own house.</p></li>
+  </ol>
+</section>
+
+{cta("Tell us about the occasion.",
+     "Date, rough guest count, and whose house it is. We&rsquo;ll come back with a menu and a number.",
+     "Start planning")}
+""")
+
+# ------------------------------------------------------------------ JOURNEYS
+PAGES["journeys.html"] = dict(
+title="Journeys — temples, rides &amp; Hidden Mangalore | Shetty&rsquo;s Hospitality",
+desc="Temple journeys to Dharmasthala, Kukke and Udupi, airport transfers and day cars, plus curated local experiences around Mangalore.",
+body=phero("Journeys", "Everything that happens<br>outside the house.",
+  "Temples, transport and the parts of Mangalore that never make it onto a list. Booked as one plan, "
+  "with one person answering the phone.",
+  [("Temples", "Dharmasthala &middot; Kukke &middot; Udupi"), ("Cars", "Fixed fares, verified drivers"), ("Local", "Half-day walks with a host")],
+  image="journeys.jpg", alt="Stone steps up to a coastal Karnataka temple at first light", variant="mirror") + f"""
+<section class="section" id="temples">
+  <header class="section__head reveal">
+    <p class="eyebrow">Temple &amp; spiritual travel</p>
+    <h2>Darshan, without the guesswork.</h2>
+    <p class="section__lede">
+      The drive is the easy part. Knowing which queue to join, when the doors close, which seva to book
+      ahead and where elders can sit down &mdash; that is what we handle.
+    </p>
+  </header>
+  <ul class="cards cards--3">
+    <li class="card reveal"><h3>Dharmasthala</h3><p>Day trip or overnight, with darshan timings, annadana and the drive up through Charmadi country.</p><p class="card__meta">2.5 hrs from Mangalore</p></li>
+    <li class="card reveal"><h3>Kukke Subrahmanya</h3><p>Sarpa samskara and other sevas booked ahead, with an early start so you are back before dark.</p><p class="card__meta">3 hrs from Mangalore</p></li>
+    <li class="card reveal"><h3>Udupi Krishna Matha</h3><p>Paryaya-season crowds handled, plus Malpe and the Ananthapadmanabha temple if the day allows.</p><p class="card__meta">1.5 hrs from Mangalore</p></li>
+    <li class="card reveal"><h3>Kateel Durgaparameshwari</h3><p>A short morning run to the river temple, easy to pair with the airport on arrival day.</p><p class="card__meta">45 min from the city</p></li>
+    <li class="card reveal"><h3>Kadri Manjunatha</h3><p>In the city itself &mdash; a good first stop the morning after you land.</p><p class="card__meta">In Mangalore</p></li>
+    <li class="card card--ask reveal"><h3>A circuit</h3><p>Three or four temples over two days, sequenced so the driving works and the elders are not exhausted.</p><p class="card__meta"><a class="link" href="contact.html">Plan a circuit <span aria-hidden="true">&rarr;</span></a></p></li>
+  </ul>
+</section>
+
+<section class="section band" id="rides">
+  <div class="band__in">
+    <header class="section__head section__head--left reveal">
+      <p class="eyebrow eyebrow--light">Shetty&rsquo;s Rides</p>
+      <h2>The fare is agreed before you get in.</h2>
+      <p class="section__lede">
+        Drivers we know by name, cars we have sat in, and no surprise at the end of the day.
+      </p>
+    </header>
+    <div class="incl reveal">
+      <div>
+        <h4>Airport transfers</h4>
+        <p>Mangalore International, at any hour. The driver&rsquo;s name, number and vehicle
+        reach you the night before, so nobody is scanning a crowd at three in the morning.
+        We watch the flight rather than the clock &mdash; if you land two hours late, the car
+        is still there and the fare is still the one we quoted.</p>
+      </div>
+      <div>
+        <h4>Day cars</h4>
+        <p>A car and driver for a half day or a full day, in the city or well outside it.
+        Sedans for two or three, SUVs for a family with luggage, tempo travellers for a group
+        travelling together. The driver stays with you between stops, so there is no rebooking
+        after lunch and no waiting at a temple gate for something to turn up.</p>
+      </div>
+      <div>
+        <h4>Outstation</h4>
+        <p>Udupi, Coorg, Chikmagalur, Kasaragod and the routes in between, priced per trip
+        rather than per kilometre. Tolls, parking and the driver&rsquo;s allowance are inside the
+        number we give you, and on overnight runs so is his stay. The figure you agree at the
+        start is the figure at the end.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="hidden">
+  <header class="section__head reveal">
+    <p class="eyebrow">Hidden Mangalore</p>
+    <h2>The half day you didn&rsquo;t know to ask for.</h2>
+    <p class="section__lede">
+      Led by someone who lives here, not a script. Pick one, or let us build a morning around what you like.
+    </p>
+  </header>
+  <ul class="chips reveal">
+    <li>Kori rotti and neer dosa, where locals eat</li>
+    <li>The fish market at first light</li>
+    <li>Someshwara rocks at low tide</li>
+    <li>Old Mangalore tile factories</li>
+    <li>Basel Mission heritage walk</li>
+    <li>Sultan Battery and the boat across</li>
+    <li>Cashew and coffee buying, properly</li>
+    <li>Yakshagana, in season</li>
+  </ul>
+</section>
+
+{cta("One trip, one plan.",
+     "Tell us who&rsquo;s travelling and what matters most. We&rsquo;ll sequence the temples, the cars and the free afternoons.",
+     "Plan a journey")}
+""")
+
+# ------------------------------------------------------------------ ABOUT
+PAGES["about.html"] = dict(
+title="About — Shetty&rsquo;s Hospitality, Mangalore",
+desc="Why Shetty's Hospitality exists, how we work, and what we promise. A single point of contact for stays, celebrations, temples and travel in Mangalore.",
+body=phero("About us", "One contact.<br>Complete hospitality.",
+  "Mangalore&rsquo;s hospitality is fragmented. Good people, working separately, with nobody joining them up. "
+  "Shetty&rsquo;s Hospitality is the join.",
+  [("Founded by", "Rithesh Shetty"), ("Based in", "Mangalore"), ("Model", "Aggregator and operator")],
+  image="about.jpg", alt="House keys and a hand bell on a table by the door") + f"""
+<section class="section split">
+  <div class="split__copy reveal">
+    <p class="eyebrow">The problem</p>
+    <h2>Four vendors, four standards, one exhausted guest.</h2>
+    <p>
+      Travellers arriving in Mangalore juggle a booking site, a driver, a cook and a temple queue,
+      with no coordination between any of them. Quality changes from one to the next, planning eats
+      the days before the trip, and there is no single trusted person to call when something slips.
+    </p>
+  </div>
+  <div class="split__copy reveal">
+    <p class="eyebrow">The solution</p>
+    <h2>Someone whose job is the whole trip.</h2>
+    <p>
+      We handle the entire journey &mdash; the house, the cars, the temples, the table and the celebration
+      &mdash; to one standard, under one plan. We onboard and manage local vendors, and we stay in the room
+      for quality and for every conversation with you.
+    </p>
+  </div>
+</section>
+
+<section class="section band">
+  <div class="band__in">
+    <header class="section__head section__head--left reveal">
+      <p class="eyebrow eyebrow--light">How we work</p>
+      <h2>Aggregator on the supply side. Operator on yours.</h2>
+    </header>
+    <div class="incl reveal">
+      <div><h4>Local network</h4><p>We onboard houses, drivers, cooks and staff in Mangalore, and keep working with the ones who hold the standard.</p></div>
+      <div><h4>Our own checklists</h4><p>Standard operating procedures for arrivals, cleaning, transport and events, so the experience does not depend on who turned up.</p></div>
+      <div><h4>We stay the contact</h4><p>Vendors execute. We coordinate, inspect and answer the phone. You never have to manage a chain of suppliers.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <header class="section__head reveal">
+    <p class="eyebrow">How it works for you</p>
+    <h2>Four steps, and then it&rsquo;s handled.</h2>
+  </header>
+  <ol class="steps">
+    <li class="reveal"><span class="steps__n">01</span><h3>You call once</h3><p>Phone, WhatsApp or the enquiry form. One person picks it up and stays with you for the whole trip.</p></li>
+    <li class="reveal"><span class="steps__n">02</span><h3>We ask the right questions</h3><p>Dates, how many of you, elders in the group, dietary needs, which temples matter. Ten minutes, usually.</p></li>
+    <li class="reveal"><span class="steps__n">03</span><h3>You get one plan</h3><p>House, cars, temple timings, meals and experiences in a single written proposal with a single price.</p></li>
+    <li class="reveal"><span class="steps__n">04</span><h3>We run it</h3><p>From the airport door to the departure gate. And we check in after, because most of our guests come back.</p></li>
+  </ol>
+</section>
+
+<section class="section split">
+  <div class="split__copy reveal">
+    <p class="eyebrow">Who we look after</p>
+    <h2>Mostly people coming home.</h2>
+    <ul class="ticks">
+      <li>Families and NRIs returning to Mangalore</li>
+      <li>Pilgrimage travellers</li>
+      <li>Visitors exploring the coast and its culture</li>
+      <li>Corporate teams needing stays and transport that just work</li>
+      <li>Local families hosting something at home</li>
+    </ul>
+  </div>
+  <div class="split__copy reveal">
+    <p class="eyebrow">Where we&rsquo;re going</p>
+    <h2>Deeper here first, then outward.</h2>
+    <p>
+      The immediate work is depth in Mangalore: more houses, more trusted partners, tighter standards.
+      After that, the same system in nearby cities &mdash; a structured vendor network is easier to
+      replicate than a reputation, so we intend to earn both in that order.
+    </p>
+  </div>
+</section>
+
+{cta("Start with a phone call.",
+     "No deposit to ask a question, and no obligation after the plan arrives.",
+     "Get in touch")}
+""")
+
+# ------------------------------------------------------------------ CONTACT
+PAGES["contact.html"] = dict(
+title="Contact — Shetty&rsquo;s Hospitality, Mangalore",
+desc="Talk to Shetty's Hospitality about a homestay, a celebration at home, temple travel or transport in Mangalore.",
+body=f"""
+<section class="section plan">
+  <div class="plan__grid">
+    <div class="plan__copy">
+      <p class="eyebrow">Plan with us</p>
+      <h1>Tell us the dates.<br>We&rsquo;ll take it from there.</h1>
+      <p>
+        Send this and we&rsquo;ll come back with a plan and a price &mdash; usually the same day.
+        No deposit to ask a question.
+      </p>
+      <ul class="contact">
+        <li><span>Phone &amp; WhatsApp</span><a href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a></li>
+        <li><span>Email</span><a href="mailto:{EMAIL}">{EMAIL}</a></li>
+        <li><span>Instagram</span><a href="{INSTAGRAM}" target="_blank" rel="noopener">@shettys_hospitality</a></li>
+        <li><span>Where</span><p>Mangalore, Dakshina Kannada, Karnataka</p></li>
+        <li><span>Hours</span><p>Every day, 8am to 9pm IST</p></li>
+      </ul>
+    </div>
+
+    <form class="form" id="planForm" novalidate>
+      <div class="field">
+        <label for="f-name">Your name</label>
+        <input id="f-name" name="name" type="text" autocomplete="name" required />
+      </div>
+      <div class="field field--half">
+        <label for="f-phone">Phone</label>
+        <input id="f-phone" name="phone" type="tel" autocomplete="tel" required />
+      </div>
+      <div class="field field--half">
+        <label for="f-email">Email</label>
+        <input id="f-email" name="email" type="email" autocomplete="email" />
+      </div>
+      <div class="field field--half">
+        <label for="f-what">What do you need</label>
+        <select id="f-what" name="what">
+          <option>A homestay</option>
+          <option>A celebration at home</option>
+          <option>A temple journey</option>
+          <option>Cars and transfers</option>
+          <option>All of it</option>
+        </select>
+      </div>
+      <div class="field field--half">
+        <label for="f-dates">Dates</label>
+        <input id="f-dates" name="dates" type="text" placeholder="e.g. 12&ndash;16 Nov" />
+      </div>
+      <div class="field">
+        <label for="f-notes">Anything we should know</label>
+        <textarea id="f-notes" name="notes" rows="4" placeholder="Group size, elders travelling, temples on the list, food preferences"></textarea>
+      </div>
+      <button class="btn" type="submit">Send enquiry</button>
+      <p class="form__note" id="formNote" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<section class="promise">
+  <p class="eyebrow eyebrow--light">Our promise</p>
+  <p class="promise__words reveal"><span>Reliable.</span> <span>Coordinated.</span> <span>Complete.</span></p>
+  <p class="promise__by">A vision by Rithesh Shetty</p>
+</section>
+""")
+
+
+def build():
+    for page, d in PAGES.items():
+        html = head(page, d["title"], d["desc"]) + header(page) + '<main id="main">\n' + d["body"] + '</main>\n' + FOOTER
+        with io.open(os.path.join(OUT, page), "w", encoding="utf-8") as f:
+            f.write(html)
+        print("wrote", page)
+
+
+if __name__ == "__main__":
+    build()
