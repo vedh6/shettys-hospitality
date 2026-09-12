@@ -326,9 +326,43 @@ body=f"""
   <p class="promise__by">A vision by Rithesh Shetty</p>
 </section>
 
+<section class="wordof">
+  <div class="wordof__in">
+    <div class="wordof__rubric reveal">
+      <p class="eyebrow">In their words</p>
+      <h2>We would rather print nothing than write it ourselves.</h2>
+      <p class="wordof__note">
+        Guests send these after they get home. We ask before printing one, we print it whole,
+        and we set out what was actually arranged beside it so you can weigh the words against
+        the work.
+      </p>
+      <p class="wordof__note">
+        <a class="link" href="contact.html">Stayed with us? Send us yours <span aria-hidden="true">&rarr;</span></a>
+      </p>
+    </div>
+
+    <div class="wordof__well reveal">
+      <figure class="quote quote--held">
+        <div class="quote__body">
+          <p><span class="quote__brk" aria-hidden="true">[</span>
+          Held for the first guest who tells us, in their own words, that we got this right.
+          <span class="quote__brk" aria-hidden="true">]</span></p>
+          <span class="quote__rules" aria-hidden="true"><i></i><i></i></span>
+        </div>
+        <figcaption class="quote__by">
+          <span class="quote__names">
+            <span class="quote__who">Name to follow</span>
+            <span class="quote__what">Nothing printed here yet &mdash; the first accounts are being collected</span>
+          </span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
 <section class="section split">
   <figure class="split__media reveal">
-    <div class="ph" data-ph="Photograph: living room, morning">
+    <div class="ph">
       <img src="assets/img/detail-wide.jpg" alt="Interior of a managed homestay" />
     </div>
   </figure>
@@ -366,7 +400,7 @@ body=phero("Shetty&rsquo;s Stays", "Homes, not room numbers.",
   image="stays.jpg", alt="A bedroom in one of our managed homes", variant="below") + f"""
 <section class="section split">
   <figure class="split__media reveal">
-    <div class="ph" data-ph="Photograph: bedroom or living room">
+    <div class="ph">
       <img src="assets/img/detail-wide.jpg" alt="Interior of a managed homestay" />
     </div>
   </figure>
