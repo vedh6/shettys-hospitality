@@ -423,8 +423,8 @@ a{ color:inherit; }
 .wordof{ background:var(--paper-2); padding:clamp(84px,10.5vw,150px) var(--gut); }
 .wordof__in{
   max-width:var(--max-in); margin-inline:auto;
-  display:grid; grid-template-columns:minmax(0,17rem) minmax(0,1fr);
-  gap:clamp(36px,6vw,104px); align-items:start;
+  display:grid; grid-template-columns:minmax(0,15rem) minmax(0,1fr) clamp(250px,20vw,290px);
+  gap:clamp(24px,2.8vw,44px); align-items:start;
 }
 .wordof__rubric h2{ font-size:clamp(1.42rem,2vw,1.78rem); max-width:18ch; margin-bottom:1.15rem; }
 .wordof__note{ margin:0 0 1.5rem; font-size:.92rem; line-height:1.72;
@@ -445,8 +445,8 @@ a{ color:inherit; }
   margin:0; position:relative;
   font-family:"Fraunces", Georgia, serif;
   font-variation-settings:"opsz" 144;
-  font-size:clamp(1.52rem,3.15vw,2.62rem);
-  line-height:1.26; letter-spacing:-.014em; text-wrap:balance;
+  font-size:clamp(1.34rem,2.35vw,2.05rem);
+  line-height:1.28; letter-spacing:-.014em; text-wrap:balance;
 }
 .quote__body p{ margin:0; }
 .quote__body::before{
@@ -469,7 +469,7 @@ a{ color:inherit; }
    convention for an editorial insertion; ruled empty lines for a reserved column.
    No quotation mark — an empty one looks broken, its absence looks reserved. */
 .quote--held .quote__body{
-  font-size:clamp(1.24rem,2.35vw,1.92rem); font-style:italic;
+  font-size:clamp(1.14rem,1.85vw,1.6rem); font-style:italic;
   font-variation-settings:"opsz" 96;
   color:color-mix(in srgb, var(--ink) 58%, transparent);
 }
@@ -490,8 +490,25 @@ a{ color:inherit; }
 .quote + .quote .quote__body{ font-size:clamp(1.16rem,1.85vw,1.42rem); line-height:1.42; }
 .quote + .quote .quote__body::before{ font-size:1.7em; }
 
-@media (max-width:1000px){
-  .wordof__in{ grid-template-columns:minmax(0,14rem) minmax(0,1fr); gap:clamp(30px,4.5vw,56px); }
+/* the latest reel, sitting where guest accounts will eventually go */
+.wordof__reel{ margin:0; }
+.reel__frame{
+  position:relative; width:100%; height:clamp(470px,40vw,600px);
+  overflow:hidden; background:var(--paper);
+  border:1px solid var(--rule-strong);
+}
+.reel__frame iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+.reel__cap{
+  margin:.85rem 0 0; font-size:var(--label); letter-spacing:var(--track-label);
+  text-transform:uppercase; font-weight:var(--w-label);
+}
+.reel__cap a{ color:var(--sage-dp); text-decoration:none;
+  border-bottom:1px solid var(--rule-strong); }
+.reel__cap a:hover{ border-bottom-color:var(--ink); }
+
+@media (max-width:1100px){
+  .wordof__in{ grid-template-columns:minmax(0,12rem) minmax(0,1fr); }
+  .wordof__reel{ grid-column:1 / -1; max-width:320px; margin-top:clamp(28px,4vw,44px); }
 }
 @media (max-width:860px){
   .wordof__in{ grid-template-columns:1fr; gap:clamp(40px,7vw,54px); }

@@ -357,6 +357,17 @@ body=f"""
         </figcaption>
       </figure>
     </div>
+
+    <aside class="wordof__reel reveal">
+      <div class="reel__frame">
+        <iframe src="https://www.instagram.com/p/DZjtreWBWzQ/embed/"
+                title="Shetty&rsquo;s Hospitality on Instagram"
+                loading="lazy" scrolling="no" allowfullscreen></iframe>
+      </div>
+      <p class="reel__cap">
+        <a href="https://www.instagram.com/shettys_hospitality/" target="_blank" rel="noopener">@shettys_hospitality</a>
+      </p>
+    </aside>
   </div>
 </section>
 
