@@ -365,10 +365,7 @@ body=f"""
             <source src="assets/video/review.mp4?v={BUILD_ID}" type="video/mp4" />
           </video>
 
-          <button class="vplayer__big" type="button" data-play aria-label="Play">
-            <svg class="i-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="6 3 20 12 6 21 6 3"/></svg><svg class="i-pause" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="14" y="4" width="4" height="16" rx="1"/><rect x="6" y="4" width="4" height="16" rx="1"/></svg>
-          </button>
-
+  
           <div class="vplayer__bar">
             <div class="vplayer__seekrow">
               <span class="vplayer__time" data-current>0:00</span>
