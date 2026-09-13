@@ -359,12 +359,15 @@ body=f"""
     </div>
 
     <aside class="wordof__reel reveal">
-      <div class="reel__frame">
-        <iframe src="https://www.instagram.com/p/DZjtreWBWzQ/embed/"
-                title="Shetty&rsquo;s Hospitality on Instagram"
-                loading="lazy" scrolling="no" allowfullscreen></iframe>
-      </div>
+      <figure class="reel__frame">
+        <video controls playsinline preload="metadata"
+               poster="assets/img/review-poster.jpg?v={BUILD_ID}"
+               aria-label="A guest talking about their stay">
+          <source src="assets/video/review.mp4?v={BUILD_ID}" type="video/mp4" />
+        </video>
+      </figure>
       <p class="reel__cap">
+        <span class="reel__kicker">Guest review</span>
         <a href="https://www.instagram.com/shettys_hospitality/" target="_blank" rel="noopener">@shettys_hospitality</a>
       </p>
     </aside>

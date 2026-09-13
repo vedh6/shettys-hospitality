@@ -493,15 +493,19 @@ a{ color:inherit; }
 /* the latest reel, sitting where guest accounts will eventually go */
 .wordof__reel{ margin:0; }
 .reel__frame{
-  position:relative; width:100%; height:clamp(360px,30vw,430px);
-  overflow:hidden; background:var(--paper);
-  border:1px solid var(--rule-strong);
+  margin:0; position:relative; width:100%; overflow:hidden;
+  background:var(--ink); border:1px solid var(--rule-strong);
 }
-.reel__frame iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+.reel__frame video{
+  display:block; width:100%; height:auto; aspect-ratio:9/16; object-fit:cover;
+  background:var(--ink);
+}
 .reel__cap{
   margin:.85rem 0 0; font-size:var(--label); letter-spacing:var(--track-label);
   text-transform:uppercase; font-weight:var(--w-label);
+  display:flex; flex-wrap:wrap; gap:.3rem .7rem; align-items:baseline;
 }
+.reel__kicker{ color:var(--ink); }
 .reel__cap a{ color:var(--sage-dp); text-decoration:none;
   border-bottom:1px solid var(--rule-strong); }
 .reel__cap a:hover{ border-bottom-color:var(--ink); }
