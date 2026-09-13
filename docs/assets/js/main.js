@@ -98,6 +98,76 @@
   }
 
 
+
+  // Split testimonials. With one account this does nothing; adding a second
+  // <article data-testimonial> to the markup turns on the dots, the Next
+  // control, click-to-advance and the crossfade, with no further work.
+  document.querySelectorAll('[data-tsplit]').forEach(function (root) {
+    var items = Array.prototype.slice.call(root.querySelectorAll('[data-testimonial]'));
+    var dots = root.querySelector('[data-dots]');
+    if (items.length < 2 || !dots) return;
+
+    var index = 0;
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    items.forEach(function (el, i) { if (i !== 0) el.hidden = true; });
+
+    var show = function (next) {
+      if (next === index) return;
+      var from = items[index], to = items[next];
+      index = next;
+      paintDots();
+
+      if (reduced) { from.hidden = true; to.hidden = false; return; }
+
+      from.classList.add('is-leaving');
+      setTimeout(function () {
+        from.hidden = true;
+        from.classList.remove('is-leaving');
+        to.hidden = false;
+        to.classList.add('is-entering');
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () { to.classList.remove('is-entering'); });
+        });
+      }, 260);
+    };
+
+    var buttons = items.map(function (_, i) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.setAttribute('aria-label', 'Show account ' + (i + 1) + ' of ' + items.length);
+      b.addEventListener('click', function (e) { e.stopPropagation(); show(i); });
+      dots.appendChild(b);
+      return b;
+    });
+
+    var next = document.createElement('button');
+    next.type = 'button';
+    next.className = 'tsplit__next';
+    next.innerHTML = 'Next <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
+      'stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+      '<path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>';
+    next.addEventListener('click', function (e) {
+      e.stopPropagation();
+      show((index + 1) % items.length);
+    });
+    dots.appendChild(next);
+
+    function paintDots() {
+      buttons.forEach(function (b, i) {
+        b.setAttribute('aria-current', i === index ? 'true' : 'false');
+      });
+    }
+    paintDots();
+    dots.hidden = false;
+
+    // Clicking the panel advances, except on the player and on real links.
+    root.addEventListener('click', function (e) {
+      if (e.target.closest('.tsplit__visual, a, button')) return;
+      show((index + 1) % items.length);
+    });
+  });
+
   // Video player. Custom controls so the review sits in the site's own language
   // rather than the browser's: centre play button, seek, skip, volume,
   // fullscreen, auto-hiding bar, and keyboard shortcuts while focused.

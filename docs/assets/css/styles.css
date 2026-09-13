@@ -416,84 +416,83 @@ a{ color:inherit; }
 .promise__by{ margin:0; font-size:var(--label); letter-spacing:var(--track-label); text-transform:uppercase;
   color:color-mix(in srgb, var(--paper) 78%, transparent); }
 
-/* ---------- guest accounts ---------- */
-/* A rubric column stating the printing policy, beside a well holding one account
-   at a time. Deliberately not a .section — .promise sits above it and the
-   .section + .section adjacency rule must not fire on the split below. */
+/* ---------- guest accounts: split layout ---------- */
+/* Deliberately not a .section — .promise sits above and the .section adjacency
+   rules must not fire on the split below. */
 .wordof{ background:var(--paper-2); padding:clamp(84px,10.5vw,150px) var(--gut); }
-.wordof__in{
+.tsplit{
   max-width:var(--max-in); margin-inline:auto;
-  display:grid; grid-template-columns:minmax(0,15rem) minmax(0,1fr);
-  gap:clamp(30px,4vw,64px); align-items:start;
+  display:grid; grid-template-columns:1fr auto; gap:clamp(36px,5vw,88px);
+  align-items:center;
 }
-.wordof__rubric h2{ font-size:clamp(1.42rem,2vw,1.78rem); max-width:18ch; margin-bottom:1.15rem; }
-.wordof__note{ margin:0 0 1.5rem; font-size:.92rem; line-height:1.72;
-  color:color-mix(in srgb, var(--ink) 82%, var(--sage)); }
-.wordof__note:last-child{ margin-bottom:0; }
-.wordof__rubric .link{ font-size:.78rem; }
+.tsplit__copy{ min-width:0; }
 
-.quote{ margin:0; }
-/* What was actually arranged, set ABOVE the words — the quote then has something
-   to corroborate rather than floating free. */
-.quote__booked{
-  margin:0 0 1.1rem; padding-bottom:1rem;
-  border-bottom:1px solid var(--rule-strong);
-  font-size:.84rem; letter-spacing:.02em; line-height:1.6;
-  color:color-mix(in srgb, var(--ink) 62%, transparent);
+/* the rule-and-label device, one recipe shared by the tag and the byline */
+.tsplit__hr{
+  display:inline-block; width:34px; height:1px; background:var(--rule-strong); flex:none;
 }
-.quote__body{
-  margin:0; position:relative;
-  font-family:"Fraunces", Georgia, serif;
+.tsplit__tag{
+  display:flex; align-items:center; gap:.7rem; margin:0 0 clamp(22px,2.6vw,34px);
+  font-size:var(--label); letter-spacing:var(--track-label); text-transform:uppercase;
+  font-weight:var(--w-label); color:var(--sage);
+}
+
+.tsplit__quote{
+  margin:0 0 clamp(26px,3vw,38px); max-width:24ch;
+  font-family:"Fraunces", Georgia, serif; font-weight:350;
   font-variation-settings:"opsz" 144;
-  font-size:clamp(1.34rem,2.35vw,2.05rem);
-  line-height:1.28; letter-spacing:-.014em; text-wrap:balance;
+  font-size:clamp(1.6rem,3.4vw,2.6rem); line-height:1.28; letter-spacing:-.024em;
+  color:var(--ink); text-wrap:balance;
 }
-.quote__body p{ margin:0; }
-.quote__body::before{
-  content:"\201C"; position:absolute; right:100%; top:.04em; margin-right:.08em;
-  font-size:2.4em; line-height:1; color:var(--tile); pointer-events:none;
-}
-.quote__by{ margin-top:clamp(24px,2.8vw,36px); padding-top:clamp(18px,2vw,26px); position:relative; }
-.quote__by::before{ content:""; position:absolute; left:0; top:0; width:46px; height:1px; background:var(--sage); }
-.quote__names{ display:flex; flex-wrap:wrap; align-items:baseline; gap:.2rem .9rem; }
-.quote__who{ font-size:var(--label); letter-spacing:var(--track-label); text-transform:uppercase; font-weight:var(--w-label); color:var(--sage-dp); }
-.quote__what{ font-size:.9rem; color:color-mix(in srgb, var(--ink) 80%, var(--sage)); }
-/* How it reached us. Two grades: a link where the review is public, plain text on file. */
-.quote__src{ display:block; margin-top:.55rem; font-size:.82rem;
-  color:color-mix(in srgb, var(--ink) 74%, var(--sage)); }
-.quote__src a{ color:var(--sage-dp);
-  border-bottom:1px solid var(--rule-strong); text-decoration:none; }
-.quote__src a:hover{ border-bottom-color:var(--ink); }
+.tsplit__brk{ color:var(--tile); padding:0 .12em; }
 
-/* Held: the slot before anything is printed in it. Square brackets are the print
-   convention for an editorial insertion; ruled empty lines for a reserved column.
-   No quotation mark — an empty one looks broken, its absence looks reserved. */
-.quote--held .quote__body{
-  font-size:clamp(1.14rem,1.85vw,1.6rem); font-style:italic;
-  font-variation-settings:"opsz" 96;
-  color:color-mix(in srgb, var(--ink) 58%, transparent);
-}
-.quote--held .quote__body::before{ content:none; }
-.quote--held .quote__by{ margin-top:clamp(34px,4vw,54px); }
-.quote--held .quote__who{ color:var(--sage); }
-.quote__brk{ font-style:normal; color:var(--tile); padding:0 .1em; }
-.quote__rules{ display:block; margin-top:.24em; max-width:30rem; }
-.quote__rules i{ display:block; height:1px; margin-top:1.26em;
-  background:var(--rule-strong); }
-.quote__rules i:last-child{ width:56%; }
+.tsplit__by{ display:flex; align-items:center; gap:1rem; }
+.tsplit__name{ margin:0; font-size:.92rem; font-weight:600; color:var(--ink); }
+.tsplit__role{ margin:.15rem 0 0; font-size:.82rem;
+  color:color-mix(in srgb, var(--ink) 82%, var(--sage)); }
 
-/* Second and later accounts read as follow-on notes, never as a row of peers. */
-.quote + .quote{
-  margin-top:clamp(38px,4.6vw,62px); padding-top:clamp(38px,4.6vw,62px);
-  border-top:1px solid var(--rule-strong);
+.tsplit__note{
+  margin:clamp(30px,3.6vw,46px) 0 0; max-width:46ch;
+  font-size:.9rem; line-height:1.72;
+  color:color-mix(in srgb, var(--ink) 82%, var(--sage));
 }
-.quote + .quote .quote__body{ font-size:clamp(1.16rem,1.85vw,1.42rem); line-height:1.42; }
-.quote + .quote .quote__body::before{ font-size:1.7em; }
+.tsplit__note .link{ font-size:.76rem; display:inline-block; margin-top:.7rem; }
 
-/* the latest reel, sitting where guest accounts will eventually go */
-.wordof__reel{ margin:clamp(34px,4.4vw,58px) 0 0 auto;
-  max-width:clamp(260px,28vw,380px); }
-.wordof__reel .reel__cap{ justify-content:flex-end; }
+.tsplit__visual{ min-width:0; width:clamp(260px,30vw,400px); }
+
+/* Motion between accounts. Only runs once there is more than one to move between. */
+.tsplit__item{
+  transition:opacity var(--d-tint) var(--ease-tint), transform var(--d-move) var(--ease);
+}
+.tsplit__item[hidden]{ display:none; }
+.tsplit__item.is-leaving{ opacity:0; transform:translateY(-18px); }
+.tsplit__item.is-entering{ opacity:0; transform:translateY(26px); }
+
+/* Cycling controls appear only when a second account exists */
+.tsplit__dots{ display:flex; align-items:center; gap:.85rem; margin-top:clamp(28px,3vw,40px); }
+.tsplit__dots button{
+  width:9px; height:9px; padding:0; border:0; border-radius:999px; cursor:pointer;
+  background:color-mix(in srgb, var(--ink) 26%, transparent);
+  transition:background var(--d-tint) var(--ease-tint), transform var(--d-tint) var(--ease-tint);
+}
+.tsplit__dots button:hover{ background:color-mix(in srgb, var(--ink) 45%, transparent); }
+.tsplit__dots button[aria-current="true"]{ background:var(--ink); transform:scale(1.12); }
+.tsplit__next{
+  display:inline-flex; align-items:center; gap:.4rem; margin-left:.6rem;
+  font-size:var(--label); letter-spacing:var(--track-label); text-transform:uppercase;
+  font-weight:var(--w-label); color:var(--sage);
+  background:none; border:0; cursor:pointer; padding:0;
+  opacity:0; transition:opacity var(--d-tint) var(--ease-tint);
+}
+.tsplit:hover .tsplit__next,.tsplit__next:focus-visible{ opacity:1; }
+.tsplit__next svg{ width:12px; height:12px; }
+
+@media (max-width:860px){
+  .tsplit{ grid-template-columns:1fr; gap:clamp(34px,6vw,48px); }
+  .tsplit__visual{ width:100%; max-width:400px; }
+  .tsplit__quote{ max-width:none; }
+}
+
 /* ---- video player ---- */
 .vplayer{
   margin:0; position:relative; overflow:hidden; isolation:isolate;

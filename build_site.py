@@ -327,72 +327,70 @@ body=f"""
 </section>
 
 <section class="wordof">
-  <div class="wordof__in">
-    <div class="wordof__rubric reveal">
-      <p class="eyebrow">In their words</p>
-      <h2>We would rather print nothing than write it ourselves.</h2>
-      <p class="wordof__note">
-        Guests send these after they get home. We ask before printing one, we print it whole,
-        and we set out what was actually arranged beside it so you can weigh the words against
-        the work.
-      </p>
-      <p class="wordof__note">
+  <div class="tsplit" data-tsplit>
+    <div class="tsplit__copy">
+
+      <article class="tsplit__item is-active" data-testimonial>
+        <p class="tsplit__tag"><span class="tsplit__hr" aria-hidden="true"></span>In their words</p>
+
+        <blockquote class="tsplit__quote">
+          <span class="tsplit__brk" aria-hidden="true">[</span>Held for the first guest who tells
+          us, in their own words, that we got this right.<span class="tsplit__brk" aria-hidden="true">]</span>
+        </blockquote>
+
+        <div class="tsplit__by">
+          <span class="tsplit__hr" aria-hidden="true"></span>
+          <div>
+            <p class="tsplit__name">Name to follow</p>
+            <p class="tsplit__role">No written account printed here yet</p>
+          </div>
+        </div>
+      </article>
+
+      <p class="tsplit__note">
+        Guests send these after they get home. We ask before printing one, we print it whole, and
+        we set out what was actually arranged beside it.
         <a class="link" href="contact.html">Stayed with us? Send us yours <span aria-hidden="true">&rarr;</span></a>
       </p>
+
+      <div class="tsplit__dots" data-dots hidden></div>
     </div>
 
-    <div class="wordof__well">
-      <figure class="quote quote--held reveal">
-        <div class="quote__body">
-          <p><span class="quote__brk" aria-hidden="true">[</span>
-          Held for the first guest who tells us, in their own words, that we got this right.
-          <span class="quote__brk" aria-hidden="true">]</span></p>
-          <span class="quote__rules" aria-hidden="true"><i></i><i></i></span>
-        </div>
-        <figcaption class="quote__by">
-          <span class="quote__names">
-            <span class="quote__who">Name to follow</span>
-            <span class="quote__what">Nothing printed here yet &mdash; the first accounts are being collected</span>
-          </span>
-        </figcaption>
-      </figure>
-
-      <aside class="wordof__reel reveal">
-        <figure class="vplayer" data-vplayer style="--poster:url(assets/img/review-poster.jpg?v={BUILD_ID})">
-          <video class="vplayer__video" playsinline preload="metadata"
-                 poster="assets/img/review-poster.jpg?v={BUILD_ID}"
-                 aria-label="A guest talking about their stay">
-            <source src="assets/video/review.mp4?v={BUILD_ID}" type="video/mp4" />
-          </video>
+    <div class="tsplit__visual">
+    <figure class="vplayer" data-vplayer style="--poster:url(assets/img/review-poster.jpg?v={BUILD_ID})">
+    <video class="vplayer__video" playsinline preload="metadata"
+    poster="assets/img/review-poster.jpg?v={BUILD_ID}"
+    aria-label="A guest talking about their stay">
+    <source src="assets/video/review.mp4?v={BUILD_ID}" type="video/mp4" />
+    </video>
 
   
-          <div class="vplayer__bar">
-            <div class="vplayer__seekrow">
-              <span class="vplayer__time" data-current>0:00</span>
-              <input class="vplayer__seek" type="range" min="0" max="100" value="0" step="0.01"
-                     aria-label="Seek through the video" />
-              <span class="vplayer__time" data-duration>0:00</span>
-            </div>
-            <div class="vplayer__btns">
-              <div class="vplayer__group">
-                <button type="button" data-skip="-10" aria-label="Back 10 seconds"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="19 20 9 12 19 4 19 20"/><line x1="5" x2="5" y1="19" y2="5"/></svg></button>
-                <button type="button" data-play aria-label="Play"><svg class="i-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="6 3 20 12 6 21 6 3"/></svg><svg class="i-pause" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="14" y="4" width="4" height="16" rx="1"/><rect x="6" y="4" width="4" height="16" rx="1"/></svg></button>
-                <button type="button" data-skip="10" aria-label="Forward 10 seconds"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" x2="19" y1="5" y2="19"/></svg></button>
-                <div class="vplayer__vol">
-                  <button type="button" data-mute aria-label="Mute"><svg class="i-vol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 4.7a.7.7 0 0 0-1.2-.5L6.4 7.6A1.4 1.4 0 0 1 5.4 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.4a1.4 1.4 0 0 1 1 .4l3.4 3.4a.7.7 0 0 0 1.2-.5z"/><path d="M16 9a5 5 0 0 1 0 6"/><path d="M19.4 18.4a9 9 0 0 0 0-12.8"/></svg><svg class="i-mute" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 4.7a.7.7 0 0 0-1.2-.5L6.4 7.6A1.4 1.4 0 0 1 5.4 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.4a1.4 1.4 0 0 1 1 .4l3.4 3.4a.7.7 0 0 0 1.2-.5z"/><line x1="22" x2="16" y1="9" y2="15"/><line x1="16" x2="22" y1="9" y2="15"/></svg></button>
-                  <input class="vplayer__volume" type="range" min="0" max="1" step="0.05" value="1"
-                         aria-label="Volume" />
-                </div>
-              </div>
-              <button type="button" data-fullscreen aria-label="Full screen"><svg class="i-max" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg><svg class="i-min" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v3a2 2 0 0 1-2 2H3"/><path d="M21 8h-3a2 2 0 0 1-2-2V3"/><path d="M3 16h3a2 2 0 0 1 2 2v3"/><path d="M16 21v-3a2 2 0 0 1 2-2h3"/></svg></button>
-            </div>
-          </div>
-        </figure>
-        <p class="reel__cap">
-          <span class="reel__kicker">Guest review</span>
-          <a href="https://www.instagram.com/shettys_hospitality/" target="_blank" rel="noopener">@shettys_hospitality</a>
-        </p>
-      </aside>
+    <div class="vplayer__bar">
+    <div class="vplayer__seekrow">
+    <span class="vplayer__time" data-current>0:00</span>
+    <input class="vplayer__seek" type="range" min="0" max="100" value="0" step="0.01"
+    aria-label="Seek through the video" />
+    <span class="vplayer__time" data-duration>0:00</span>
+    </div>
+    <div class="vplayer__btns">
+    <div class="vplayer__group">
+    <button type="button" data-skip="-10" aria-label="Back 10 seconds"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="19 20 9 12 19 4 19 20"/><line x1="5" x2="5" y1="19" y2="5"/></svg></button>
+    <button type="button" data-play aria-label="Play"><svg class="i-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="6 3 20 12 6 21 6 3"/></svg><svg class="i-pause" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="14" y="4" width="4" height="16" rx="1"/><rect x="6" y="4" width="4" height="16" rx="1"/></svg></button>
+    <button type="button" data-skip="10" aria-label="Forward 10 seconds"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" x2="19" y1="5" y2="19"/></svg></button>
+    <div class="vplayer__vol">
+    <button type="button" data-mute aria-label="Mute"><svg class="i-vol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 4.7a.7.7 0 0 0-1.2-.5L6.4 7.6A1.4 1.4 0 0 1 5.4 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.4a1.4 1.4 0 0 1 1 .4l3.4 3.4a.7.7 0 0 0 1.2-.5z"/><path d="M16 9a5 5 0 0 1 0 6"/><path d="M19.4 18.4a9 9 0 0 0 0-12.8"/></svg><svg class="i-mute" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 4.7a.7.7 0 0 0-1.2-.5L6.4 7.6A1.4 1.4 0 0 1 5.4 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.4a1.4 1.4 0 0 1 1 .4l3.4 3.4a.7.7 0 0 0 1.2-.5z"/><line x1="22" x2="16" y1="9" y2="15"/><line x1="16" x2="22" y1="9" y2="15"/></svg></button>
+    <input class="vplayer__volume" type="range" min="0" max="1" step="0.05" value="1"
+    aria-label="Volume" />
+    </div>
+    </div>
+    <button type="button" data-fullscreen aria-label="Full screen"><svg class="i-max" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg><svg class="i-min" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v3a2 2 0 0 1-2 2H3"/><path d="M21 8h-3a2 2 0 0 1-2-2V3"/><path d="M3 16h3a2 2 0 0 1 2 2v3"/><path d="M16 21v-3a2 2 0 0 1 2-2h3"/></svg></button>
+    </div>
+    </div>
+    </figure>
+      <p class="reel__cap">
+        <span class="reel__kicker">Guest review</span>
+        <a href="https://www.instagram.com/shettys_hospitality/" target="_blank" rel="noopener">@shettys_hospitality</a>
+      </p>
     </div>
   </div>
 </section>
