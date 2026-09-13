@@ -97,6 +97,130 @@
     }, { passive: true });
   }
 
+
+  // Video player. Custom controls so the review sits in the site's own language
+  // rather than the browser's: centre play button, seek, skip, volume,
+  // fullscreen, auto-hiding bar, and keyboard shortcuts while focused.
+  document.querySelectorAll('[data-vplayer]').forEach(function (root) {
+    var video = root.querySelector('video');
+    if (!video) return;
+
+    var seek = root.querySelector('.vplayer__seek');
+    var vol = root.querySelector('.vplayer__volume');
+    var curEl = root.querySelector('[data-current]');
+    var durEl = root.querySelector('[data-duration]');
+    var idleTimer = null;
+
+    root.tabIndex = 0;
+
+    var fmt = function (t) {
+      if (!isFinite(t)) return '0:00';
+      var m = Math.floor(t / 60), sec = Math.floor(t % 60);
+      return m + ':' + String(sec).padStart(2, '0');
+    };
+
+    var paintRange = function (el, pct) {
+      el.style.background =
+        'linear-gradient(to right, var(--paper) 0%, var(--paper) ' + pct + '%,' +
+        ' rgba(245,242,234,.3) ' + pct + '%, rgba(245,242,234,.3) 100%)';
+    };
+
+    var wake = function () {
+      root.classList.remove('is-idle');
+      if (idleTimer) clearTimeout(idleTimer);
+      if (!video.paused) {
+        idleTimer = setTimeout(function () { root.classList.add('is-idle'); }, 2600);
+      }
+    };
+
+    var toggle = function () { video.paused ? video.play() : video.pause(); };
+    var skipBy = function (n) {
+      video.currentTime = Math.max(0, Math.min(video.duration || 0, video.currentTime + n));
+    };
+
+    root.querySelectorAll('[data-play]').forEach(function (b) {
+      b.addEventListener('click', function (e) { e.stopPropagation(); toggle(); });
+    });
+    root.querySelectorAll('[data-skip]').forEach(function (b) {
+      b.addEventListener('click', function (e) {
+        e.stopPropagation();
+        skipBy(parseFloat(b.getAttribute('data-skip')));
+      });
+    });
+    root.querySelector('[data-mute]').addEventListener('click', function (e) {
+      e.stopPropagation();
+      video.muted = !video.muted;
+    });
+    root.querySelector('[data-fullscreen]').addEventListener('click', function (e) {
+      e.stopPropagation();
+      if (document.fullscreenElement) {
+        document.exitFullscreen();
+      } else if (root.requestFullscreen) {
+        root.requestFullscreen();
+      } else if (video.webkitEnterFullscreen) {
+        video.webkitEnterFullscreen();   // iPhone Safari only allows the video itself
+      }
+    });
+
+    video.addEventListener('click', toggle);
+    video.addEventListener('loadedmetadata', function () {
+      seek.max = String(video.duration || 0);
+      durEl.textContent = fmt(video.duration);
+    });
+    video.addEventListener('timeupdate', function () {
+      if (seek.matches(':active')) return;
+      seek.value = String(video.currentTime);
+      curEl.textContent = fmt(video.currentTime);
+      paintRange(seek, video.duration ? (video.currentTime / video.duration) * 100 : 0);
+    });
+    video.addEventListener('play', function () { root.classList.add('is-playing'); wake(); });
+    video.addEventListener('pause', function () {
+      root.classList.remove('is-playing', 'is-idle');
+      if (idleTimer) clearTimeout(idleTimer);
+    });
+    video.addEventListener('ended', function () { root.classList.remove('is-playing', 'is-idle'); });
+    video.addEventListener('volumechange', function () {
+      root.classList.toggle('is-muted', video.muted || video.volume === 0);
+      vol.value = String(video.muted ? 0 : video.volume);
+      paintRange(vol, (video.muted ? 0 : video.volume) * 100);
+    });
+
+    seek.addEventListener('input', function () {
+      video.currentTime = parseFloat(seek.value);
+      curEl.textContent = fmt(video.currentTime);
+      paintRange(seek, video.duration ? (video.currentTime / video.duration) * 100 : 0);
+    });
+    vol.addEventListener('input', function () {
+      video.volume = parseFloat(vol.value);
+      video.muted = video.volume === 0;
+    });
+
+    root.addEventListener('mousemove', wake);
+    root.addEventListener('mouseleave', function () {
+      if (!video.paused) root.classList.add('is-idle');
+    });
+
+    document.addEventListener('fullscreenchange', function () {
+      root.classList.toggle('is-full', document.fullscreenElement === root);
+    });
+
+    root.addEventListener('keydown', function (e) {
+      var k = e.key;
+      if (k === ' ' || k === 'k') { e.preventDefault(); toggle(); }
+      else if (k === 'm') { e.preventDefault(); video.muted = !video.muted; }
+      else if (k === 'f') { e.preventDefault(); root.querySelector('[data-fullscreen]').click(); }
+      else if (k === 'ArrowLeft') { e.preventDefault(); skipBy(-10); }
+      else if (k === 'ArrowRight') { e.preventDefault(); skipBy(10); }
+      else if (k === 'ArrowUp') { e.preventDefault(); video.muted = false; video.volume = Math.min(1, video.volume + 0.1); }
+      else if (k === 'ArrowDown') { e.preventDefault(); video.volume = Math.max(0, video.volume - 0.1); }
+      else return;
+      wake();
+    });
+
+    paintRange(seek, 0);
+    paintRange(vol, 100);
+  });
+
   // Enquiry form — no backend yet, so hand the message to WhatsApp/email.
   var form = document.getElementById('planForm');
   var note = document.getElementById('formNote');

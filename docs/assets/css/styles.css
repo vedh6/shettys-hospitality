@@ -423,7 +423,7 @@ a{ color:inherit; }
 .wordof{ background:var(--paper-2); padding:clamp(84px,10.5vw,150px) var(--gut); }
 .wordof__in{
   max-width:var(--max-in); margin-inline:auto;
-  display:grid; grid-template-columns:minmax(0,15rem) minmax(0,1fr) clamp(190px,15vw,230px);
+  display:grid; grid-template-columns:minmax(0,15rem) minmax(0,1fr) clamp(224px,17vw,262px);
   gap:clamp(24px,2.8vw,44px); align-items:start;
 }
 .wordof__rubric h2{ font-size:clamp(1.42rem,2vw,1.78rem); max-width:18ch; margin-bottom:1.15rem; }
@@ -492,14 +492,97 @@ a{ color:inherit; }
 
 /* the latest reel, sitting where guest accounts will eventually go */
 .wordof__reel{ margin:0; }
-.reel__frame{
-  margin:0; position:relative; width:100%; overflow:hidden;
+/* ---- video player ---- */
+.vplayer{
+  margin:0; position:relative; overflow:hidden; isolation:isolate;
   background:var(--ink); border:1px solid var(--rule-strong);
 }
-.reel__frame video{
-  display:block; width:100%; height:auto; aspect-ratio:9/16; object-fit:cover;
-  background:var(--ink);
+.vplayer__video{
+  display:block; width:100%; height:auto; aspect-ratio:9/16;
+  object-fit:cover; background:var(--ink);
 }
+.vplayer:fullscreen .vplayer__video{ height:100%; aspect-ratio:auto; object-fit:contain; }
+
+/* centre play button — visible when paused, and on hover while playing */
+.vplayer__big{
+  position:absolute; inset:0; margin:auto; width:58px; height:58px;
+  display:grid; place-items:center; padding:0; cursor:pointer;
+  border-radius:999px; border:1px solid rgba(245,242,234,.38);
+  background:rgba(22,38,29,.34); backdrop-filter:blur(6px);
+  color:var(--paper);
+  transition:opacity var(--d-tint) var(--ease-tint),
+             background var(--d-tint) var(--ease-tint);
+}
+.vplayer__big:hover{ background:rgba(22,38,29,.55); }
+.vplayer__big svg{ width:22px; height:22px; }
+.vplayer__big .i-play{ margin-left:3px; }
+
+/* controls */
+.vplayer__bar{
+  position:absolute; left:0; right:0; bottom:0; padding:12px 11px 11px;
+  display:flex; flex-direction:column; gap:9px;
+  background:linear-gradient(to top, rgba(12,22,16,.88), rgba(12,22,16,.42) 55%, transparent);
+  transition:opacity var(--d-tint) var(--ease-tint);
+}
+.vplayer__seekrow{ display:flex; align-items:center; gap:8px; }
+.vplayer__time{
+  color:var(--paper); font-size:.62rem; letter-spacing:.04em;
+  font-variant-numeric:tabular-nums; flex:none; opacity:.9;
+}
+.vplayer__btns{ display:flex; align-items:center; justify-content:space-between; gap:6px; }
+.vplayer__group{ display:flex; align-items:center; gap:1px; }
+.vplayer__bar button{
+  display:grid; place-items:center; width:30px; height:30px; padding:0;
+  background:none; border:0; cursor:pointer; color:var(--paper); border-radius:2px;
+  transition:background var(--d-tint) var(--ease-tint);
+}
+.vplayer__bar button:hover{ background:rgba(245,242,234,.18); }
+.vplayer__bar button svg{ width:15px; height:15px; }
+
+/* volume slider opens on hover, like the rest of the site it stays quiet until asked */
+.vplayer__vol{ display:flex; align-items:center; }
+.vplayer__volume{ width:0; opacity:0; transition:width var(--d-tint) var(--ease-tint), opacity var(--d-tint) var(--ease-tint); }
+.vplayer__vol:hover .vplayer__volume,
+.vplayer__volume:focus-visible{ width:56px; opacity:1; margin-left:4px; }
+
+/* range inputs */
+.vplayer__seek,.vplayer__volume{
+  -webkit-appearance:none; appearance:none; height:3px; border-radius:999px;
+  background:rgba(245,242,234,.3); cursor:pointer; min-width:0;
+}
+.vplayer__seek{ flex:1 1 auto; }
+.vplayer__seek::-webkit-slider-thumb,.vplayer__volume::-webkit-slider-thumb{
+  -webkit-appearance:none; appearance:none; width:11px; height:11px; border-radius:999px;
+  background:var(--paper); border:0; cursor:pointer;
+  transition:transform var(--d-tint) var(--ease-tint);
+}
+.vplayer__seek:hover::-webkit-slider-thumb{ transform:scale(1.25); }
+.vplayer__seek::-moz-range-thumb,.vplayer__volume::-moz-range-thumb{
+  width:11px; height:11px; border-radius:999px; background:var(--paper); border:0; cursor:pointer;
+}
+.vplayer :focus-visible{ outline:2px solid var(--paper); outline-offset:2px; }
+
+/* idle: controls fade out while playing until the pointer moves */
+.vplayer.is-idle .vplayer__bar,
+.vplayer.is-idle .vplayer__big{ opacity:0; pointer-events:none; }
+.vplayer.is-playing .vplayer__big .i-play,
+.vplayer .vplayer__big .i-pause,
+.vplayer.is-playing .vplayer__bar .i-play,
+.vplayer .vplayer__bar .i-pause,
+.vplayer .i-mute,
+.vplayer.is-muted .i-vol,
+.vplayer .i-min,
+.vplayer.is-full .i-max{ display:none; }
+.vplayer.is-playing .vplayer__big .i-pause,
+.vplayer.is-playing .vplayer__bar .i-pause,
+.vplayer.is-muted .i-mute,
+.vplayer.is-full .i-min{ display:block; }
+
+/* narrow slots drop the skip buttons and the volume slider rather than crush everything */
+@media (max-width:520px){
+  .vplayer__bar{ padding:10px 8px 9px; }
+}
+
 .reel__cap{
   margin:.85rem 0 0; font-size:var(--label); letter-spacing:var(--track-label);
   text-transform:uppercase; font-weight:var(--w-label);
@@ -512,7 +595,7 @@ a{ color:inherit; }
 
 @media (max-width:1100px){
   .wordof__in{ grid-template-columns:minmax(0,12rem) minmax(0,1fr); }
-  .wordof__reel{ grid-column:1 / -1; max-width:230px; margin-top:clamp(28px,4vw,44px); }
+  .wordof__reel{ grid-column:1 / -1; max-width:262px; margin-top:clamp(28px,4vw,44px); }
 }
 @media (max-width:860px){
   .wordof__in{ grid-template-columns:1fr; gap:clamp(40px,7vw,54px); }
