@@ -109,6 +109,7 @@
 
     var index = 0;
     var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var advance = function () { show((index + 1) % items.length); };
 
     items.forEach(function (el, i) { if (i !== 0) el.hidden = true; });
 
@@ -136,7 +137,7 @@
       var b = document.createElement('button');
       b.type = 'button';
       b.setAttribute('aria-label', 'Show account ' + (i + 1) + ' of ' + items.length);
-      b.addEventListener('click', function (e) { e.stopPropagation(); show(i); });
+      b.addEventListener('click', function (e) { e.stopPropagation(); show(i); restart(); });
       dots.appendChild(b);
       return b;
     });
@@ -149,7 +150,8 @@
       '<path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>';
     next.addEventListener('click', function (e) {
       e.stopPropagation();
-      show((index + 1) % items.length);
+      advance();
+      restart();
     });
     dots.appendChild(next);
 
@@ -164,8 +166,47 @@
     // Clicking the panel advances, except on the player and on real links.
     root.addEventListener('click', function (e) {
       if (e.target.closest('.tsplit__visual, a, button')) return;
-      show((index + 1) % items.length);
+      advance();
     });
+
+    // Auto-advance every 4s. Held while the pointer is over the panel, while
+    // anything inside has keyboard focus, while the review video is playing,
+    // and while the section is off screen or the tab is in the background.
+    var timer = null;
+    var video = root.querySelector('.tsplit__visual video');
+    var hovering = false, focused = false, onScreen = false, stopped = reduced;
+
+    function canRun() {
+      return !stopped && onScreen && !hovering && !focused &&
+             !document.hidden && !(video && !video.paused);
+    }
+    function tick() {
+      if (canRun()) advance();
+    }
+    function restart() {
+      if (timer) clearInterval(timer);
+      timer = stopped ? null : setInterval(tick, 4000);
+    }
+
+    root.addEventListener('mouseenter', function () { hovering = true; });
+    root.addEventListener('mouseleave', function () { hovering = false; });
+    root.addEventListener('focusin', function () { focused = true; });
+    root.addEventListener('focusout', function () { focused = false; });
+    document.addEventListener('visibilitychange', restart);
+    if (video) {
+      video.addEventListener('play', restart);
+      video.addEventListener('pause', restart);
+    }
+
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        onScreen = entries[0].isIntersecting;
+      }, { threshold: 0.25 }).observe(root);
+    } else {
+      onScreen = true;
+    }
+
+    restart();
   });
 
   // Video player. Custom controls so the review sits in the site's own language
