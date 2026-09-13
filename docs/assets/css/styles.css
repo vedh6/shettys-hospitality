@@ -423,7 +423,7 @@ a{ color:inherit; }
 .wordof{ background:var(--paper-2); padding:clamp(84px,10.5vw,150px) var(--gut); }
 .wordof__in{
   max-width:var(--max-in); margin-inline:auto;
-  display:grid; grid-template-columns:minmax(0,15rem) minmax(0,1fr) clamp(250px,20vw,290px);
+  display:grid; grid-template-columns:minmax(0,15rem) minmax(0,1fr) clamp(190px,15vw,230px);
   gap:clamp(24px,2.8vw,44px); align-items:start;
 }
 .wordof__rubric h2{ font-size:clamp(1.42rem,2vw,1.78rem); max-width:18ch; margin-bottom:1.15rem; }
@@ -493,7 +493,7 @@ a{ color:inherit; }
 /* the latest reel, sitting where guest accounts will eventually go */
 .wordof__reel{ margin:0; }
 .reel__frame{
-  position:relative; width:100%; height:clamp(470px,40vw,600px);
+  position:relative; width:100%; height:clamp(360px,30vw,430px);
   overflow:hidden; background:var(--paper);
   border:1px solid var(--rule-strong);
 }
@@ -508,7 +508,7 @@ a{ color:inherit; }
 
 @media (max-width:1100px){
   .wordof__in{ grid-template-columns:minmax(0,12rem) minmax(0,1fr); }
-  .wordof__reel{ grid-column:1 / -1; max-width:320px; margin-top:clamp(28px,4vw,44px); }
+  .wordof__reel{ grid-column:1 / -1; max-width:230px; margin-top:clamp(28px,4vw,44px); }
 }
 @media (max-width:860px){
   .wordof__in{ grid-template-columns:1fr; gap:clamp(40px,7vw,54px); }
