@@ -423,8 +423,8 @@ a{ color:inherit; }
 .wordof{ background:var(--paper-2); padding:clamp(84px,10.5vw,150px) var(--gut); }
 .wordof__in{
   max-width:var(--max-in); margin-inline:auto;
-  display:grid; grid-template-columns:minmax(0,15rem) minmax(0,1fr) clamp(224px,17vw,262px);
-  gap:clamp(24px,2.8vw,44px); align-items:start;
+  display:grid; grid-template-columns:minmax(0,15rem) minmax(0,1fr);
+  gap:clamp(30px,4vw,64px); align-items:start;
 }
 .wordof__rubric h2{ font-size:clamp(1.42rem,2vw,1.78rem); max-width:18ch; margin-bottom:1.15rem; }
 .wordof__note{ margin:0 0 1.5rem; font-size:.92rem; line-height:1.72;
@@ -491,17 +491,24 @@ a{ color:inherit; }
 .quote + .quote .quote__body::before{ font-size:1.7em; }
 
 /* the latest reel, sitting where guest accounts will eventually go */
-.wordof__reel{ margin:0; }
+.wordof__reel{ margin:clamp(34px,4.4vw,58px) 0 0; }
 /* ---- video player ---- */
 .vplayer{
   margin:0; position:relative; overflow:hidden; isolation:isolate;
-  background:var(--ink); border:1px solid var(--rule-strong);
+  aspect-ratio:16/9; background:var(--ink); border:1px solid var(--rule-strong);
+}
+/* the footage is portrait; a blurred still fills the sides so nothing is cropped */
+.vplayer::before{
+  content:""; position:absolute; inset:-8%; z-index:-1;
+  background:var(--poster) center/cover no-repeat;
+  filter:blur(26px) saturate(.85) brightness(.52);
 }
 .vplayer__video{
-  display:block; width:100%; height:auto; aspect-ratio:9/16;
-  object-fit:cover; background:var(--ink);
+  position:absolute; inset:0; display:block; width:100%; height:100%;
+  object-fit:contain; background:transparent;
 }
-.vplayer:fullscreen .vplayer__video{ height:100%; aspect-ratio:auto; object-fit:contain; }
+.vplayer:fullscreen{ aspect-ratio:auto; }
+.vplayer:fullscreen::before{ content:none; }
 
 /* centre play button — visible when paused, and on hover while playing */
 .vplayer__big{
@@ -593,9 +600,8 @@ a{ color:inherit; }
   border-bottom:1px solid var(--rule-strong); }
 .reel__cap a:hover{ border-bottom-color:var(--ink); }
 
-@media (max-width:1100px){
-  .wordof__in{ grid-template-columns:minmax(0,12rem) minmax(0,1fr); }
-  .wordof__reel{ grid-column:1 / -1; max-width:262px; margin-top:clamp(28px,4vw,44px); }
+@media (max-width:860px){
+  .wordof__in{ grid-template-columns:1fr; }
 }
 @media (max-width:860px){
   .wordof__in{ grid-template-columns:1fr; gap:clamp(40px,7vw,54px); }
