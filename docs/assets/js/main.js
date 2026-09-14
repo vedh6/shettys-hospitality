@@ -44,17 +44,28 @@
     // The source is already chosen by the inline booter next to the <video>,
     // so that a phone never fetches the landscape file. Setting .src there
     // cancels the autoplay attribute, so ask for playback explicitly.
+    // Every request to play goes through here, so the reduced-motion choice
+    // holds. It used to be applied once at startup and then undone by the
+    // later canplaythrough/visibility/tap handlers, which is what made the
+    // hero start, stop, and then run again on the first tap.
+    var stillness = window.matchMedia('(prefers-reduced-motion: reduce)');
     var play = function () {
+      if (stillness.matches) { return; }
       var p = vid.play();
       if (p && p.catch) { p.catch(function () {}); }
     };
-    play();
+    var hold = function () {
+      vid.removeAttribute('autoplay');
+      vid.pause();
+    };
+
+    if (stillness.matches) { hold(); } else { play(); }
     vid.addEventListener('loadeddata', play);
     vid.addEventListener('canplay', play);
     vid.addEventListener('canplaythrough', play);
     // iOS suspends media when the tab goes to the background and does not
     // always resume by itself; and a first play() can be refused outright
-    // (Low Power Mode), where a later user gesture is the only way back.
+    // (Low Power Mode or Low Data Mode), where a later gesture is the way back.
     document.addEventListener('visibilitychange', function () {
       if (!document.hidden) { play(); }
     });
@@ -64,10 +75,11 @@
         document.removeEventListener(evt, once);
       }, { passive: true });
     });
-    // Hold it still for anyone who asked for less motion.
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      vid.removeAttribute('autoplay');
-      vid.pause();
+    // Follow the setting if it is changed while the page is open.
+    if (stillness.addEventListener) {
+      stillness.addEventListener('change', function () {
+        if (stillness.matches) { hold(); } else { play(); }
+      });
     }
   }
 
