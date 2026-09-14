@@ -441,22 +441,22 @@ a{ color:inherit; }
   margin:0 0 clamp(26px,3vw,38px); max-width:24ch;
   font-family:"Fraunces", Georgia, serif; font-weight:350;
   font-variation-settings:"opsz" 144;
-  font-size:clamp(1.6rem,3.4vw,2.6rem); line-height:1.28; letter-spacing:-.024em;
+  font-size:clamp(1.9rem,4.1vw,3.15rem); line-height:1.22; letter-spacing:-.028em;
   color:var(--ink); text-wrap:balance;
 }
 .tsplit__brk{ color:var(--tile); padding:0 .12em; }
 
 .tsplit__by{ display:flex; align-items:center; gap:1rem; }
-.tsplit__name{ margin:0; font-size:.92rem; font-weight:600; color:var(--ink); }
-.tsplit__role{ margin:.15rem 0 0; font-size:.82rem;
+.tsplit__name{ margin:0; font-size:1.02rem; font-weight:600; color:var(--ink); }
+.tsplit__role{ margin:.2rem 0 0; font-size:.9rem;
   color:color-mix(in srgb, var(--ink) 82%, var(--sage)); }
 
 .tsplit__note{
-  margin:clamp(30px,3.6vw,46px) 0 0; max-width:46ch;
-  font-size:.9rem; line-height:1.72;
+  margin:clamp(30px,3.6vw,46px) 0 0; max-width:40ch;
+  font-size:.79rem; line-height:1.66;
   color:color-mix(in srgb, var(--ink) 82%, var(--sage));
 }
-.tsplit__note .link{ font-size:.76rem; display:inline-block; margin-top:.7rem; }
+.tsplit__note .link{ font-size:.68rem; display:inline-block; margin-top:.6rem; }
 
 .tsplit__visual{ min-width:0; width:clamp(260px,30vw,400px); }
 
@@ -471,7 +471,7 @@ a{ color:inherit; }
 /* Cycling controls appear only when a second account exists */
 .tsplit__dots{ display:flex; align-items:center; gap:.85rem; margin-top:clamp(28px,3vw,40px); }
 .tsplit__dots button{
-  width:9px; height:9px; padding:0; border:0; border-radius:999px; cursor:pointer;
+  width:8px; height:8px; padding:0; border:0; border-radius:999px; cursor:pointer;
   background:color-mix(in srgb, var(--ink) 26%, transparent);
   transition:background var(--d-tint) var(--ease-tint), transform var(--d-tint) var(--ease-tint);
 }
