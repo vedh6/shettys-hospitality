@@ -205,7 +205,8 @@ body=f"""
 <section class="vhero">
   <video class="vhero__media" autoplay muted loop playsinline preload="auto"
          poster="assets/img/hero-poster.jpg" aria-hidden="true"
-         data-portrait="assets/video/hero-portrait.mp4">
+         data-portrait="assets/video/hero-portrait.mp4"
+         data-portrait-poster="assets/img/hero-poster-portrait.jpg">
     <source src="assets/video/hero.mp4" type="video/mp4" />
   </video>
   <div class="vhero__scrim" aria-hidden="true"></div>

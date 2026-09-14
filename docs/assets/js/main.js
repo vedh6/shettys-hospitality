@@ -43,6 +43,10 @@
   if (vid) {
     var portrait = vid.getAttribute('data-portrait');
     if (portrait && window.matchMedia('(max-width: 819px)').matches) {
+      // Swap the poster too, or the phone flashes the landscape room-tour
+      // still before the portrait reel has any frames to show.
+      var pp = vid.getAttribute('data-portrait-poster');
+      if (pp) { vid.poster = pp; }
       vid.src = portrait;
       vid.load();
     }
