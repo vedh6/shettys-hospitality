@@ -480,25 +480,50 @@ body=phero("Shetty&rsquo;s Stays", "Homes, not room numbers.",
   "afternoon sun, and how long the drive to the airport really takes at 6am.",
   [("Stay length", "One night to several months"), ("Group size", "2 to 20 guests"), ("Ready", "Cleaned before every arrival")],
   image="stays.jpg", alt="A bedroom in one of our managed homes", variant="below") + f"""
-<section class="section split">
-  <figure class="split__media reveal">
-    <div class="ph">
-      <img src="assets/img/detail-wide.jpg" alt="Interior of a managed homestay" />
-    </div>
-  </figure>
-  <div class="split__copy reveal">
+<section class="section">
+  <header class="section__head section__head--left reveal">
     <p class="eyebrow">In every house</p>
     <h2>The list we check before you arrive.</h2>
-    <ul class="ticks">
-      <li>Cleaned and inspected before every arrival</li>
-      <li>Fresh linen and towels, beds made</li>
-      <li>Stocked kitchen and filtered water</li>
-      <li>Wi-Fi, hot water, backup power where available</li>
-      <li>Parking, and a caretaker who answers the phone</li>
-      <li>Airport pickup arranged with the booking</li>
-    </ul>
-    <a class="link" href="contact.html">Check dates <span aria-hidden="true">&rarr;</span></a>
+  </header>
+
+  <div class="bento reveal">
+    <div class="bento__cell bento__cell--hero">
+      <h3>Cleaned and inspected before every arrival</h3>
+      <p>Room by room, against the same written checklist every time &mdash; by someone who has
+      been in the house before.</p>
+    </div>
+
+    <figure class="bento__cell bento__cell--img">
+      <img src="assets/img/pages/stays.jpg?v={BUILD_ID}" alt="A bedroom in one of our managed homes" loading="lazy" />
+    </figure>
+
+    <div class="bento__cell">
+      <h3>Fresh linen and towels</h3>
+      <p>Beds made up before you land, not left folded on the mattress.</p>
+    </div>
+
+    <div class="bento__cell">
+      <h3>Stocked kitchen</h3>
+      <p>Filtered water and the basics already in.</p>
+    </div>
+
+    <div class="bento__cell">
+      <h3>Wi-Fi and hot water</h3>
+      <p>Backup power where the house has it.</p>
+    </div>
+
+    <div class="bento__cell">
+      <h3>Parking, and a caretaker</h3>
+      <p>A name and a number that answers.</p>
+    </div>
+
+    <div class="bento__cell">
+      <h3>Airport pickup</h3>
+      <p>Arranged with the booking, at any hour.</p>
+    </div>
   </div>
+
+  <p class="bento__after"><a class="link" href="contact.html">Check dates <span aria-hidden="true">&rarr;</span></a></p>
 </section>
 
 <section class="section">
