@@ -689,7 +689,11 @@ body=phero("Celebrations at home", "The house fills up.<br>You get to enjoy it."
     </div>
     <figure class="split__media">
       <div class="ph">
-        <img src="assets/img/occasions/birthday.jpg?v={BUILD_ID}" alt="A birthday table laid on the verandah of a Mangalore house" loading="lazy" />
+        <img src="assets/img/occasions/birthday.jpg?v={BUILD_ID}"
+             srcset="assets/img/occasions/birthday-700.jpg?v={BUILD_ID} 700w,
+                     assets/img/occasions/birthday.jpg?v={BUILD_ID} 1200w"
+             sizes="(max-width: 860px) 90vw, 42vw"
+             alt="A birthday table laid on the verandah of a Mangalore house" loading="lazy" />
       </div>
     </figure>
   </article>
@@ -703,7 +707,11 @@ body=phero("Celebrations at home", "The house fills up.<br>You get to enjoy it."
     </div>
     <figure class="split__media">
       <div class="ph">
-        <img src="assets/img/occasions/reunion.jpg?v={BUILD_ID}" alt="A long family lunch laid out on the verandah of a coastal Karnataka house" loading="lazy" />
+        <img src="assets/img/occasions/reunion.jpg?v={BUILD_ID}"
+             srcset="assets/img/occasions/reunion-700.jpg?v={BUILD_ID} 700w,
+                     assets/img/occasions/reunion.jpg?v={BUILD_ID} 1200w"
+             sizes="(max-width: 860px) 90vw, 42vw"
+             alt="A long family lunch laid out on the verandah of a coastal Karnataka house" loading="lazy" />
       </div>
     </figure>
   </article>
@@ -717,7 +725,11 @@ body=phero("Celebrations at home", "The house fills up.<br>You get to enjoy it."
     </div>
     <figure class="split__media">
       <div class="ph">
-        <img src="assets/img/occasions/offsite.jpg?v={BUILD_ID}" alt="A long table set for a private dinner on a lit verandah at dusk" loading="lazy" />
+        <img src="assets/img/occasions/offsite.jpg?v={BUILD_ID}"
+             srcset="assets/img/occasions/offsite-700.jpg?v={BUILD_ID} 700w,
+                     assets/img/occasions/offsite.jpg?v={BUILD_ID} 1200w"
+             sizes="(max-width: 860px) 90vw, 42vw"
+             alt="A long table set for a private dinner on a lit verandah at dusk" loading="lazy" />
       </div>
     </figure>
   </article>

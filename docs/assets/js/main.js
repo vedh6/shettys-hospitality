@@ -113,9 +113,11 @@
     }
     function restart() {
       if (timer) clearInterval(timer);
-      timer = reduced ? null : setInterval(function () {
+      if (reduced) { timer = null; return; }
+      var ms = typeof everyMs === 'function' ? everyMs() : everyMs;
+      timer = setInterval(function () {
         if (canRun()) advance();
-      }, everyMs);
+      }, ms);
     }
 
     root.addEventListener('mouseenter', function () { hovering = true; });
@@ -257,8 +259,16 @@
     paint();
     dots.hidden = false;
 
-    // 6s, not the testimonials' 4s: these slides are two full paragraphs.
-    var restart = autoRotate(root, advance, 6000, null);
+    // 5s on a laptop. Phones get longer: below 860px the slide stacks to
+    // ~864px, taller than the viewport, so the copy and the photograph cannot
+    // be taken in at one glance, and a 323px measure reads slower than a
+    // 406px one. Re-armed on breakpoint change so a rotate or a resize picks
+    // up the other timing.
+    var phone = window.matchMedia('(max-width: 860px)');
+    var restart = autoRotate(root, advance, function () {
+      return phone.matches ? 8000 : 5000;
+    }, null);
+    if (phone.addEventListener) phone.addEventListener('change', restart);
   });
 
   // Video player. Custom controls so the review sits in the site's own language
