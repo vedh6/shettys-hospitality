@@ -336,6 +336,51 @@ a{ color:inherit; }
 .card--ask{ background:color-mix(in srgb, var(--sage) 9%, var(--paper)); }
 .card--ask:hover{ background:color-mix(in srgb, var(--sage) 14%, var(--paper)); }
 
+/* ---------- houses ---------- */
+.houses{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(20px,2.6vw,44px);
+}
+.house{ margin:0; min-width:0; }
+.house__media{ margin:0 0 clamp(16px,1.8vw,24px); overflow:hidden; background:var(--ink); }
+.house__media img{
+  width:100%; aspect-ratio:4/3; object-fit:cover; display:block;
+  transition:transform var(--d-move) var(--ease);
+}
+.house:hover .house__media img{ transform:scale(1.03); }
+.house__kind{
+  margin:0 0 .5rem; font-size:var(--label); letter-spacing:var(--track-label);
+  text-transform:uppercase; font-weight:var(--w-label); color:var(--sage);
+}
+.house__name{
+  margin:0 0 .55rem; font-size:clamp(1.2rem,1.6vw,1.45rem);
+  font-variation-settings:"opsz" 36; letter-spacing:-.01em;
+}
+.house__line{
+  margin:0 0 1.1rem; font-size:.9rem; line-height:1.62;
+  color:color-mix(in srgb, var(--ink) 82%, var(--sage));
+}
+.house__meta{
+  display:grid; grid-template-columns:repeat(2,1fr); margin:0;
+  border-top:1px solid var(--rule);
+}
+.house__meta > div{ padding:.85rem 14px 0 0; }
+.house__meta > div + div{
+  padding-left:14px; padding-right:0;
+  border-left:1px solid var(--rule);
+}
+.house__meta dt{
+  font-size:.62rem; letter-spacing:var(--track-label); text-transform:uppercase;
+  font-weight:var(--w-label); color:var(--sage);
+}
+.house__meta dd{ margin:.3em 0 0; font-size:.86rem; }
+
+@media (max-width:1000px){
+  .houses{ grid-template-columns:repeat(2,1fr); }
+}
+@media (max-width:620px){
+  .houses{ grid-template-columns:1fr; gap:clamp(30px,6vw,40px); }
+}
+
 /* ---------- bento ---------- */
 /* Four columns. The hero and the photograph hold the top two rows between them,
    the remaining five items fill the two below. */

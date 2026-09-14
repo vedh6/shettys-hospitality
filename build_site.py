@@ -482,6 +482,56 @@ body=phero("Shetty&rsquo;s Stays", "Homes, not room numbers.",
   image="stays.jpg", alt="A bedroom in one of our managed homes", variant="below") + f"""
 <section class="section">
   <header class="section__head section__head--left reveal">
+    <p class="eyebrow">The houses</p>
+    <h2>Where you would actually stay.</h2>
+    <p class="section__lede">Each of these is a house we manage ourselves. Details are being
+    collected &mdash; names, sizes and neighbourhoods go in below.</p>
+  </header>
+
+  <div class="houses">
+    <article class="house reveal">
+      <figure class="house__media">
+        <img src="assets/img/houses/house-1.jpg?v={BUILD_ID}" alt="" loading="lazy" />
+      </figure>
+      <p class="house__kind">A whole house</p>
+      <h3 class="house__name">House one &mdash; name to follow</h3>
+      <p class="house__line">A short line about what this house is good for goes here.</p>
+      <dl class="house__meta">
+        <div><dt>Sleeps</dt><dd>Sleeps 0 &middot; 0 bedrooms</dd></div>
+        <div><dt>Where</dt><dd>Area of Mangalore to follow</dd></div>
+      </dl>
+    </article>
+
+    <article class="house reveal">
+      <figure class="house__media">
+        <img src="assets/img/houses/house-2.jpg?v={BUILD_ID}" alt="" loading="lazy" />
+      </figure>
+      <p class="house__kind">An apartment</p>
+      <h3 class="house__name">House two &mdash; name to follow</h3>
+      <p class="house__line">A short line about what this house is good for goes here.</p>
+      <dl class="house__meta">
+        <div><dt>Sleeps</dt><dd>Sleeps 0 &middot; 0 bedrooms</dd></div>
+        <div><dt>Where</dt><dd>Area of Mangalore to follow</dd></div>
+      </dl>
+    </article>
+
+    <article class="house reveal">
+      <figure class="house__media">
+        <img src="assets/img/houses/house-3.jpg?v={BUILD_ID}" alt="" loading="lazy" />
+      </figure>
+      <p class="house__kind">A sea-facing house</p>
+      <h3 class="house__name">House three &mdash; name to follow</h3>
+      <p class="house__line">A short line about what this house is good for goes here.</p>
+      <dl class="house__meta">
+        <div><dt>Sleeps</dt><dd>Sleeps 0 &middot; 0 bedrooms</dd></div>
+        <div><dt>Where</dt><dd>Area of Mangalore to follow</dd></div>
+      </dl>
+    </article>
+  </div>
+</section>
+
+<section class="section">
+  <header class="section__head section__head--left reveal">
     <p class="eyebrow">In every house</p>
     <h2>The list we check before you arrive.</h2>
   </header>
