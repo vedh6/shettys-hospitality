@@ -44,22 +44,16 @@
     // The source is already chosen by the inline booter next to the <video>,
     // so that a phone never fetches the landscape file. Setting .src there
     // cancels the autoplay attribute, so ask for playback explicitly.
-    // Every request to play goes through here, so the reduced-motion choice
-    // holds. It used to be applied once at startup and then undone by the
-    // later canplaythrough/visibility/tap handlers, which is what made the
-    // hero start, stop, and then run again on the first tap.
-    var stillness = window.matchMedia('(prefers-reduced-motion: reduce)');
+    // Deliberate call by the site owner: the hero plays on every device,
+    // including ones with prefers-reduced-motion set. Everything else on the
+    // site still honours that setting — the scroll reveals and the rotating
+    // panels below both stop for it. Revisit if a visitor ever complains.
     var play = function () {
-      if (stillness.matches) { return; }
       var p = vid.play();
       if (p && p.catch) { p.catch(function () {}); }
     };
-    var hold = function () {
-      vid.removeAttribute('autoplay');
-      vid.pause();
-    };
 
-    if (stillness.matches) { hold(); } else { play(); }
+    play();
     vid.addEventListener('loadeddata', play);
     vid.addEventListener('canplay', play);
     vid.addEventListener('canplaythrough', play);
@@ -75,12 +69,7 @@
         document.removeEventListener(evt, once);
       }, { passive: true });
     });
-    // Follow the setting if it is changed while the page is open.
-    if (stillness.addEventListener) {
-      stillness.addEventListener('change', function () {
-        if (stillness.matches) { hold(); } else { play(); }
-      });
-    }
+
   }
 
   // Scroll reveal — nothing below the fold is on screen until you reach it.
