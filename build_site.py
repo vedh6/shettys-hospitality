@@ -677,6 +677,30 @@ body=phero("Celebrations at home", "The house fills up.<br>You get to enjoy it."
   </ul>
 </section>
 
+<section class="section split">
+  <div class="split__copy reveal">
+    <p class="eyebrow">Smaller parties</p>
+    <h2>A first birthday is not a small wedding.</h2>
+    <p>
+      Most of what we are asked for is not a hundred and fifty people. It is twenty or thirty,
+      in a courtyard, on a Sunday evening &mdash; a child&rsquo;s birthday, a first birthday, an
+      anniversary the family never wanted to move to a hall in the first place.
+    </p>
+    <p>
+      Those need less building and more judgement. How much food actually gets eaten. Where the
+      children will end up running once the cake is cut. How loud is too loud in a house with
+      neighbours on both sides. We scale the evening down properly rather than shrinking a
+      package meant for a crowd.
+    </p>
+    <a class="link" href="contact.html">Tell us about the occasion <span aria-hidden="true">&rarr;</span></a>
+  </div>
+  <figure class="split__media reveal">
+    <div class="ph">
+      <img src="assets/img/birthday.jpg?v={BUILD_ID}" alt="A child&rsquo;s birthday laid out in the courtyard of a Mangalore home" loading="lazy" />
+    </div>
+  </figure>
+</section>
+
 <section class="section band">
   <div class="band__in">
     <header class="section__head section__head--left reveal">
