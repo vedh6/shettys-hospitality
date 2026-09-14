@@ -41,16 +41,9 @@
   // browser would crop the tall video anyway, and the full tall frame for phones.
   var vid = document.querySelector('.vhero__media');
   if (vid) {
-    var portrait = vid.getAttribute('data-portrait');
-    if (portrait && window.matchMedia('(max-width: 819px)').matches) {
-      // Swap the poster too, or the phone flashes the landscape room-tour
-      // still before the portrait reel has any frames to show.
-      var pp = vid.getAttribute('data-portrait-poster');
-      if (pp) { vid.poster = pp; }
-      vid.src = portrait;
-      vid.load();
-    }
-    // Swapping the source cancels the autoplay attribute, so ask again.
+    // The source is already chosen by the inline booter next to the <video>,
+    // so that a phone never fetches the landscape file. Setting .src there
+    // cancels the autoplay attribute, so ask for playback explicitly.
     var play = function () {
       var p = vid.play();
       if (p && p.catch) { p.catch(function () {}); }
@@ -58,6 +51,19 @@
     play();
     vid.addEventListener('loadeddata', play);
     vid.addEventListener('canplay', play);
+    vid.addEventListener('canplaythrough', play);
+    // iOS suspends media when the tab goes to the background and does not
+    // always resume by itself; and a first play() can be refused outright
+    // (Low Power Mode), where a later user gesture is the only way back.
+    document.addEventListener('visibilitychange', function () {
+      if (!document.hidden) { play(); }
+    });
+    ['touchstart', 'click'].forEach(function (evt) {
+      document.addEventListener(evt, function once() {
+        play();
+        document.removeEventListener(evt, once);
+      }, { passive: true });
+    });
     // Hold it still for anyone who asked for less motion.
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       vid.removeAttribute('autoplay');
