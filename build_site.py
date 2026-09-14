@@ -331,7 +331,7 @@ body=f"""
     <div class="tsplit__copy">
 
       <article class="tsplit__item is-active" data-testimonial>
-        <p class="tsplit__tag"><span class="tsplit__hr" aria-hidden="true"></span>A stay &mdash; slot 1 of 4</p>
+        <p class="tsplit__tag"><span class="tsplit__hr" aria-hidden="true"></span>A stay</p>
 
         <blockquote class="tsplit__quote">
           <span class="tsplit__brk" aria-hidden="true">[</span>A family who stayed here. Their own words, printed whole.<span class="tsplit__brk" aria-hidden="true">]</span>
@@ -347,7 +347,7 @@ body=f"""
       </article>
 
       <article class="tsplit__item" data-testimonial>
-        <p class="tsplit__tag"><span class="tsplit__hr" aria-hidden="true"></span>A celebration &mdash; slot 2 of 4</p>
+        <p class="tsplit__tag"><span class="tsplit__hr" aria-hidden="true"></span>A celebration</p>
 
         <blockquote class="tsplit__quote">
           <span class="tsplit__brk" aria-hidden="true">[</span>Whoever hosted the evening. What they said once it was over.<span class="tsplit__brk" aria-hidden="true">]</span>
@@ -363,7 +363,7 @@ body=f"""
       </article>
 
       <article class="tsplit__item" data-testimonial>
-        <p class="tsplit__tag"><span class="tsplit__hr" aria-hidden="true"></span>A temple journey &mdash; slot 3 of 4</p>
+        <p class="tsplit__tag"><span class="tsplit__hr" aria-hidden="true"></span>A temple journey</p>
 
         <blockquote class="tsplit__quote">
           <span class="tsplit__brk" aria-hidden="true">[</span>The people who travelled. Unedited, as they sent it.<span class="tsplit__brk" aria-hidden="true">]</span>
@@ -379,7 +379,7 @@ body=f"""
       </article>
 
       <article class="tsplit__item" data-testimonial>
-        <p class="tsplit__tag"><span class="tsplit__hr" aria-hidden="true"></span>A homecoming &mdash; slot 4 of 4</p>
+        <p class="tsplit__tag"><span class="tsplit__hr" aria-hidden="true"></span>A homecoming</p>
 
         <blockquote class="tsplit__quote">
           <span class="tsplit__brk" aria-hidden="true">[</span>A family back for the season. Their account of the month.<span class="tsplit__brk" aria-hidden="true">]</span>
