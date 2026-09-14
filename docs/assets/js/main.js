@@ -99,6 +99,51 @@
 
 
 
+  // Shared auto-advance timer for the rotating panels. Held while the pointer
+  // is over the panel, while anything inside has keyboard focus, while a video
+  // inside is playing, and while the panel is off screen or the tab is in the
+  // background. Returns restart(), to call after any manual advance.
+  function autoRotate(root, advance, everyMs, video) {
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var timer = null, hovering = false, focused = false, onScreen = false;
+
+    function canRun() {
+      return !reduced && onScreen && !hovering && !focused &&
+             !document.hidden && !(video && !video.paused);
+    }
+    function restart() {
+      if (timer) clearInterval(timer);
+      timer = reduced ? null : setInterval(function () {
+        if (canRun()) advance();
+      }, everyMs);
+    }
+
+    root.addEventListener('mouseenter', function () { hovering = true; });
+    root.addEventListener('mouseleave', function () { hovering = false; });
+    root.addEventListener('focusin', function () { focused = true; });
+    root.addEventListener('focusout', function () { focused = false; });
+    document.addEventListener('visibilitychange', restart);
+    if (video) {
+      video.addEventListener('play', restart);
+      video.addEventListener('pause', restart);
+    }
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        var was = onScreen;
+        onScreen = entries[0].isIntersecting;
+        // Restart on entry so the first slide a reader sees gets a full
+        // interval, rather than inheriting whatever is left of a tick that
+        // was skipped while the panel was off screen.
+        if (onScreen && !was) restart();
+      }, { threshold: 0.25 }).observe(root);
+    } else {
+      onScreen = true;
+    }
+
+    restart();
+    return restart;
+  }
+
   // Split testimonials. With one account this does nothing; adding a second
   // <article data-testimonial> to the markup turns on the dots, the Next
   // control, click-to-advance and the crossfade, with no further work.
@@ -169,44 +214,51 @@
       advance();
     });
 
-    // Auto-advance every 4s. Held while the pointer is over the panel, while
-    // anything inside has keyboard focus, while the review video is playing,
-    // and while the section is off screen or the tab is in the background.
-    var timer = null;
-    var video = root.querySelector('.tsplit__visual video');
-    var hovering = false, focused = false, onScreen = false, stopped = reduced;
+    // Auto-advance every 4s, paused by the shared rules in autoRotate.
+    var restart = autoRotate(root, advance, 4000,
+                             root.querySelector('.tsplit__visual video'));
+  });
 
-    function canRun() {
-      return !stopped && onScreen && !hovering && !focused &&
-             !document.hidden && !(video && !video.paused);
-    }
-    function tick() {
-      if (canRun()) advance();
-    }
-    function restart() {
-      if (timer) clearInterval(timer);
-      timer = stopped ? null : setInterval(tick, 4000);
-    }
+  // Rotating occasions on Celebrations. Each slide carries its own copy and
+  // its own photograph, so the two always cross-fade together. Slides stay in
+  // flow (see .occ__slide) so the section height never jumps.
+  document.querySelectorAll('[data-occ]').forEach(function (root) {
+    var slides = Array.prototype.slice.call(root.querySelectorAll('[data-occasion]'));
+    var dots = root.querySelector('[data-occ-dots]');
+    if (slides.length < 2 || !dots) return;
 
-    root.addEventListener('mouseenter', function () { hovering = true; });
-    root.addEventListener('mouseleave', function () { hovering = false; });
-    root.addEventListener('focusin', function () { focused = true; });
-    root.addEventListener('focusout', function () { focused = false; });
-    document.addEventListener('visibilitychange', restart);
-    if (video) {
-      video.addEventListener('play', restart);
-      video.addEventListener('pause', restart);
+    var index = 0;
+    function show(next) {
+      if (next === index) return;
+      slides[index].classList.remove('is-current');
+      index = next;
+      slides[index].classList.add('is-current');
+      paint();
     }
+    var advance = function () { show((index + 1) % slides.length); };
 
-    if ('IntersectionObserver' in window) {
-      new IntersectionObserver(function (entries) {
-        onScreen = entries[0].isIntersecting;
-      }, { threshold: 0.25 }).observe(root);
-    } else {
-      onScreen = true;
+    var buttons = slides.map(function (el, i) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.setAttribute('aria-label', el.getAttribute('aria-label') || ('Slide ' + (i + 1)));
+      b.addEventListener('click', function () { show(i); restart(); });
+      dots.appendChild(b);
+      return b;
+    });
+
+    function paint() {
+      buttons.forEach(function (b, i) {
+        b.setAttribute('aria-current', i === index ? 'true' : 'false');
+      });
+      slides.forEach(function (el, i) {
+        el.setAttribute('aria-hidden', i === index ? 'false' : 'true');
+      });
     }
+    paint();
+    dots.hidden = false;
 
-    restart();
+    // 6s, not the testimonials' 4s: these slides are two full paragraphs.
+    var restart = autoRotate(root, advance, 6000, null);
   });
 
   // Video player. Custom controls so the review sits in the site's own language

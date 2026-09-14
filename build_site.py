@@ -677,28 +677,52 @@ body=phero("Celebrations at home", "The house fills up.<br>You get to enjoy it."
   </ul>
 </section>
 
-<section class="section split">
-  <div class="split__copy reveal">
-    <p class="eyebrow">Smaller parties</p>
-    <h2>A first birthday is not a small wedding.</h2>
-    <p>
-      Most of what we are asked for is not a hundred and fifty people. It is twenty or thirty,
-      in a courtyard, on a Sunday evening &mdash; a child&rsquo;s birthday, a first birthday, an
-      anniversary the family never wanted to move to a hall in the first place.
-    </p>
-    <p>
-      Those need less building and more judgement. How much food actually gets eaten. Where the
-      children will end up running once the cake is cut. How loud is too loud in a house with
-      neighbours on both sides. We scale the evening down properly rather than shrinking a
-      package meant for a crowd.
-    </p>
-    <a class="link" href="contact.html">Tell us about the occasion <span aria-hidden="true">&rarr;</span></a>
-  </div>
-  <figure class="split__media reveal">
-    <div class="ph">
-      <img src="assets/img/birthday.jpg?v={BUILD_ID}" alt="A child&rsquo;s birthday laid out in the courtyard of a Mangalore home" loading="lazy" />
+<section class="section occ reveal" data-occ>
+  <div class="occ__stage">
+  <article class="occ__slide split is-current" data-occasion aria-label="Birthdays">
+    <div class="split__copy">
+      <p class="eyebrow">Birthdays</p>
+      <h2>A first birthday is not a small wedding.</h2>
+        <p>Most of what we are asked for is not a hundred and fifty people. It is twenty or thirty, in a courtyard, on a Sunday evening &mdash; a child&rsquo;s birthday, a first birthday, an anniversary the family never wanted to move to a hall in the first place.</p>
+        <p>Those need less building and more judgement. How much food actually gets eaten. Where the children will end up running once the cake is cut. How loud is too loud in a house with neighbours on both sides. We scale the evening down properly rather than shrinking a package meant for a crowd.</p>
+      <a class="link" href="contact.html">Tell us about the occasion <span aria-hidden="true">&rarr;</span></a>
     </div>
-  </figure>
+    <figure class="split__media">
+      <div class="ph">
+        <img src="assets/img/occasions/birthday.jpg?v={BUILD_ID}" alt="A birthday table laid on the verandah of a Mangalore house" loading="lazy" />
+      </div>
+    </figure>
+  </article>
+  <article class="occ__slide split" data-occasion aria-label="Family reunions">
+    <div class="split__copy">
+      <p class="eyebrow">Family reunions</p>
+      <h2>A week is not a long evening.</h2>
+        <p>When three families land at once and stay for a week, the hard part is not the welcome dinner. It is the seventh morning, when everyone wants breakfast at a different hour and two people have decided to fast.</p>
+        <p>So we staff it as a household rather than an event. The kitchen keeps going between meals, diets are written down instead of guessed at, and the cleaning and the airport runs happen without anybody having to ask. Nobody spends their holiday cooking for twenty.</p>
+      <a class="link" href="contact.html">Tell us about the occasion <span aria-hidden="true">&rarr;</span></a>
+    </div>
+    <figure class="split__media">
+      <div class="ph">
+        <img src="assets/img/occasions/reunion.jpg?v={BUILD_ID}" alt="A long family lunch laid out on the verandah of a coastal Karnataka house" loading="lazy" />
+      </div>
+    </figure>
+  </article>
+  <article class="occ__slide split" data-occasion aria-label="Corporate offsites">
+    <div class="split__copy">
+      <p class="eyebrow">Corporate offsites</p>
+      <h2>A house that behaves like a venue.</h2>
+        <p>Team dinners and small offsites work better in a house than in a banquet room &mdash; right up until somebody needs the timings held to the minute, or a proper invoice at the end.</p>
+        <p>So we run those parts like a venue and leave the rest feeling like a house. Fixed serving times, power and space sorted before anyone arrives, a setup that stays out of the way of whatever the session is, and a single invoice for your accounts team.</p>
+      <a class="link" href="contact.html">Tell us about the occasion <span aria-hidden="true">&rarr;</span></a>
+    </div>
+    <figure class="split__media">
+      <div class="ph">
+        <img src="assets/img/occasions/offsite.jpg?v={BUILD_ID}" alt="A long table set for a private dinner on a lit verandah at dusk" loading="lazy" />
+      </div>
+    </figure>
+  </article>
+  </div>
+  <div class="occ__dots" data-occ-dots hidden></div>
 </section>
 
 <section class="section band">
