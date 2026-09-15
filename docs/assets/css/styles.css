@@ -172,6 +172,27 @@ a{ color:inherit; }
   border-bottom:1px solid var(--rule);
 }
 
+/* An open drawer always gets a solid ground. Without this the home nav
+   stays transparent and the menu is white text over the hero video. */
+.nav.is-open{
+  background:var(--paper);
+  backdrop-filter:blur(14px);
+  border-bottom-color:var(--rule);
+}
+.home .nav.is-open{
+  background:var(--paper);
+  backdrop-filter:blur(14px);
+  border-bottom-color:var(--rule);
+}
+.home .nav.is-open .brand__name,
+.home .nav.is-open .nav__drawer a{ color:var(--ink); }
+.home .nav.is-open .brand__mark{ color:var(--sage); }
+.home .nav.is-open .brand__tag{ color:var(--sage); }
+.home .nav.is-open .nav__toggle{ border-color:var(--rule-strong); }
+.home .nav.is-open .nav__toggle span{ background:var(--ink); }
+.home .nav.is-open .nav__drawer a{ border-bottom-color:var(--rule); }
+.nav.is-open .nav__drawer a[aria-current="page"]{ color:var(--sage-dp); font-weight:600; }
+
 /* ---------- video hero ---------- */
 .vhero{
   position:relative; min-height:100svh; display:flex; align-items:center; justify-content:center;

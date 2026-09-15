@@ -9,16 +9,27 @@
   var toggle = document.getElementById('navToggle');
   var drawer = document.getElementById('navDrawer');
   if (toggle && drawer) {
-    toggle.addEventListener('click', function () {
-      var open = drawer.hasAttribute('hidden');
+    var nav = toggle.closest('.nav');
+    // The home nav is transparent over the hero video, so an open drawer
+    // there would be white links on moving footage. is-open gives it a
+    // solid ground for as long as it is open, whatever the page or scroll.
+    var setOpen = function (open) {
       if (open) { drawer.removeAttribute('hidden'); } else { drawer.setAttribute('hidden', ''); }
+      if (nav) { nav.classList.toggle('is-open', open); }
       toggle.setAttribute('aria-expanded', String(open));
       toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    };
+
+    toggle.addEventListener('click', function () {
+      setOpen(drawer.hasAttribute('hidden'));
     });
     drawer.addEventListener('click', function (e) {
-      if (e.target.tagName === 'A') {
-        drawer.setAttribute('hidden', '');
-        toggle.setAttribute('aria-expanded', 'false');
+      if (e.target.tagName === 'A') { setOpen(false); }
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !drawer.hasAttribute('hidden')) {
+        setOpen(false);
+        toggle.focus();
       }
     });
   }
