@@ -197,28 +197,17 @@ def phero(eyebrow, title, lede, meta=None, image=None, alt="", variant="beside")
 
 PAGES = {}
 
-HERO_BOOT = """<script>
-(function () {
-  var v = document.currentScript.previousElementSibling;
-  var phone = window.matchMedia('(max-width: 819px)').matches;
-  // Chosen before the browser requests anything, so a phone never pulls the
-  // 10MB landscape file just to have it replaced a moment later.
-  v.poster = v.getAttribute(phone ? 'data-poster-portrait' : 'data-poster-landscape');
-  v.src = v.getAttribute(phone ? 'data-portrait' : 'data-landscape');
-})();
-</script>"""
-
 # ------------------------------------------------------------------ HOME
 PAGES["index.html"] = dict(
 title="Shetty&rsquo;s Hospitality — Homestays &amp; celebrations in Mangalore",
 desc="Managed homestays, private celebrations, temple journeys and rides across Mangalore. One contact for the whole stay.",
 body=f"""
 <section class="vhero">
-  <video class="vhero__media" autoplay muted loop playsinline preload="auto" aria-hidden="true"
-         data-landscape="assets/video/hero.mp4?v={BUILD_ID}"
-         data-portrait="assets/video/hero-portrait.mp4?v={BUILD_ID}"
-         data-poster-landscape="assets/img/hero-poster.jpg?v={BUILD_ID}"
-         data-poster-portrait="assets/img/hero-poster-portrait.jpg?v={BUILD_ID}"></video>{HERO_BOOT}
+  <picture class="vhero__pic" aria-hidden="true">
+    <source media="(max-width:819px)" srcset="assets/img/hero-portrait.jpg?v={BUILD_ID}" />
+    <img class="vhero__media" src="assets/img/hero.jpg?v={BUILD_ID}" alt=""
+         fetchpriority="high" decoding="async" />
+  </picture>
   <div class="vhero__scrim" aria-hidden="true"></div>
 
   <div class="vhero__in">

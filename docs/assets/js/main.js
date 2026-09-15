@@ -48,46 +48,14 @@
     window.addEventListener('resize', mark);
   }
 
-  // The hero ships two cuts of the same footage: a wide band for desktop, where the
-  // browser would crop the tall video anyway, and the full tall frame for phones.
+  // Hero still. The placeholder behind it (.vhero::before) paints first, so
+  // fade the real image in over it rather than letting it pop.
   var vid = document.querySelector('.vhero__media');
   if (vid) {
-    // The source is already chosen by the inline booter next to the <video>,
-    // so that a phone never fetches the landscape file. Setting .src there
-    // cancels the autoplay attribute, so ask for playback explicitly.
-    // Deliberate call by the site owner: the hero plays on every device,
-    // including ones with prefers-reduced-motion set. Everything else on the
-    // site still honours that setting — the scroll reveals and the rotating
-    // panels below both stop for it. Revisit if a visitor ever complains.
-    var play = function () {
-      var p = vid.play();
-      if (p && p.catch) { p.catch(function () {}); }
-    };
-
-    // Reveal only once there is a real frame, so the fade goes from the
-    // inlined placeholder straight to moving footage with nothing blank between.
     var ready = function () { vid.classList.add('is-ready'); };
-    if (vid.readyState >= 2) { ready(); }
-    vid.addEventListener('loadeddata', ready);
-    vid.addEventListener('canplay', ready);
-
-    play();
-    vid.addEventListener('loadeddata', play);
-    vid.addEventListener('canplay', play);
-    vid.addEventListener('canplaythrough', play);
-    // iOS suspends media when the tab goes to the background and does not
-    // always resume by itself; and a first play() can be refused outright
-    // (Low Power Mode or Low Data Mode), where a later gesture is the way back.
-    document.addEventListener('visibilitychange', function () {
-      if (!document.hidden) { play(); }
-    });
-    ['touchstart', 'click'].forEach(function (evt) {
-      document.addEventListener(evt, function once() {
-        play();
-        document.removeEventListener(evt, once);
-      }, { passive: true });
-    });
-
+    if (vid.complete && vid.naturalWidth) { ready(); }
+    vid.addEventListener('load', ready);
+    vid.addEventListener('error', ready);
   }
 
   // Scroll reveal — nothing below the fold is on screen until you reach it.
