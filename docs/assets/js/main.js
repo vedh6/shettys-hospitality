@@ -288,14 +288,11 @@
     paint();
     dots.hidden = false;
 
-    // 5s on a laptop. Phones get longer: below 860px the slide stacks to
-    // ~864px, taller than the viewport, so the copy and the photograph cannot
-    // be taken in at one glance, and a 323px measure reads slower than a
-    // 406px one. Re-armed on breakpoint change so a rotate or a resize picks
-    // up the other timing.
+    // 4s on a phone, 5s on a laptop — the site owner's call. Re-armed on
+    // breakpoint change so a rotate or a resize picks up the other timing.
     var phone = window.matchMedia('(max-width: 860px)');
     var restart = autoRotate(root, advance, function () {
-      return phone.matches ? 8000 : 5000;
+      return phone.matches ? 4000 : 5000;
     }, null);
     if (phone.addEventListener) phone.addEventListener('change', restart);
   });
