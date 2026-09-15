@@ -64,6 +64,13 @@
       if (p && p.catch) { p.catch(function () {}); }
     };
 
+    // Reveal only once there is a real frame, so the fade goes from the
+    // inlined placeholder straight to moving footage with nothing blank between.
+    var ready = function () { vid.classList.add('is-ready'); };
+    if (vid.readyState >= 2) { ready(); }
+    vid.addEventListener('loadeddata', ready);
+    vid.addEventListener('canplay', ready);
+
     play();
     vid.addEventListener('loadeddata', play);
     vid.addEventListener('canplay', play);
