@@ -643,51 +643,6 @@ body=phero("Celebrations at home", "The house fills up.<br>You get to enjoy it."
   "and hand you back the evening.",
   [("Guests", "15 to 150"), ("Notice", "Two weeks is comfortable"), ("On the day", "A coordinator, start to finish")],
   image="celebrations.jpg", alt="Banana leaves being laid for a family meal at home", variant="overlay") + f"""
-<section class="section">
-  <header class="section__head reveal">
-    <p class="eyebrow">Occasions</p>
-    <h2>What we usually get called for.</h2>
-  </header>
-  <ul class="occasions occasions--light reveal">
-    <li>
-      <span>Naming &amp; cradle ceremonies</span>
-      <p>Morning functions that start early and fill the house with elders and small children.
-      We plan for both: chairs with backs, shade where people wait, and a menu that leans sweet
-      and is ready when the ceremony ends rather than an hour after.</p>
-    </li>
-    <li>
-      <span>House-warming</span>
-      <p>Griha pravesha at whatever hour the priest gives you, which is often before light.
-      We handle what the pooja needs, keep the kitchen running from dawn, and turn the house
-      around for a full lunch once the ritual is done.</p>
-    </li>
-    <li>
-      <span>Birthdays &amp; anniversaries</span>
-      <p>Evening parties, usually smaller. A first birthday and a sixtieth need very different
-      rooms, so we scale the seating, the sound and the food to the actual guest list instead of
-      a package.</p>
-    </li>
-    <li>
-      <span>Intimate weddings &amp; roce</span>
-      <p>Roce, mehendi, haldi and small weddings held at home rather than in a hall. These run
-      across days and involve family doing things themselves, so we work around the household
-      instead of taking it over.</p>
-    </li>
-    <li>
-      <span>Family reunions &amp; NRI homecomings</span>
-      <p>Several families under one roof for a week, with different diets, different sleep
-      schedules and a lot of catching up. Meals stay flexible, the kitchen keeps going, and
-      nobody is cooking for twenty on their holiday.</p>
-    </li>
-    <li>
-      <span>Corporate offsites &amp; dinners</span>
-      <p>Team dinners and small offsites in a house instead of a banquet room. Fixed timings,
-      a quiet setup that stays out of the way, and a single invoice at the end for your
-      accounts team.</p>
-    </li>
-  </ul>
-</section>
-
 <section class="section occ reveal" data-occ>
   <div class="occ__stage">
   <article class="occ__slide split is-current" data-occasion aria-label="Birthdays">
@@ -746,6 +701,51 @@ body=phero("Celebrations at home", "The house fills up.<br>You get to enjoy it."
   </article>
   </div>
   <div class="occ__dots" data-occ-dots hidden></div>
+</section>
+
+<section class="section">
+  <header class="section__head reveal">
+    <p class="eyebrow">Occasions</p>
+    <h2>What we usually get called for.</h2>
+  </header>
+  <ul class="occasions occasions--light reveal">
+    <li>
+      <span>Naming &amp; cradle ceremonies</span>
+      <p>Morning functions that start early and fill the house with elders and small children.
+      We plan for both: chairs with backs, shade where people wait, and a menu that leans sweet
+      and is ready when the ceremony ends rather than an hour after.</p>
+    </li>
+    <li>
+      <span>House-warming</span>
+      <p>Griha pravesha at whatever hour the priest gives you, which is often before light.
+      We handle what the pooja needs, keep the kitchen running from dawn, and turn the house
+      around for a full lunch once the ritual is done.</p>
+    </li>
+    <li>
+      <span>Birthdays &amp; anniversaries</span>
+      <p>Evening parties, usually smaller. A first birthday and a sixtieth need very different
+      rooms, so we scale the seating, the sound and the food to the actual guest list instead of
+      a package.</p>
+    </li>
+    <li>
+      <span>Intimate weddings &amp; roce</span>
+      <p>Roce, mehendi, haldi and small weddings held at home rather than in a hall. These run
+      across days and involve family doing things themselves, so we work around the household
+      instead of taking it over.</p>
+    </li>
+    <li>
+      <span>Family reunions &amp; NRI homecomings</span>
+      <p>Several families under one roof for a week, with different diets, different sleep
+      schedules and a lot of catching up. Meals stay flexible, the kitchen keeps going, and
+      nobody is cooking for twenty on their holiday.</p>
+    </li>
+    <li>
+      <span>Corporate offsites &amp; dinners</span>
+      <p>Team dinners and small offsites in a house instead of a banquet room. Fixed timings,
+      a quiet setup that stays out of the way, and a single invoice at the end for your
+      accounts team.</p>
+    </li>
+  </ul>
 </section>
 
 <section class="section band">
