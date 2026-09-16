@@ -252,13 +252,13 @@ body=f"""
         <img src="assets/img/kambala.jpg?v={BUILD_ID}" alt="A pair of buffalo racing down a flooded paddy track at a kambala" loading="lazy" />
         <figcaption>Kambala &mdash; paired buffalo raced down a flooded paddy track, through the season</figcaption>
       </figure>
-      <figure class="mang__slide" data-mangslide aria-label="The coast">
-        <img src="assets/img/coast.jpg?v={BUILD_ID}" alt="A wide sandy beach on the Arabian Sea at sunset" loading="lazy" />
-        <figcaption>The coast &mdash; the Arabian Sea, an hour either side of sunset</figcaption>
+      <figure class="mang__slide" data-mangslide aria-label="Tannirbhavi">
+        <img src="assets/img/tannirbhavi.jpg?v={BUILD_ID}" alt="Surf and casuarinas on the sand at Tannirbhavi beach, Mangalore" loading="lazy" />
+        <figcaption>Tannirbhavi &mdash; a ferry ride across the river, and the sand runs for miles</figcaption>
       </figure>
-      <figure class="mang__slide" data-mangslide aria-label="The watchtower">
-        <img src="assets/img/watchtower.jpg?v={BUILD_ID}" alt="An eighteenth-century laterite watchtower on a tidal river" loading="lazy" />
-        <figcaption>An eighteenth-century watchtower of black laterite, down on the river</figcaption>
+      <figure class="mang__slide" data-mangslide aria-label="Sultan Battery">
+        <img src="assets/img/sultan-battery.jpg?v={BUILD_ID}" alt="The stone bastion of Sultan Battery on the Gurupura river at Boloor, Mangalore" loading="lazy" />
+        <figcaption>Sultan Battery &mdash; Tipu&rsquo;s watchtower at Boloor, on the Gurupura</figcaption>
       </figure>
     </div>
     <div class="mang__dots" data-mangdots hidden></div>
