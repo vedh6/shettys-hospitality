@@ -310,7 +310,7 @@ body=f"""
 <section class="section">
   <header class="section__head reveal">
     <p class="eyebrow">What we look after</p>
-    <h2>Six things, one phone number.</h2>
+    <h2>Six services, one phone number.</h2>
     <p class="section__lede">
       Mangalore has no shortage of good drivers, good cooks and good houses. What it lacks is
       someone holding them together. That is the whole job.
