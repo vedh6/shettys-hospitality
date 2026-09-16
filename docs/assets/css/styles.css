@@ -515,15 +515,28 @@ a{ color:inherit; }
 /* Deliberately not a grid. Each entry is one full-width ruled row with the
    label held in a narrow left column, so it reads as an index rather than as
    tiles - and stays distinct from the alternating service rows below it. */
-.mang__figure{ margin:0 0 clamp(40px,5vw,72px); }
-.mang__figure img{
+.mang__gallery{ margin:0 0 clamp(40px,5vw,72px); }
+/* All three slides share one grid cell so the block never changes height as
+   they swap; they stay in flow (visibility, not [hidden]) for the same reason. */
+.mang__stage{ display:grid; }
+.mang__slide{
+  grid-area:1/1; margin:0;
+  opacity:0; visibility:hidden;
+  transition:opacity var(--d-tint) var(--ease-tint), visibility 0s var(--d-tint);
+}
+.mang__slide.is-current{
+  opacity:1; visibility:visible;
+  transition:opacity var(--d-tint) var(--ease-tint);
+}
+.mang__slide img{
   display:block; width:100%; aspect-ratio:21/9; object-fit:cover; border-radius:var(--r);
 }
-.mang__figure figcaption{
+.mang__slide figcaption{
   margin-top:.85rem; font-family:"Karla",sans-serif;
   font-size:var(--label); letter-spacing:var(--track-label); font-weight:var(--w-label);
   text-transform:uppercase; color:var(--sage);
 }
+.mang__dots{ display:flex; align-items:center; gap:.85rem; margin-top:1.1rem; }
 .mang{ margin:0; border-top:1px solid var(--rule-strong); }
 .mang > div{
   display:grid; grid-template-columns:minmax(0,1fr) minmax(0,2.4fr);
@@ -741,13 +754,13 @@ a{ color:inherit; }
 
 /* Cycling controls appear only when a second account exists */
 .tsplit__dots,.occ__dots{ display:flex; align-items:center; gap:.85rem; margin-top:clamp(28px,3vw,40px); }
-.tsplit__dots button,.occ__dots button{
+.tsplit__dots button,.occ__dots button,.mang__dots button{
   width:8px; height:8px; padding:0; border:0; border-radius:999px; cursor:pointer;
   background:color-mix(in srgb, var(--ink) 26%, transparent);
   transition:background var(--d-tint) var(--ease-tint), transform var(--d-tint) var(--ease-tint);
 }
-.tsplit__dots button:hover,.occ__dots button:hover{ background:color-mix(in srgb, var(--ink) 45%, transparent); }
-.tsplit__dots button[aria-current="true"],.occ__dots button[aria-current="true"]{ background:var(--ink); transform:scale(1.12); }
+.tsplit__dots button:hover,.occ__dots button:hover,.mang__dots button:hover{ background:color-mix(in srgb, var(--ink) 45%, transparent); }
+.tsplit__dots button[aria-current="true"],.occ__dots button[aria-current="true"],.mang__dots button[aria-current="true"]{ background:var(--ink); transform:scale(1.12); }
 .tsplit__next{
   display:inline-flex; align-items:center; gap:.4rem; margin-left:.6rem;
   font-size:var(--label); letter-spacing:var(--track-label); text-transform:uppercase;
@@ -762,7 +775,7 @@ a{ color:inherit; }
   .cone__grid{ grid-template-columns:1fr; gap:clamp(26px,4vw,36px); }
 
   .mang > div{ grid-template-columns:1fr; gap:.55rem; }
-  .mang__figure img{ aspect-ratio:16/10; }
+  .mang__slide img{ aspect-ratio:16/10; }
 
   .offer__row{ grid-template-columns:1fr; gap:clamp(22px,3.5vw,32px); }
   .offer__row:nth-child(even) .offer__media{ order:0; }

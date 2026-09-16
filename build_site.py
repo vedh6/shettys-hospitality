@@ -246,11 +246,23 @@ body=f"""
     </p>
   </header>
 
-  <figure class="mang__figure reveal">
-    <img src="assets/img/kambala.jpg?v={BUILD_ID}"
-         alt="A pair of buffalo racing down a flooded paddy track at a kambala" loading="lazy" />
-    <figcaption>Kambala &mdash; paired buffalo raced down a flooded paddy track, through the season</figcaption>
-  </figure>
+  <div class="mang__gallery reveal" data-mangrot>
+    <div class="mang__stage">
+      <figure class="mang__slide is-current" data-mangslide aria-label="Kambala">
+        <img src="assets/img/kambala.jpg?v={BUILD_ID}" alt="A pair of buffalo racing down a flooded paddy track at a kambala" loading="lazy" />
+        <figcaption>Kambala &mdash; paired buffalo raced down a flooded paddy track, through the season</figcaption>
+      </figure>
+      <figure class="mang__slide" data-mangslide aria-label="The coast">
+        <img src="assets/img/coast.jpg?v={BUILD_ID}" alt="A wide sandy beach on the Arabian Sea at sunset" loading="lazy" />
+        <figcaption>The coast &mdash; the Arabian Sea, an hour either side of sunset</figcaption>
+      </figure>
+      <figure class="mang__slide" data-mangslide aria-label="The watchtower">
+        <img src="assets/img/watchtower.jpg?v={BUILD_ID}" alt="An eighteenth-century laterite watchtower on a tidal river" loading="lazy" />
+        <figcaption>An eighteenth-century watchtower of black laterite, down on the river</figcaption>
+      </figure>
+    </div>
+    <div class="mang__dots" data-mangdots hidden></div>
+  </div>
 
   <dl class="mang reveal">
     <div>
@@ -287,7 +299,7 @@ body=f"""
 <section class="section">
   <header class="section__head reveal">
     <p class="eyebrow">What we look after</p>
-    <h2>Five things, one phone number.</h2>
+    <h2>Six things, one phone number.</h2>
     <p class="section__lede">
       Mangalore has no shortage of good drivers, good cooks and good houses. What it lacks is
       someone holding them together. That is the whole job.
@@ -380,6 +392,23 @@ body=f"""
         <a class="link" href="journeys.html#hidden">Walk with us <span aria-hidden="true">&rarr;</span></a>
       </div>
     </li>
+    <li class="offer__row reveal">
+      <figure class="offer__media">
+        <img src="assets/img/manpower.jpg?v={BUILD_ID}" alt="Service staff laying a long table before guests arrive" loading="lazy" />
+      </figure>
+      <div class="offer__copy">
+        <p class="offer__n">06</p>
+        <h3><a href="contact.html">Staff, by the day</a></h3>
+        <p class="offer__lede">The same cooks, servers and decorators we use on our own events, available to you on yours.</p>
+        <ul class="ticks">
+          <li>Kitchen and service staff, waiters and cleaners</li>
+          <li>Decor and setup crews, and the team that clears after</li>
+          <li>For your own event, or to fill out someone else&rsquo;s</li>
+        </ul>
+        <p class="offer__meta">Numbers and day rates &mdash; to follow</p>
+        <a class="link" href="contact.html">Tell us what you need <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </li>
   </ol>
 
   <p class="offer__note reveal">
@@ -387,32 +416,6 @@ body=f"""
     it. There is no charge for asking.
     <a class="link" href="contact.html">Tell us what you need <span aria-hidden="true">&rarr;</span></a>
   </p>
-</section>
-
-<section class="section band cone">
-  <div class="band__in">
-    <div class="cone__grid">
-      <div class="cone__copy reveal">
-        <p class="eyebrow eyebrow--light">New line of work</p>
-        <h2>Lately we have started building the rooms, not only filling them.</h2>
-        <p class="section__lede">
-          Cone houses &mdash; triangular A-frame cabins, framed and finished from scratch on
-          site. We build them for other people&rsquo;s land: layouts, resorts and estates that
-          want rooms up without putting up a block.
-        </p>
-        <ul class="ticks ticks--light">
-          <li>Designed, framed and finished by our own team</li>
-          <li>Built on your site, in your layout or resort</li>
-          <li>Sizes, timeline and what a unit costs &mdash; to follow</li>
-        </ul>
-        <a class="link link--light" href="contact.html">Ask about a build <span aria-hidden="true">&rarr;</span></a>
-      </div>
-      <figure class="cone__media reveal">
-        <img src="assets/img/cone-houses.jpg?v={BUILD_ID}"
-             alt="A-frame cone house cabins in a palm clearing" loading="lazy" />
-      </figure>
-    </div>
-  </div>
 </section>
 
 <section class="promise">
@@ -669,6 +672,32 @@ body=phero("Shetty&rsquo;s Stays", "Homes, not room numbers.",
   </div>
 
   <p class="bento__after"><a class="link" href="contact.html">Check dates <span aria-hidden="true">&rarr;</span></a></p>
+</section>
+
+<section class="section band cone">
+  <div class="band__in">
+    <div class="cone__grid">
+      <div class="cone__copy reveal">
+        <p class="eyebrow eyebrow--light">New line of work</p>
+        <h2>Lately we have started building the rooms, not only filling them.</h2>
+        <p class="section__lede">
+          Cone houses &mdash; triangular A-frame cabins, framed and finished from scratch on
+          site. We build them for other people&rsquo;s land: layouts, resorts and estates that
+          want rooms up without putting up a block.
+        </p>
+        <ul class="ticks ticks--light">
+          <li>Designed, framed and finished by our own team</li>
+          <li>Built on your site, in your layout or resort</li>
+          <li>Sizes, timeline and what a unit costs &mdash; to follow</li>
+        </ul>
+        <a class="link link--light" href="contact.html">Ask about a build <span aria-hidden="true">&rarr;</span></a>
+      </div>
+      <figure class="cone__media reveal">
+        <img src="assets/img/cone-houses.jpg?v={BUILD_ID}"
+             alt="A-frame cone house cabins in a palm clearing" loading="lazy" />
+      </figure>
+    </div>
+  </div>
 </section>
 
 <section class="section">

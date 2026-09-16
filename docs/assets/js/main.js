@@ -265,6 +265,52 @@
     if (phone.addEventListener) phone.addEventListener('change', restart);
   });
 
+  // Mangalore gallery. Same stacked-slide idea as the occasions panel, but the
+  // slides are photographs only, so it runs a little slower than copy would.
+  document.querySelectorAll('[data-mangrot]').forEach(function (root) {
+    var slides = Array.prototype.slice.call(root.querySelectorAll('[data-mangslide]'));
+    var dots = root.querySelector('[data-mangdots]');
+    if (slides.length < 2 || !dots) return;
+
+    var index = 0;
+    function show(next) {
+      if (next === index) return;
+      slides[index].classList.remove('is-current');
+      index = next;
+      slides[index].classList.add('is-current');
+      paint();
+    }
+    var advance = function () { show((index + 1) % slides.length); };
+
+    var buttons = slides.map(function (el, i) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.setAttribute('aria-label', el.getAttribute('aria-label') || ('Image ' + (i + 1)));
+      b.addEventListener('click', function () { show(i); restart(); });
+      dots.appendChild(b);
+      return b;
+    });
+
+    function paint() {
+      buttons.forEach(function (b, i) {
+        b.setAttribute('aria-current', i === index ? 'true' : 'false');
+      });
+      slides.forEach(function (el, i) {
+        el.setAttribute('aria-hidden', i === index ? 'false' : 'true');
+      });
+    }
+    paint();
+    dots.hidden = false;
+
+    // Eager-load the ones behind the first, or the swap shows an empty frame.
+    slides.slice(1).forEach(function (el) {
+      var img = el.querySelector('img');
+      if (img) { img.loading = 'eager'; }
+    });
+
+    var restart = autoRotate(root, advance, function () { return 5000; }, null);
+  });
+
   // Video player. Custom controls so the review sits in the site's own language
   // rather than the browser's: centre play button, seek, skip, volume,
   // fullscreen, auto-hiding bar, and keyboard shortcuts while focused.
