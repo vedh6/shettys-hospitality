@@ -212,11 +212,11 @@ body=f"""
 
   <div class="vhero__in">
     <p class="eyebrow eyebrow--light">Mangalore &middot; Homestays &amp; celebrations</p>
-    <h1>A house that already <em>knows</em> you&rsquo;re coming.</h1>
+    <h1>You <em>arrive</em>. The rest is already done.</h1>
     <p class="lede">
       We keep homes across Mangalore &mdash; and we keep them ready. Beds made, kitchen stocked,
-      driver briefed, temple slots held. You call one number, and the rest of the trip stops
-      being your job.
+      driver briefed, temple slots held. One person arranges all of it, and stays on the phone
+      from the first call to the last drop.
     </p>
 
     <div class="vhero__cta">
@@ -246,43 +246,42 @@ body=f"""
     </p>
   </header>
 
-  <ul class="occasions occasions--light reveal">
-    <li>
-      <span>The coast</span>
-      <p>Panambur and Tannirbhavi are the ones everybody knows. Sasihithlu, where the river
-      meets the sea, and Someshwara, where the rocks begin, are quieter and better. The sunset
-      is the same at all of them; the crowd is not.</p>
-    </li>
-    <li>
-      <span>Temples, near and far</span>
-      <p>Kadri and Mangaladevi are inside the city. Kateel sits on an island in the Nandini.
-      Dharmasthala, Kukke and Udupi are each a morning&rsquo;s drive, and each worth doing
-      properly rather than in a rush.</p>
-    </li>
-    <li>
-      <span>What you eat here</span>
-      <p>Kori rotti, chicken ghee roast, neer dosa, fish fried in rava, and a Gadbad at the end
-      of it. Mangalorean, Udupi, Konkani, Beary and Catholic kitchens, all within a few streets
-      of one another.</p>
-    </li>
-    <li>
-      <span>The ghats behind</span>
-      <p>An hour inland the land stands up. Charmadi and Shiradi climb into coffee and pepper
-      country, and through the monsoon the waterfalls run hard enough to hear from the road.</p>
-    </li>
-    <li>
-      <span>The older town</span>
-      <p>Tile factories that roofed half the coast, the Jain bastis at Moodabidri and Karkala,
-      the painted chapel at St Aloysius, and streets where the old trade with Arabia and
-      Portugal still shows in the buildings.</p>
-    </li>
-    <li>
-      <span>Tulu Nadu</span>
-      <p>Yakshagana runs through the night in season, and bhuta kola is still performed at
-      village shrines rather than for visitors. Ask us what is on while you are here and we
-      will find out.</p>
-    </li>
-  </ul>
+  <figure class="mang__figure reveal">
+    <img src="assets/img/kambala.jpg?v={BUILD_ID}"
+         alt="A pair of buffalo racing down a flooded paddy track at a kambala" loading="lazy" />
+    <figcaption>Kambala &mdash; paired buffalo raced down a flooded paddy track, through the season</figcaption>
+  </figure>
+
+  <dl class="mang reveal">
+    <div>
+      <dt>The coast</dt>
+      <dd>Panambur and Tannirbhavi are the ones everybody knows. Sasihithlu, where the river meets the sea, and Someshwara, where the rocks begin, are quieter and better. The sunset is the same at all of them; the crowd is not.</dd>
+    </div>
+    <div>
+      <dt>Kambala</dt>
+      <dd>Through the season, pairs of buffalo are raced down flooded paddy tracks with a man running behind them, and half a district turns out to watch. It is the oldest thing on this coast and still nobody&rsquo;s idea of a tourist attraction. We will tell you which ones are on.</dd>
+    </div>
+    <div>
+      <dt>Temples, near and far</dt>
+      <dd>Kadri and Mangaladevi are inside the city. Kateel sits on an island in the Nandini. Dharmasthala, Kukke and Udupi are each a morning&rsquo;s drive, and each worth doing properly rather than in a rush.</dd>
+    </div>
+    <div>
+      <dt>What you eat here</dt>
+      <dd>Kori rotti, chicken ghee roast, neer dosa, fish fried in rava, and a Gadbad at the end of it. Mangalorean, Udupi, Konkani, Beary and Catholic kitchens, all within a few streets of one another.</dd>
+    </div>
+    <div>
+      <dt>The ghats behind</dt>
+      <dd>An hour inland the land stands up. Charmadi and Shiradi climb into coffee and pepper country, and through the monsoon the waterfalls run hard enough to hear from the road.</dd>
+    </div>
+    <div>
+      <dt>The older town</dt>
+      <dd>Tile factories that roofed half the coast, the Jain bastis at Moodabidri and Karkala, the painted chapel at St Aloysius, and streets where the old trade with Arabia and Portugal still shows in the buildings.</dd>
+    </div>
+    <div>
+      <dt>Yakshagana &amp; bhuta kola</dt>
+      <dd>Yakshagana runs through the night in season, and bhuta kola is still performed at village shrines rather than for visitors. Ask us what is on while you are here and we will find out.</dd>
+    </div>
+  </dl>
 </section>
 
 <section class="section">
@@ -388,6 +387,32 @@ body=f"""
     it. There is no charge for asking.
     <a class="link" href="contact.html">Tell us what you need <span aria-hidden="true">&rarr;</span></a>
   </p>
+</section>
+
+<section class="section band cone">
+  <div class="band__in">
+    <div class="cone__grid">
+      <div class="cone__copy reveal">
+        <p class="eyebrow eyebrow--light">New line of work</p>
+        <h2>Lately we have started building the rooms, not only filling them.</h2>
+        <p class="section__lede">
+          Cone houses &mdash; triangular A-frame cabins, framed and finished from scratch on
+          site. We build them for other people&rsquo;s land: layouts, resorts and estates that
+          want rooms up without putting up a block.
+        </p>
+        <ul class="ticks ticks--light">
+          <li>Designed, framed and finished by our own team</li>
+          <li>Built on your site, in your layout or resort</li>
+          <li>Sizes, timeline and what a unit costs &mdash; to follow</li>
+        </ul>
+        <a class="link link--light" href="contact.html">Ask about a build <span aria-hidden="true">&rarr;</span></a>
+      </div>
+      <figure class="cone__media reveal">
+        <img src="assets/img/cone-houses.jpg?v={BUILD_ID}"
+             alt="A-frame cone house cabins in a palm clearing" loading="lazy" />
+      </figure>
+    </div>
+  </div>
 </section>
 
 <section class="promise">
