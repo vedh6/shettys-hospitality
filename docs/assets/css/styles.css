@@ -511,45 +511,49 @@ a{ color:inherit; }
 .link--light{ color:var(--paper); border-bottom-color:color-mix(in srgb, var(--paper) 45%, transparent); }
 .link--light:hover{ color:var(--brass); border-bottom-color:var(--brass); }
 
-/* ---------- Mangalore: ruled editorial list (Home) ---------- */
-/* Deliberately not a grid. Each entry is one full-width ruled row with the
-   label held in a narrow left column, so it reads as an index rather than as
-   tiles - and stays distinct from the alternating service rows below it. */
-.mang__gallery{ margin:0 0 clamp(40px,5vw,72px); }
-/* All three slides share one grid cell so the block never changes height as
-   they swap; they stay in flow (visibility, not [hidden]) for the same reason. */
+/* ---------- Mangalore: tabbed photo + copy (Home) ---------- */
+/* One entry visible at a time. The tab swaps the photograph and the paragraph
+   together, so six subjects cost the height of one instead of six. */
+.mang__tabs{
+  display:flex; flex-wrap:wrap; gap:0;
+  border-bottom:1px solid var(--rule-strong);
+  margin-bottom:clamp(26px,3vw,40px);
+}
+.mang__tabs button{
+  appearance:none; background:none; border:0; cursor:pointer;
+  padding:.85em clamp(14px,1.6vw,24px);
+  font-family:"Karla",sans-serif;
+  font-size:var(--label-lg); letter-spacing:var(--track-label); font-weight:var(--w-label);
+  text-transform:uppercase;
+  color:color-mix(in srgb, var(--ink) 52%, var(--sage));
+  border-bottom:2px solid transparent; margin-bottom:-1px;
+  transition:color var(--d-tint) var(--ease-tint), border-color var(--d-tint) var(--ease-tint);
+}
+.mang__tabs button:hover{ color:var(--ink); }
+.mang__tabs button[aria-selected="true"]{ color:var(--ink); border-bottom-color:var(--tile); }
+
+/* Panels share one grid cell so the section never jumps as they swap. */
 .mang__stage{ display:grid; }
-.mang__slide{
-  grid-area:1/1; margin:0;
+.mang__panel{
+  grid-area:1/1;
   opacity:0; visibility:hidden;
   transition:opacity var(--d-tint) var(--ease-tint), visibility 0s var(--d-tint);
 }
-.mang__slide.is-current{
+.mang__panel.is-current{
   opacity:1; visibility:visible;
   transition:opacity var(--d-tint) var(--ease-tint);
 }
-.mang__slide img{
+.mang__figure{ margin:0; }
+.mang__figure img{
   display:block; width:100%; aspect-ratio:21/9; object-fit:cover; border-radius:var(--r);
 }
-.mang__slide figcaption{
+.mang__figure figcaption{
   margin-top:.85rem; font-family:"Karla",sans-serif;
   font-size:var(--label); letter-spacing:var(--track-label); font-weight:var(--w-label);
   text-transform:uppercase; color:var(--sage);
 }
-.mang__dots{ display:flex; align-items:center; gap:.85rem; margin-top:1.1rem; }
-.mang{ margin:0; border-top:1px solid var(--rule-strong); }
-.mang > div{
-  display:grid; grid-template-columns:minmax(0,1fr) minmax(0,2.4fr);
-  gap:clamp(20px,4vw,64px);
-  padding:clamp(22px,2.6vw,34px) 0;
-  border-bottom:1px solid var(--rule-strong);
-}
-.mang dt{
-  font-family:"Fraunces",serif; font-size:clamp(1.15rem,1.7vw,1.5rem); line-height:1.2;
-  font-variation-settings:"opsz" 36; letter-spacing:-.008em;
-}
-.mang dd{
-  margin:0; font-size:1rem; line-height:1.68; max-width:44rem;
+.mang__text{
+  margin:clamp(20px,2.4vw,30px) 0 0; font-size:1.02rem; line-height:1.68; max-width:46rem;
   color:color-mix(in srgb, var(--ink) 84%, var(--sage));
 }
 
@@ -754,13 +758,13 @@ a{ color:inherit; }
 
 /* Cycling controls appear only when a second account exists */
 .tsplit__dots,.occ__dots{ display:flex; align-items:center; gap:.85rem; margin-top:clamp(28px,3vw,40px); }
-.tsplit__dots button,.occ__dots button,.mang__dots button{
+.tsplit__dots button,.occ__dots button{
   width:8px; height:8px; padding:0; border:0; border-radius:999px; cursor:pointer;
   background:color-mix(in srgb, var(--ink) 26%, transparent);
   transition:background var(--d-tint) var(--ease-tint), transform var(--d-tint) var(--ease-tint);
 }
-.tsplit__dots button:hover,.occ__dots button:hover,.mang__dots button:hover{ background:color-mix(in srgb, var(--ink) 45%, transparent); }
-.tsplit__dots button[aria-current="true"],.occ__dots button[aria-current="true"],.mang__dots button[aria-current="true"]{ background:var(--ink); transform:scale(1.12); }
+.tsplit__dots button:hover,.occ__dots button:hover:hover{ background:color-mix(in srgb, var(--ink) 45%, transparent); }
+.tsplit__dots button[aria-current="true"],.occ__dots button[aria-current="true"]{ background:var(--ink); transform:scale(1.12); }
 .tsplit__next{
   display:inline-flex; align-items:center; gap:.4rem; margin-left:.6rem;
   font-size:var(--label); letter-spacing:var(--track-label); text-transform:uppercase;
@@ -774,8 +778,11 @@ a{ color:inherit; }
 @media (max-width:860px){
   .cone__grid{ grid-template-columns:1fr; gap:clamp(26px,4vw,36px); }
 
-  .mang > div{ grid-template-columns:1fr; gap:.55rem; }
-  .mang__slide img{ aspect-ratio:16/10; }
+  .mang__figure img{ aspect-ratio:16/10; }
+  /* Tab strip scrolls sideways rather than wrapping to three rows. */
+  .mang__tabs{ flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none; }
+  .mang__tabs::-webkit-scrollbar{ display:none; }
+  .mang__tabs button{ flex:none; }
 
   .offer__row{ grid-template-columns:1fr; gap:clamp(22px,3.5vw,32px); }
   .offer__row:nth-child(even) .offer__media{ order:0; }

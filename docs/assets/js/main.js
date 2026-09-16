@@ -265,50 +265,37 @@
     if (phone.addEventListener) phone.addEventListener('change', restart);
   });
 
-  // Mangalore gallery. Same stacked-slide idea as the occasions panel, but the
-  // slides are photographs only, so it runs a little slower than copy would.
-  document.querySelectorAll('[data-mangrot]').forEach(function (root) {
-    var slides = Array.prototype.slice.call(root.querySelectorAll('[data-mangslide]'));
-    var dots = root.querySelector('[data-mangdots]');
-    if (slides.length < 2 || !dots) return;
+  // Mangalore tabs. The photograph and the paragraph belong to the same panel,
+  // so one click swaps both. No auto-rotation here: the reader is choosing.
+  document.querySelectorAll('[data-mang]').forEach(function (root) {
+    var tabs = Array.prototype.slice.call(root.querySelectorAll('[data-mangtab]'));
+    var panels = Array.prototype.slice.call(root.querySelectorAll('[data-mangpanel]'));
+    if (tabs.length !== panels.length || !tabs.length) return;
 
-    var index = 0;
     function show(next) {
-      if (next === index) return;
-      slides[index].classList.remove('is-current');
-      index = next;
-      slides[index].classList.add('is-current');
-      paint();
-    }
-    var advance = function () { show((index + 1) % slides.length); };
-
-    var buttons = slides.map(function (el, i) {
-      var b = document.createElement('button');
-      b.type = 'button';
-      b.setAttribute('aria-label', el.getAttribute('aria-label') || ('Image ' + (i + 1)));
-      b.addEventListener('click', function () { show(i); restart(); });
-      dots.appendChild(b);
-      return b;
-    });
-
-    function paint() {
-      buttons.forEach(function (b, i) {
-        b.setAttribute('aria-current', i === index ? 'true' : 'false');
+      tabs.forEach(function (t, i) {
+        t.setAttribute('aria-selected', i === next ? 'true' : 'false');
+        t.tabIndex = i === next ? 0 : -1;
       });
-      slides.forEach(function (el, i) {
-        el.setAttribute('aria-hidden', i === index ? 'false' : 'true');
+      panels.forEach(function (p, i) {
+        p.classList.toggle('is-current', i === next);
+        p.setAttribute('aria-hidden', i === next ? 'false' : 'true');
       });
     }
-    paint();
-    dots.hidden = false;
+    show(0);
 
-    // Eager-load the ones behind the first, or the swap shows an empty frame.
-    slides.slice(1).forEach(function (el) {
-      var img = el.querySelector('img');
-      if (img) { img.loading = 'eager'; }
+    tabs.forEach(function (t, i) {
+      t.addEventListener('click', function () { show(i); });
+      // Left/right arrows move between tabs, which is what a tablist should do.
+      t.addEventListener('keydown', function (e) {
+        var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+        if (!d) return;
+        e.preventDefault();
+        var n = (i + d + tabs.length) % tabs.length;
+        show(n);
+        tabs[n].focus();
+      });
     });
-
-    var restart = autoRotate(root, advance, function () { return 5000; }, null);
   });
 
   // Video player. Custom controls so the review sits in the site's own language

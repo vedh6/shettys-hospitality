@@ -246,54 +246,60 @@ body=f"""
     </p>
   </header>
 
-  <div class="mang__gallery reveal" data-mangrot>
+  <div class="mang reveal" data-mang>
+    <div class="mang__tabs" role="tablist" aria-label="Around Mangalore">
+      <button type="button" role="tab" data-mangtab aria-controls="mang-coast" aria-selected="true">The coast</button>
+      <button type="button" role="tab" data-mangtab aria-controls="mang-kambala" aria-selected="false">Kambala</button>
+      <button type="button" role="tab" data-mangtab aria-controls="mang-temples" aria-selected="false">Temples</button>
+      <button type="button" role="tab" data-mangtab aria-controls="mang-table" aria-selected="false">The table</button>
+      <button type="button" role="tab" data-mangtab aria-controls="mang-ghats" aria-selected="false">The ghats</button>
+      <button type="button" role="tab" data-mangtab aria-controls="mang-town" aria-selected="false">The older town</button>
+    </div>
     <div class="mang__stage">
-      <figure class="mang__slide is-current" data-mangslide aria-label="Kambala">
-        <img src="assets/img/kambala.jpg?v={BUILD_ID}" alt="A pair of buffalo racing down a flooded paddy track at a kambala" loading="lazy" />
-        <figcaption>Kambala &mdash; paired buffalo raced down a flooded paddy track, through the season</figcaption>
-      </figure>
-      <figure class="mang__slide" data-mangslide aria-label="Tannirbhavi">
-        <img src="assets/img/tannirbhavi.jpg?v={BUILD_ID}" alt="Surf and casuarinas on the sand at Tannirbhavi beach, Mangalore" loading="lazy" />
-        <figcaption>Tannirbhavi &mdash; a ferry ride across the river, and the sand runs for miles</figcaption>
-      </figure>
-      <figure class="mang__slide" data-mangslide aria-label="Sultan Battery">
-        <img src="assets/img/sultan-battery.jpg?v={BUILD_ID}" alt="The stone bastion of Sultan Battery on the Gurupura river at Boloor, Mangalore" loading="lazy" />
-        <figcaption>Sultan Battery &mdash; Tipu&rsquo;s watchtower at Boloor, on the Gurupura</figcaption>
-      </figure>
+      <div class="mang__panel is-current" id="mang-coast" role="tabpanel" data-mangpanel>
+        <figure class="mang__figure">
+          <img src="assets/img/tannirbhavi.jpg?v={BUILD_ID}" alt="Surf and casuarinas on the sand at Tannirbhavi beach, Mangalore" fetchpriority="high" />
+          <figcaption>Tannirbhavi &mdash; a ferry ride across the river, and the sand runs for miles</figcaption>
+        </figure>
+        <p class="mang__text">Panambur and Tannirbhavi are the ones everybody knows. Sasihithlu, where the river meets the sea, and Someshwara, where the rocks begin, are quieter and better. The sunset is the same at all of them; the crowd is not.</p>
+      </div>
+      <div class="mang__panel" id="mang-kambala" role="tabpanel" data-mangpanel>
+        <figure class="mang__figure">
+          <img src="assets/img/kambala.jpg?v={BUILD_ID}" alt="A pair of buffalo racing down a flooded paddy track at a kambala" loading="lazy" />
+          <figcaption>Kambala &mdash; paired buffalo raced down a flooded paddy track, through the season</figcaption>
+        </figure>
+        <p class="mang__text">Through the season, pairs of buffalo are raced down flooded paddy tracks with a man running behind them, and half a district turns out to watch. Yakshagana runs through the night in the same months, and bhuta kola is still performed at village shrines rather than for visitors. Ask us what is on and we will find out.</p>
+      </div>
+      <div class="mang__panel" id="mang-temples" role="tabpanel" data-mangpanel>
+        <figure class="mang__figure">
+          <img src="assets/img/temples-wide.jpg?v={BUILD_ID}" alt="The lamp-lit stone colonnade of a coastal Karnataka temple at dawn" loading="lazy" />
+          <figcaption>First light, before the queues</figcaption>
+        </figure>
+        <p class="mang__text">Kadri and Mangaladevi are inside the city. Kateel sits on an island in the Nandini. Dharmasthala, Kukke and Udupi are each a morning&rsquo;s drive, and each worth doing properly rather than in a rush.</p>
+      </div>
+      <div class="mang__panel" id="mang-table" role="tabpanel" data-mangpanel>
+        <figure class="mang__figure">
+          <img src="assets/img/food-wide.jpg?v={BUILD_ID}" alt="A coastal Karnataka meal of ghee roast, neer dosa and rava-fried fish" loading="lazy" />
+          <figcaption>Kori rotti, ghee roast, neer dosa, and a Gadbad after</figcaption>
+        </figure>
+        <p class="mang__text">Kori rotti, chicken ghee roast, neer dosa, fish fried in rava, and a Gadbad at the end of it. Mangalorean, Udupi, Konkani, Beary and Catholic kitchens, all within a few streets of one another.</p>
+      </div>
+      <div class="mang__panel" id="mang-ghats" role="tabpanel" data-mangpanel>
+        <figure class="mang__figure">
+          <img src="assets/img/ghats-wide.jpg?v={BUILD_ID}" alt="A wet ghat road curving through the monsoon forest of the Western Ghats" loading="lazy" />
+          <figcaption>The ghat road in the monsoon</figcaption>
+        </figure>
+        <p class="mang__text">An hour inland the land stands up. Charmadi and Shiradi climb into coffee and pepper country, and through the monsoon the waterfalls run hard enough to hear from the road.</p>
+      </div>
+      <div class="mang__panel" id="mang-town" role="tabpanel" data-mangpanel>
+        <figure class="mang__figure">
+          <img src="assets/img/sultan-battery.jpg?v={BUILD_ID}" alt="The stone bastion of Sultan Battery on the Gurupura river at Boloor, Mangalore" loading="lazy" />
+          <figcaption>Sultan Battery &mdash; Tipu&rsquo;s watchtower at Boloor, on the Gurupura</figcaption>
+        </figure>
+        <p class="mang__text">Tile factories that roofed half the coast, the Jain bastis at Moodabidri and Karkala, the painted chapel at St Aloysius, and streets where the old trade with Arabia and Portugal still shows in the buildings.</p>
+      </div>
     </div>
-    <div class="mang__dots" data-mangdots hidden></div>
   </div>
-
-  <dl class="mang reveal">
-    <div>
-      <dt>The coast</dt>
-      <dd>Panambur and Tannirbhavi are the ones everybody knows. Sasihithlu, where the river meets the sea, and Someshwara, where the rocks begin, are quieter and better. The sunset is the same at all of them; the crowd is not.</dd>
-    </div>
-    <div>
-      <dt>Kambala</dt>
-      <dd>Through the season, pairs of buffalo are raced down flooded paddy tracks with a man running behind them, and half a district turns out to watch. It is the oldest thing on this coast and still nobody&rsquo;s idea of a tourist attraction. We will tell you which ones are on.</dd>
-    </div>
-    <div>
-      <dt>Temples, near and far</dt>
-      <dd>Kadri and Mangaladevi are inside the city. Kateel sits on an island in the Nandini. Dharmasthala, Kukke and Udupi are each a morning&rsquo;s drive, and each worth doing properly rather than in a rush.</dd>
-    </div>
-    <div>
-      <dt>What you eat here</dt>
-      <dd>Kori rotti, chicken ghee roast, neer dosa, fish fried in rava, and a Gadbad at the end of it. Mangalorean, Udupi, Konkani, Beary and Catholic kitchens, all within a few streets of one another.</dd>
-    </div>
-    <div>
-      <dt>The ghats behind</dt>
-      <dd>An hour inland the land stands up. Charmadi and Shiradi climb into coffee and pepper country, and through the monsoon the waterfalls run hard enough to hear from the road.</dd>
-    </div>
-    <div>
-      <dt>The older town</dt>
-      <dd>Tile factories that roofed half the coast, the Jain bastis at Moodabidri and Karkala, the painted chapel at St Aloysius, and streets where the old trade with Arabia and Portugal still shows in the buildings.</dd>
-    </div>
-    <div>
-      <dt>Yakshagana &amp; bhuta kola</dt>
-      <dd>Yakshagana runs through the night in season, and bhuta kola is still performed at village shrines rather than for visitors. Ask us what is on while you are here and we will find out.</dd>
-    </div>
-  </dl>
 </section>
 
 <section class="section">
