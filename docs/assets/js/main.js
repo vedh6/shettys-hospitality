@@ -272,7 +272,9 @@
     var panels = Array.prototype.slice.call(root.querySelectorAll('[data-mangpanel]'));
     if (tabs.length !== panels.length || !tabs.length) return;
 
+    var index = 0;
     function show(next) {
+      index = next;
       tabs.forEach(function (t, i) {
         t.setAttribute('aria-selected', i === next ? 'true' : 'false');
         t.tabIndex = i === next ? 0 : -1;
@@ -284,8 +286,10 @@
     }
     show(0);
 
+    var advance = function () { show((index + 1) % tabs.length); };
+
     tabs.forEach(function (t, i) {
-      t.addEventListener('click', function () { show(i); });
+      t.addEventListener('click', function () { show(i); restart(); });
       // Left/right arrows move between tabs, which is what a tablist should do.
       t.addEventListener('keydown', function (e) {
         var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
@@ -294,8 +298,22 @@
         var n = (i + d + tabs.length) % tabs.length;
         show(n);
         tabs[n].focus();
+        restart();
       });
     });
+
+    // Cycles every 4s. autoRotate holds it while the pointer is over the
+    // section or anything inside has focus, which matters more here than on
+    // the other panels: these paragraphs take far longer than 4s to read, so
+    // hovering is what lets you actually finish one.
+    var prev = root.querySelector('[data-mangprev]');
+    var next = root.querySelector('[data-mangnext]');
+    if (prev) prev.addEventListener('click', function () {
+      show((index - 1 + tabs.length) % tabs.length); restart();
+    });
+    if (next) next.addEventListener('click', function () { advance(); restart(); });
+
+    var restart = autoRotate(root, advance, function () { return 4000; }, null);
   });
 
   // Video player. Custom controls so the review sits in the site's own language

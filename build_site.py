@@ -261,42 +261,47 @@ body=f"""
           <img src="assets/img/tannirbhavi.jpg?v={BUILD_ID}" alt="Surf and casuarinas on the sand at Tannirbhavi beach, Mangalore" fetchpriority="high" />
           <figcaption>Tannirbhavi &mdash; a ferry ride across the river, and the sand runs for miles</figcaption>
         </figure>
-        <p class="mang__text">Panambur and Tannirbhavi are the ones everybody knows. Sasihithlu, where the river meets the sea, and Someshwara, where the rocks begin, are quieter and better. The sunset is the same at all of them; the crowd is not.</p>
+        <p class="mang__text">Panambur and Tannirbhavi are the ones everybody knows, and Tannirbhavi is best reached the old way, on the ferry across the Gurupura rather than the long road round. Sasihithlu, where two rivers meet the sea, and Someshwara, where the rocks begin, are quieter and better. Surathkal has the lighthouse; Ullal has the longest stretch of empty sand. Between June and September the sea here is not for swimming and nobody local pretends otherwise — but the light on a monsoon evening is the best of the year. The sunset is the same at all of them; the crowd is not.</p>
       </div>
       <div class="mang__panel" id="mang-kambala" role="tabpanel" data-mangpanel>
         <figure class="mang__figure">
           <img src="assets/img/kambala.jpg?v={BUILD_ID}" alt="A pair of buffalo racing down a flooded paddy track at a kambala" loading="lazy" />
           <figcaption>Kambala &mdash; paired buffalo raced down a flooded paddy track, through the season</figcaption>
         </figure>
-        <p class="mang__text">Through the season, pairs of buffalo are raced down flooded paddy tracks with a man running behind them, and half a district turns out to watch. Yakshagana runs through the night in the same months, and bhuta kola is still performed at village shrines rather than for visitors. Ask us what is on and we will find out.</p>
+        <p class="mang__text">From about November to March, pairs of buffalo are raced down flooded paddy tracks with a man running behind them holding the reins, and half a district turns out to watch. The good meets run through the night under lights, and there is nothing polite about them. Yakshagana runs in the same months — painted faces, drums, a story that starts at ten and finishes at dawn — and bhuta kola is still performed at village shrines for the village, not for visitors. None of it is ticketed and none of it is on a schedule you will find online. Ask us what is on while you are here and we will find out.</p>
       </div>
       <div class="mang__panel" id="mang-temples" role="tabpanel" data-mangpanel>
         <figure class="mang__figure">
           <img src="assets/img/temples-wide.jpg?v={BUILD_ID}" alt="The lamp-lit stone colonnade of a coastal Karnataka temple at dawn" loading="lazy" />
           <figcaption>First light, before the queues</figcaption>
         </figure>
-        <p class="mang__text">Kadri and Mangaladevi are inside the city. Kateel sits on an island in the Nandini. Dharmasthala, Kukke and Udupi are each a morning&rsquo;s drive, and each worth doing properly rather than in a rush.</p>
+        <p class="mang__text">Kadri and Mangaladevi are inside the city and take an hour between them. Kateel sits on an island in the middle of the Nandini, which is worth the trip on its own. Dharmasthala, Kukke Subrahmanya and the Krishna Matha at Udupi are each a morning&rsquo;s drive, and each worth doing properly rather than in a rush. The difference between a good darshan and three hours in a queue is knowing which line to join, which seva to book ahead, and what time the doors actually close — which is most of what we do for you.</p>
       </div>
       <div class="mang__panel" id="mang-table" role="tabpanel" data-mangpanel>
         <figure class="mang__figure">
           <img src="assets/img/food-wide.jpg?v={BUILD_ID}" alt="A coastal Karnataka meal of ghee roast, neer dosa and rava-fried fish" loading="lazy" />
           <figcaption>Kori rotti, ghee roast, neer dosa, and a Gadbad after</figcaption>
         </figure>
-        <p class="mang__text">Kori rotti, chicken ghee roast, neer dosa, fish fried in rava, and a Gadbad at the end of it. Mangalorean, Udupi, Konkani, Beary and Catholic kitchens, all within a few streets of one another.</p>
+        <p class="mang__text">Kori rotti, chicken ghee roast, neer dosa, pundi, fish fried in rava, and a Gadbad at the end of it. Five kitchens sit within a few streets of one another and none of them cook the same way: Bunt, Udupi, Konkani, Beary and Mangalorean Catholic. The last of those is where pork sorpotel and sannas come from, which surprises people who think they know Indian food. Go to the fish market at first light and you will see tomorrow&rsquo;s menu being argued over. We will tell you where to eat, and it is rarely the place with the sign.</p>
       </div>
       <div class="mang__panel" id="mang-ghats" role="tabpanel" data-mangpanel>
         <figure class="mang__figure">
           <img src="assets/img/ghats-wide.jpg?v={BUILD_ID}" alt="A wet ghat road curving through the monsoon forest of the Western Ghats" loading="lazy" />
           <figcaption>The ghat road in the monsoon</figcaption>
         </figure>
-        <p class="mang__text">An hour inland the land stands up. Charmadi and Shiradi climb into coffee and pepper country, and through the monsoon the waterfalls run hard enough to hear from the road.</p>
+        <p class="mang__text">An hour inland the land stands up. Charmadi and Shiradi climb through thirty-odd hairpins into coffee and pepper country, and through the monsoon the waterfalls beside the road run hard enough to hear over the engine. Agumbe, up the ghat, takes some of the heaviest rain in the country and the sunsets from the top are worth the drive on a clear evening. Bring something warm; it is ten degrees cooler up there than it is on the coast, which nobody ever believes until they arrive.</p>
       </div>
       <div class="mang__panel" id="mang-town" role="tabpanel" data-mangpanel>
         <figure class="mang__figure">
           <img src="assets/img/sultan-battery.jpg?v={BUILD_ID}" alt="The stone bastion of Sultan Battery on the Gurupura river at Boloor, Mangalore" loading="lazy" />
           <figcaption>Sultan Battery &mdash; Tipu&rsquo;s watchtower at Boloor, on the Gurupura</figcaption>
         </figure>
-        <p class="mang__text">Tile factories that roofed half the coast, the Jain bastis at Moodabidri and Karkala, the painted chapel at St Aloysius, and streets where the old trade with Arabia and Portugal still shows in the buildings.</p>
+        <p class="mang__text">The tile factories here roofed half of south India, which is why every old building from Bombay to Colombo wears the same terracotta. The Jain bastis at Moodabidri and the standing figure at Karkala are an easy half day inland. St Aloysius has a chapel painted floor to ceiling by an Italian Jesuit in the 1890s that almost nobody outside the city has heard of. And the old trade with Arabia and Portugal still shows in the street names, the doorways and the food, if somebody points it out.</p>
+      </div>
+
+      <div class="mang__nav">
+        <button type="button" class="mang__arrow" data-mangprev aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m11 18-6-6 6-6"/></svg></button>
+        <button type="button" class="mang__arrow" data-mangnext aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></button>
       </div>
     </div>
   </div>
