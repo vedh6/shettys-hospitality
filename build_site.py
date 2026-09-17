@@ -327,7 +327,7 @@ body=f"""
         <h3><a href="stays.html">Shetty&rsquo;s Stays</a></h3>
         <p class="offer__lede">Homestays and service apartments we manage ourselves &mdash; same linen, same checklist, same standard every time you arrive.</p>
         <ul class="ticks">
-          <li><b>Whole houses</b>, not rooms &mdash; yours for the whole stay, across the city</li>
+          <li><b>A room or a whole house</b> &mdash; homes across the city, sized to how many of you there are</li>
           <li><b>Ready before you land</b> &mdash; cleaned, stocked and checked against the same list every time</li>
           <li><b>Staffed if you want it</b> &mdash; cook, housekeeping and airport pickup on request</li>
         </ul>
@@ -498,7 +498,7 @@ body=f"""
           <span class="tsplit__hr" aria-hidden="true"></span>
           <div>
             <p class="tsplit__name">Name to follow</p>
-            <p class="tsplit__role">Two weeks, whole house &middot; month to follow</p>
+            <p class="tsplit__role">Two weeks &middot; month to follow</p>
           </div>
         </div>
       </article>
