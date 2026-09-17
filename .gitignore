@@ -14,14 +14,16 @@ pages-overview.jpg
 # Local-only comparison page, never published
 docs/demo-layouts.html
 
-# Source photographs from the client - processed copies live in docs/assets/img
-sultan battery.jpeg
-Tannirbhavi.jpg
-Kudroli temple .jpg
-Thousand pillar temple .jpeg
-kudroli temple.jpeg
-dharmasthala.jpg
-Kukke subramanya.jpg
-Udupi krishna matha.jpg
-Kateel.jpg
-Kadri manjunatha.jpg
+# Source photographs from the client - processed copies live in docs/assets/img.
+# Anchored with a leading slash: unanchored, "dharmasthala.jpg" also matches
+# docs/assets/img/temples/dharmasthala.jpg and silently drops it from the build.
+/sultan battery.jpeg
+/Tannirbhavi.jpg
+/Kudroli temple .jpg
+/Thousand pillar temple .jpeg
+/kudroli temple.jpeg
+/dharmasthala.jpg
+/Kukke subramanya.jpg
+/Udupi krishna matha.jpg
+/Kateel.jpg
+/Kadri manjunatha.jpg
