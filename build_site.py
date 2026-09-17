@@ -929,13 +929,44 @@ body=phero("Journeys", "Everything that happens<br>outside the house.",
       ahead and where elders can sit down &mdash; that is what we handle.
     </p>
   </header>
-  <ul class="cards cards--3">
-    <li class="card reveal"><h3>Dharmasthala</h3><p>Day trip or overnight, with darshan timings, annadana and the drive up through Charmadi country.</p><p class="card__meta">2.5 hrs from Mangalore</p></li>
-    <li class="card reveal"><h3>Kukke Subrahmanya</h3><p>Sarpa samskara and other sevas booked ahead, with an early start so you are back before dark.</p><p class="card__meta">3 hrs from Mangalore</p></li>
-    <li class="card reveal"><h3>Udupi Krishna Matha</h3><p>Paryaya-season crowds handled, plus Malpe and the Ananthapadmanabha temple if the day allows.</p><p class="card__meta">1.5 hrs from Mangalore</p></li>
-    <li class="card reveal"><h3>Kateel Durgaparameshwari</h3><p>A short morning run to the river temple, easy to pair with the airport on arrival day.</p><p class="card__meta">45 min from the city</p></li>
-    <li class="card reveal"><h3>Kadri Manjunatha</h3><p>In the city itself &mdash; a good first stop the morning after you land.</p><p class="card__meta">In Mangalore</p></li>
-    <li class="card card--ask reveal"><h3>A circuit</h3><p>Three or four temples over two days, sequenced so the driving works and the elders are not exhausted.</p><p class="card__meta"><a class="link" href="contact.html">Plan a circuit <span aria-hidden="true">&rarr;</span></a></p></li>
+  <ul class="cards cards--3 cards--temples">
+    <li class="card reveal">
+      <img class="card__bg" src="assets/img/temples/dharmasthala.jpg?v={BUILD_ID}" alt="Dharmasthala temple below the misted Western Ghats in the monsoon" loading="lazy" />
+      <h3>Dharmasthala</h3>
+      <p>A Shiva temple that has been looked after by a Jain family for centuries, which tells you something about how this coast works. Everyone who comes is fed, free, in a hall that seats thousands &mdash; that is the part people remember. Go early: the queue builds through the morning. The Bahubali monolith on the hill above is a short climb and worth the detour.</p>
+      <p class="card__meta">2.5 hrs from Mangalore</p>
+    </li>
+    <li class="card reveal">
+      <img class="card__bg" src="assets/img/temples/kukke.jpg?v={BUILD_ID}" alt="The white gopuram of Kukke Subrahmanya temple against a clear sky" loading="lazy" />
+      <h3>Kukke Subrahmanya</h3>
+      <p>Subrahmanya worshipped here as the serpent king, which is why people come from across the country for Sarpa Samskara and Ashlesha Bali, the rites for naga dosha. Both must be booked well ahead and both start early. Pilgrims bathe in the Kumaradhara before darshan. The temple sits at the foot of Kumara Parvatha and the country around it is the greenest you will see.</p>
+      <p class="card__meta">3 hrs from Mangalore</p>
+    </li>
+    <li class="card reveal">
+      <img class="card__bg" src="assets/img/temples/udupi.jpg?v={BUILD_ID}" alt="The decorated temple chariot in the car street at Udupi Krishna Matha" loading="lazy" />
+      <h3>Udupi Krishna Matha</h3>
+      <p>You see the Krishna through the Kanakana Kindi, a small silver-plated window &mdash; the story goes that the idol turned to face a devotee who had been refused entry. Founded by Madhvacharya in the thirteenth century, and run in turn by eight mathas; the handover, Paryaya, comes round every two years and fills the town. Malpe and the basalt columns of St Mary&rsquo;s Island are twenty minutes on.</p>
+      <p class="card__meta">1.5 hrs from Mangalore</p>
+    </li>
+    <li class="card reveal">
+      <img class="card__bg" src="assets/img/temples/kateel.jpg?v={BUILD_ID}" alt="The red and gold gateway of Kateel Durgaparameshwari temple" loading="lazy" />
+      <h3>Kateel Durgaparameshwari</h3>
+      <p>The temple stands on an islet in the middle of the Nandini, so in the monsoon the river runs on both sides of it. It keeps one of the best-known Yakshagana melas on the coast &mdash; if you are here in season, ask and we will find out where the troupe is playing. Close enough to the airport to fit on the way in or the way out.</p>
+      <p class="card__meta">45 min from the city</p>
+    </li>
+    <li class="card reveal">
+      <img class="card__bg" src="assets/img/temples/kadri.jpg?v={BUILD_ID}" alt="The pale blue gopuram of Kadri Manjunatha temple with gilded figures" loading="lazy" />
+      <h3>Kadri Manjunatha</h3>
+      <p>Inside the city, on a hill above it. The bronze Lokeshvara in the sanctum is dated to the tenth century and is among the finest bronzes in south India. Behind the temple are nine spring-fed tanks, and above those the Jogi Mutt, which ties the place to the Natha yogis. A good first stop the morning after you land.</p>
+      <p class="card__meta">In Mangalore</p>
+    </li>
+    <li class="card card--ask reveal">
+      <h3>A circuit</h3>
+      <p>Three or four of these over two days, sequenced so the driving works, the darshan
+      timings line up and nobody is finished by the second afternoon. Tell us who is travelling
+      and how long you have, and we will lay it out.</p>
+      <p class="card__meta"><a class="link" href="contact.html">Plan a circuit <span aria-hidden="true">&rarr;</span></a></p>
+    </li>
   </ul>
 </section>
 

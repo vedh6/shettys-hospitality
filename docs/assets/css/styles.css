@@ -374,6 +374,11 @@ a{ color:inherit; }
 .card__meta .link{ font-size:.72rem; }
 
 .cards--3{ grid-template-columns:repeat(3,1fr); }
+/* Gopurams are tall. The default band is a letterbox strip, which decapitates
+   them, so this section gets a deeper one. */
+.cards--temples .card__bg{ height:clamp(200px,20vw,290px); }
+/* The ask card carries no photograph, so pull its text down to sit level. */
+.cards--temples .card--ask{ justify-content:center; }
 .card--ask{ background:color-mix(in srgb, var(--sage) 9%, var(--paper)); }
 .card--ask:hover{ background:color-mix(in srgb, var(--sage) 14%, var(--paper)); }
 
