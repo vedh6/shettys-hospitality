@@ -306,14 +306,29 @@
     // section or anything inside has focus, which matters more here than on
     // the other panels: these paragraphs take far longer than 4s to read, so
     // hovering is what lets you actually finish one.
+    // 3s while it is only cycling past. The first time someone reaches for an
+    // arrow they have shown they are actually looking, so it drops to 5.5s and
+    // stays there for the rest of the visit.
+    var everyMs = 3000;
+    function slowDown() { everyMs = 5500; }
+
     var prev = root.querySelector('[data-mangprev]');
     var next = root.querySelector('[data-mangnext]');
     if (prev) prev.addEventListener('click', function () {
-      show((index - 1 + tabs.length) % tabs.length); restart();
+      slowDown();
+      show((index - 1 + tabs.length) % tabs.length);
+      restart();
     });
-    if (next) next.addEventListener('click', function () { advance(); restart(); });
+    if (next) next.addEventListener('click', function () {
+      slowDown();
+      advance();
+      restart();
+    });
 
-    var restart = autoRotate(root, advance, function () { return 4000; }, null);
+    // autoRotate re-reads this on every restart, so the slower pace takes hold
+    // from the press onward. It also holds while the pointer is over the
+    // section or anything inside has focus.
+    var restart = autoRotate(root, advance, function () { return everyMs; }, null);
   });
 
   // Video player. Custom controls so the review sits in the site's own language

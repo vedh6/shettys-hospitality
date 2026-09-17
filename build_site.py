@@ -371,7 +371,7 @@ body=f"""
     </li>
     <li class="offer__row reveal">
       <figure class="offer__media">
-        <img src="assets/img/cards/temples.jpg?v={BUILD_ID}" alt="An early morning road through coastal Karnataka on the way to a temple" loading="lazy" />
+        <img src="assets/img/cards/temples.jpg?v={BUILD_ID}" alt="The gold gopuram of Kudroli Gokarnanatha temple, Mangalore, after rain" loading="lazy" />
       </figure>
       <div class="offer__copy">
         <p class="offer__n">04</p>
