@@ -424,6 +424,8 @@ a{ color:inherit; }
   .houses{ grid-template-columns:repeat(2,1fr); }
 }
 @media (max-width:620px){
+  .bento2{ grid-template-columns:1fr; }
+
   /* Phone only: the rotating panel carries two full paragraphs, which at the
      shared 16px runs long on a narrow column. Laptops keep the 16px. */
   .occ__slide .split__copy > p:not(.eyebrow){ font-size:.9rem; line-height:1.62; }
@@ -728,6 +730,56 @@ a{ color:inherit; }
   color:color-mix(in srgb, var(--ink) 82%, var(--sage));
 }
 
+/* ---------- bento occasion cards (Celebrations) ---------- */
+/* Ported from a React/Tailwind/framer-motion component. What carries over is
+   the layout idea: a six-column bento of uneven spans, dark cards, and a
+   frosted panel that rides up over the bottom of each photograph. Square
+   corners rather than the original's large radius, because --r is 0 across
+   this whole site. */
+.bento2{
+  list-style:none; margin:0; padding:0;
+  display:grid; grid-template-columns:repeat(6,1fr);
+  gap:clamp(12px,1.4vw,20px);
+}
+.bento2 .bcard--span-2{ grid-column:span 2; }
+.bento2 .bcard--span-3{ grid-column:span 3; }
+.bento2 .bcard--span-4{ grid-column:span 4; }
+
+.bcard{
+  position:relative; overflow:hidden; border-radius:var(--r);
+  background:var(--ink); color:var(--paper);
+  border:1px solid var(--rule-inv);
+  /* the component's inner top glow, in brass rather than its lilac */
+  box-shadow:inset 0 -20px 80px -20px color-mix(in srgb, var(--brass) 14%, transparent);
+  display:flex; flex-direction:column;
+}
+.bcard__media{ margin:0; overflow:hidden; }
+.bcard__media img{
+  display:block; width:100%; aspect-ratio:4/3; object-fit:cover;
+  transition:transform var(--d-move) var(--ease);
+}
+.bcard:hover .bcard__media img{ transform:scale(1.04); }
+
+/* The signature move: the copy rides up over the foot of the picture on a
+   blurred panel, so image and text share the same space. */
+.bcard__body{
+  position:relative; z-index:2;
+  margin-top:clamp(-116px,-9vw,-84px);
+  padding:clamp(22px,2.4vw,32px);
+  background:color-mix(in srgb, var(--ink) 62%, transparent);
+  backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px);
+  flex:1;
+}
+.bcard__body h3{
+  font-size:clamp(1.25rem,1.7vw,1.5rem); line-height:1.2; margin:0 0 .6rem;
+  font-variation-settings:"opsz" 36; letter-spacing:-.008em;
+  color:var(--paper);
+}
+.bcard__body p{
+  margin:0; font-size:.97rem; line-height:1.6;
+  color:color-mix(in srgb, var(--paper) 76%, transparent);
+}
+
 /* ---------- ruled option list ---------- */
 .chips{
   list-style:none; margin:0; padding:0;
@@ -842,6 +894,10 @@ a{ color:inherit; }
 .tsplit__next svg{ width:12px; height:12px; }
 
 @media (max-width:860px){
+  /* two even columns, then one, rather than six uneven ones */
+  .bento2{ grid-template-columns:repeat(2,1fr); }
+  .bento2 .bcard--span-2,.bento2 .bcard--span-3,.bento2 .bcard--span-4{ grid-column:span 1; }
+
   .cone__grid{ grid-template-columns:1fr; gap:clamp(26px,4vw,36px); }
 
   .mang__figure img{ aspect-ratio:16/10; }

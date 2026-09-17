@@ -839,42 +839,60 @@ body=phero("Celebrations at home", "The house fills up.<br>You get to enjoy it."
     <p class="eyebrow">Occasions</p>
     <h2>What we usually get called for.</h2>
   </header>
-  <ul class="occasions occasions--light reveal">
-    <li>
-      <span>Naming &amp; cradle ceremonies</span>
-      <p>Morning functions that start early and fill the house with elders and small children.
-      We plan for both: chairs with backs, shade where people wait, and a menu that leans sweet
-      and is ready when the ceremony ends rather than an hour after.</p>
+  <ul class="bento2 reveal">
+    <li class="bcard bcard--span-4 reveal">
+      <figure class="bcard__media">
+        <img src="assets/img/occasions/naming.jpg?v={BUILD_ID}" alt="A flower-hung wooden cradle and brass lamp set out on a verandah" loading="lazy" />
+      </figure>
+      <div class="bcard__body">
+        <h3>Naming &amp; cradle ceremonies</h3>
+        <p>Morning functions that start early and fill the house with elders and small children. We plan for both: chairs with backs, shade where people wait, and a menu that leans sweet and is ready when the ceremony ends rather than an hour after.</p>
+      </div>
     </li>
-    <li>
-      <span>House-warming</span>
-      <p>Griha pravesha at whatever hour the priest gives you, which is often before light.
-      We handle what the pooja needs, keep the kitchen running from dawn, and turn the house
-      around for a full lunch once the ritual is done.</p>
+    <li class="bcard bcard--span-2 reveal">
+      <figure class="bcard__media">
+        <img src="assets/img/occasions/housewarming.jpg?v={BUILD_ID}" alt="A rangoli, brass kalasha and lit lamps at a threshold before dawn" loading="lazy" />
+      </figure>
+      <div class="bcard__body">
+        <h3>House-warming</h3>
+        <p>Griha pravesha at whatever hour the priest gives you, which is often before light. We handle what the pooja needs, keep the kitchen running from dawn, and turn the house around for a full lunch once the ritual is done.</p>
+      </div>
     </li>
-    <li>
-      <span>Birthdays &amp; anniversaries</span>
-      <p>Evening parties, usually smaller. A first birthday and a sixtieth need very different
-      rooms, so we scale the seating, the sound and the food to the actual guest list instead of
-      a package.</p>
+    <li class="bcard bcard--span-2 reveal">
+      <figure class="bcard__media">
+        <img src="assets/img/occasions/birthday.jpg?v={BUILD_ID}" alt="A birthday table laid on the verandah of a Mangalore house" loading="lazy" />
+      </figure>
+      <div class="bcard__body">
+        <h3>Birthdays &amp; anniversaries</h3>
+        <p>Evening parties, usually smaller. A first birthday and a sixtieth need very different rooms, so we scale the seating, the sound and the food to the actual guest list instead of a package.</p>
+      </div>
     </li>
-    <li>
-      <span>Intimate weddings &amp; roce</span>
-      <p>Roce, mehendi, haldi and small weddings held at home rather than in a hall. These run
-      across days and involve family doing things themselves, so we work around the household
-      instead of taking it over.</p>
+    <li class="bcard bcard--span-4 reveal">
+      <figure class="bcard__media">
+        <img src="assets/img/occasions/roce.jpg?v={BUILD_ID}" alt="Brass bowls of coconut milk and turmeric set out for a roce" loading="lazy" />
+      </figure>
+      <div class="bcard__body">
+        <h3>Intimate weddings &amp; roce</h3>
+        <p>Roce, mehendi, haldi and small weddings held at home rather than in a hall. These run across days and involve family doing things themselves, so we work around the household instead of taking it over.</p>
+      </div>
     </li>
-    <li>
-      <span>Family reunions &amp; NRI homecomings</span>
-      <p>Several families under one roof for a week, with different diets, different sleep
-      schedules and a lot of catching up. Meals stay flexible, the kitchen keeps going, and
-      nobody is cooking for twenty on their holiday.</p>
+    <li class="bcard bcard--span-3 reveal">
+      <figure class="bcard__media">
+        <img src="assets/img/occasions/reunion.jpg?v={BUILD_ID}" alt="A long family lunch laid out on the verandah of a coastal Karnataka house" loading="lazy" />
+      </figure>
+      <div class="bcard__body">
+        <h3>Family reunions &amp; NRI homecomings</h3>
+        <p>Several families under one roof for a week, with different diets, different sleep schedules and a lot of catching up. Meals stay flexible, the kitchen keeps going, and nobody is cooking for twenty on their holiday.</p>
+      </div>
     </li>
-    <li>
-      <span>Corporate offsites &amp; dinners</span>
-      <p>Team dinners and small offsites in a house instead of a banquet room. Fixed timings,
-      a quiet setup that stays out of the way, and a single invoice at the end for your
-      accounts team.</p>
+    <li class="bcard bcard--span-3 reveal">
+      <figure class="bcard__media">
+        <img src="assets/img/occasions/offsite.jpg?v={BUILD_ID}" alt="A long table set for a private dinner on a lit verandah at dusk" loading="lazy" />
+      </figure>
+      <div class="bcard__body">
+        <h3>Corporate offsites &amp; dinners</h3>
+        <p>Team dinners and small offsites in a house instead of a banquet room. Fixed timings, a quiet setup that stays out of the way, and a single invoice at the end for your accounts team.</p>
+      </div>
     </li>
   </ul>
 </section>
