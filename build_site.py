@@ -349,7 +349,7 @@ body=f"""
       <div class="offer__copy">
         <p class="offer__n">02</p>
         <h3><a href="celebrations.html">Celebrations at home</a></h3>
-        <p class="offer__lede">Naming ceremonies, birthdays, house-warmings and small weddings, hosted in your own house instead of a hall.</p>
+        <p class="offer__lede">Naming ceremonies, birthdays, house warmings and small weddings, hosted in your own house instead of a hall.</p>
         <ul class="ticks">
           <li><b>Taste it first</b> &mdash; menus cooked for you before you commit to anything</li>
           <li><b>Sized to the room</b> &mdash; decor, seating, lighting and sound built for a house, not a hall</li>
@@ -473,7 +473,7 @@ body=f"""
           <span class="tsplit__hr" aria-hidden="true"></span>
           <div>
             <p class="tsplit__name">Name to follow</p>
-            <p class="tsplit__role">House-warming, 60 guests &middot; month to follow</p>
+            <p class="tsplit__role">House warming, 60 guests &middot; month to follow</p>
           </div>
         </div>
       </article>
@@ -767,7 +767,7 @@ body=phero("Shetty&rsquo;s Stays", "Homes, not room numbers.",
 # ------------------------------------------------------------------ CELEBRATIONS
 PAGES["celebrations.html"] = dict(
 title="Celebrations at home — Shetty&rsquo;s Hospitality, Mangalore",
-desc="Naming ceremonies, house-warmings, birthdays and intimate weddings hosted at home in Mangalore. Kitchen, decor, staff and clean-up handled.",
+desc="Naming ceremonies, house warmings, birthdays and intimate weddings hosted at home in Mangalore. Kitchen, decor, staff and clean-up handled.",
 body=phero("Celebrations at home", "The house fills up.<br>You get to enjoy it.",
   "A house party is only relaxing for the people who did not plan it. We take the planning &mdash; the cooks, "
   "the pandal, the chairs, the flowers, the parking, the plates going back to the rental at midnight &mdash; "
@@ -845,7 +845,7 @@ body=phero("Celebrations at home", "The house fills up.<br>You get to enjoy it."
         <img src="assets/img/occasions/naming.jpg?v={BUILD_ID}" alt="A flower-hung wooden cradle and brass lamp set out on a verandah" loading="lazy" />
       </figure>
       <div class="bcard__body">
-        <h3>Naming &amp; cradle ceremonies</h3>
+        <h3>Naming and cradle ceremonies</h3>
         <p>Morning functions that start early and fill the house with elders and small children. We plan for both: chairs with backs, shade where people wait, and a menu that leans sweet and is ready when the ceremony ends rather than an hour after.</p>
       </div>
     </li>
@@ -854,7 +854,7 @@ body=phero("Celebrations at home", "The house fills up.<br>You get to enjoy it."
         <img src="assets/img/occasions/housewarming.jpg?v={BUILD_ID}" alt="A rangoli, brass kalasha and lit lamps at a threshold before dawn" loading="lazy" />
       </figure>
       <div class="bcard__body">
-        <h3>House-warming</h3>
+        <h3>House warming</h3>
         <p>Griha pravesha at whatever hour the priest gives you, which is often before light. We handle what the pooja needs, keep the kitchen running from dawn, and turn the house around for a full lunch once the ritual is done.</p>
       </div>
     </li>
@@ -863,7 +863,7 @@ body=phero("Celebrations at home", "The house fills up.<br>You get to enjoy it."
         <img src="assets/img/occasions/birthday.jpg?v={BUILD_ID}" alt="A birthday table laid on the verandah of a Mangalore house" loading="lazy" />
       </figure>
       <div class="bcard__body">
-        <h3>Birthdays &amp; anniversaries</h3>
+        <h3>Birthdays and anniversaries</h3>
         <p>Evening parties, usually smaller. A first birthday and a sixtieth need very different rooms, so we scale the seating, the sound and the food to the actual guest list instead of a package.</p>
       </div>
     </li>
@@ -872,7 +872,7 @@ body=phero("Celebrations at home", "The house fills up.<br>You get to enjoy it."
         <img src="assets/img/occasions/roce.jpg?v={BUILD_ID}" alt="Brass bowls of coconut milk and turmeric set out for a roce" loading="lazy" />
       </figure>
       <div class="bcard__body">
-        <h3>Intimate weddings &amp; roce</h3>
+        <h3>Intimate weddings and roce</h3>
         <p>Roce, mehendi, haldi and small weddings held at home rather than in a hall. These run across days and involve family doing things themselves, so we work around the household instead of taking it over.</p>
       </div>
     </li>
@@ -881,7 +881,7 @@ body=phero("Celebrations at home", "The house fills up.<br>You get to enjoy it."
         <img src="assets/img/occasions/reunion.jpg?v={BUILD_ID}" alt="A long family lunch laid out on the verandah of a coastal Karnataka house" loading="lazy" />
       </figure>
       <div class="bcard__body">
-        <h3>Family reunions &amp; NRI homecomings</h3>
+        <h3>Family reunions and NRI homecomings</h3>
         <p>Several families under one roof for a week, with different diets, different sleep schedules and a lot of catching up. Meals stay flexible, the kitchen keeps going, and nobody is cooking for twenty on their holiday.</p>
       </div>
     </li>
@@ -890,7 +890,7 @@ body=phero("Celebrations at home", "The house fills up.<br>You get to enjoy it."
         <img src="assets/img/occasions/offsite.jpg?v={BUILD_ID}" alt="A long table set for a private dinner on a lit verandah at dusk" loading="lazy" />
       </figure>
       <div class="bcard__body">
-        <h3>Corporate offsites &amp; dinners</h3>
+        <h3>Corporate offsites and dinners</h3>
         <p>Team dinners and small offsites in a house instead of a banquet room. Fixed timings, a quiet setup that stays out of the way, and a single invoice at the end for your accounts team.</p>
       </div>
     </li>
