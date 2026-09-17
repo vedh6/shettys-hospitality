@@ -610,11 +610,28 @@ a{ color:inherit; }
 .offer__copy h3 a:hover{ color:var(--sage-dp); }
 .offer__lede{ margin:0; font-size:1.02rem; line-height:1.65;
   color:color-mix(in srgb, var(--ink) 84%, var(--sage)); }
-.offer__copy .ticks{ margin:1.4rem 0 1.1rem; }
+.offer__copy .ticks{ margin:1.5rem 0 1.4rem; }
+/* Each line now leads with a claim and follows with the detail. The claim is
+   set in the serif so the eye catches it first and the row stops reading as a
+   spec-sheet bullet. */
+.offer__copy .ticks li{
+  font-size:1rem; line-height:1.55; padding:.95em 0 .95em 1.9em;
+}
+.offer__copy .ticks li b{
+  font-family:"Fraunces",serif; font-weight:600;
+  font-variation-settings:"opsz" 36; letter-spacing:-.006em;
+  font-size:1.08em; color:var(--ink);
+}
+.offer__copy .ticks li::before{ top:1.72em; width:14px; }
 .offer__meta{
-  margin:0 0 1.1rem; font-family:"Karla",sans-serif;
+  margin:0 0 1.4rem; display:flex; flex-wrap:wrap; gap:.5rem;
+}
+.offer__meta span{
+  font-family:"Karla",sans-serif;
   font-size:var(--label); letter-spacing:var(--track-label); font-weight:var(--w-label);
-  text-transform:uppercase; color:var(--sage);
+  text-transform:uppercase; color:var(--sage-dp);
+  border:1px solid var(--rule-strong); border-radius:999px;
+  padding:.5em 1.05em; line-height:1;
 }
 .offer__note{
   margin:clamp(56px,7vw,110px) 0 0; padding-top:clamp(24px,3vw,36px);

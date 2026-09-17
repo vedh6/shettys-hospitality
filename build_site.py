@@ -327,11 +327,11 @@ body=f"""
         <h3><a href="stays.html">Shetty&rsquo;s Stays</a></h3>
         <p class="offer__lede">Homestays and service apartments we manage ourselves &mdash; same linen, same checklist, same standard every time you arrive.</p>
         <ul class="ticks">
-          <li>Whole houses and apartments across the city</li>
-          <li>Cleaned, stocked and inspected before you land</li>
-          <li>Cook, housekeeping and airport pickup on request</li>
+          <li><b>Whole houses</b>, not rooms &mdash; yours for the whole stay, across the city</li>
+          <li><b>Ready before you land</b> &mdash; cleaned, stocked and checked against the same list every time</li>
+          <li><b>Staffed if you want it</b> &mdash; cook, housekeeping and airport pickup on request</li>
         </ul>
-        <p class="offer__meta">Nightly &middot; Weekly &middot; Long stay</p>
+        <p class="offer__meta"><span>Nightly</span><span>Weekly</span><span>Long stay</span></p>
         <a class="link" href="stays.html">Plan a stay <span aria-hidden="true">&rarr;</span></a>
       </div>
     </li>
@@ -344,11 +344,11 @@ body=f"""
         <h3><a href="celebrations.html">Celebrations at home</a></h3>
         <p class="offer__lede">Naming ceremonies, birthdays, house-warmings and small weddings, hosted in your own house instead of a hall.</p>
         <ul class="ticks">
-          <li>Menus tasted before you commit to them</li>
-          <li>Decor, seating, lighting and sound sized to the room</li>
-          <li>Staff on the day, and the clearing up after</li>
+          <li><b>Taste it first</b> &mdash; menus cooked for you before you commit to anything</li>
+          <li><b>Sized to the room</b> &mdash; decor, seating, lighting and sound built for a house, not a hall</li>
+          <li><b>We stay till the end</b> &mdash; staff on the day, and the clearing up after everyone leaves</li>
         </ul>
-        <p class="offer__meta">15 to 150 guests</p>
+        <p class="offer__meta"><span>15 to 150 guests</span></p>
         <a class="link" href="celebrations.html">Host a celebration <span aria-hidden="true">&rarr;</span></a>
       </div>
     </li>
@@ -361,11 +361,11 @@ body=f"""
         <h3><a href="journeys.html#rides">Shetty&rsquo;s Rides</a></h3>
         <p class="offer__lede">Drivers we know by name, cars we have sat in, and a fare agreed before you get in.</p>
         <ul class="ticks">
-          <li>Airport pickups at any hour, driver&rsquo;s number sent ahead</li>
-          <li>Day cars in the city or out, sedan to tempo traveller</li>
-          <li>Outstation runs to Udupi, Coorg and Chikmagalur</li>
+          <li><b>Any hour</b> &mdash; airport runs at three in the morning, the driver&rsquo;s name and number sent the night before</li>
+          <li><b>Sedan to tempo traveller</b> &mdash; day cars in the city or well outside it</li>
+          <li><b>The fare is agreed</b> &mdash; before you get in, not after you get out</li>
         </ul>
-        <p class="offer__meta">Fixed pricing</p>
+        <p class="offer__meta"><span>Fixed pricing</span></p>
         <a class="link" href="journeys.html#rides">See the cars <span aria-hidden="true">&rarr;</span></a>
       </div>
     </li>
@@ -378,11 +378,11 @@ body=f"""
         <h3><a href="journeys.html#temples">Temple journeys</a></h3>
         <p class="offer__lede">The drive is the easy part. Knowing which queue to join and when the doors close is what we handle.</p>
         <ul class="ticks">
-          <li>Darshan timings and sevas booked ahead</li>
-          <li>Dharmasthala, Kukke, Udupi, Kateel and Kadri</li>
-          <li>Circuits sequenced so elders are not exhausted</li>
+          <li><b>Sevas booked ahead</b> &mdash; darshan timings held, so you are not guessing at the gate</li>
+          <li><b>The big five</b> &mdash; Dharmasthala, Kukke, Udupi, Kateel and Kadri, done properly</li>
+          <li><b>Paced for elders</b> &mdash; circuits sequenced so nobody is finished by the second day</li>
         </ul>
-        <p class="offer__meta">Day trips &amp; multi-day</p>
+        <p class="offer__meta"><span>Day trips</span><span>Multi-day</span></p>
         <a class="link" href="journeys.html#temples">Plan a journey <span aria-hidden="true">&rarr;</span></a>
       </div>
     </li>
@@ -395,11 +395,11 @@ body=f"""
         <h3><a href="journeys.html#hidden">Hidden Mangalore</a></h3>
         <p class="offer__lede">The parts of the coast that never make it onto a list, led by someone who actually lives here.</p>
         <ul class="ticks">
-          <li>Kori rotti and neer dosa where locals eat</li>
-          <li>The fish market at first light, Someshwara at low tide</li>
-          <li>Heritage walks, tile factories, Yakshagana in season</li>
+          <li><b>Where locals eat</b> &mdash; kori rotti and neer dosa, rarely the place with the sign</li>
+          <li><b>First light at the market</b> &mdash; and Someshwara at low tide, when the rocks come out</li>
+          <li><b>Walks with a host</b> &mdash; heritage streets, tile factories, Yakshagana in season</li>
         </ul>
-        <p class="offer__meta">Half day, with a host</p>
+        <p class="offer__meta"><span>Half day</span><span>With a host</span></p>
         <a class="link" href="journeys.html#hidden">Walk with us <span aria-hidden="true">&rarr;</span></a>
       </div>
     </li>
@@ -412,11 +412,11 @@ body=f"""
         <h3><a href="contact.html">Staff, by the day</a></h3>
         <p class="offer__lede">The same cooks, servers and decorators we use on our own events, available to you on yours.</p>
         <ul class="ticks">
-          <li>Kitchen and service staff, waiters and cleaners</li>
-          <li>Decor and setup crews, and the team that clears after</li>
-          <li>For your own event, or to fill out someone else&rsquo;s</li>
+          <li><b>Kitchen and service</b> &mdash; cooks, waiters and cleaners, by the day</li>
+          <li><b>Decor and setup</b> &mdash; the crews who build it, and the team that clears after</li>
+          <li><b>Yours or theirs</b> &mdash; for your own event, or to fill out someone else&rsquo;s</li>
         </ul>
-        <p class="offer__meta">Numbers and day rates &mdash; to follow</p>
+        <p class="offer__meta"><span>Rates to follow</span></p>
         <a class="link" href="contact.html">Tell us what you need <span aria-hidden="true">&rarr;</span></a>
       </div>
     </li>
