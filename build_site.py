@@ -320,7 +320,7 @@ body=f"""
   <ol class="offer">
     <li class="offer__row reveal">
       <figure class="offer__media">
-        <img src="assets/img/cards/stays.jpg?v={BUILD_ID}" alt="A managed homestay interior in Mangalore" loading="lazy" />
+        <img src="assets/img/cards/stays.jpg?v={BUILD_ID}" alt="A made-up bedroom in a managed homestay, shutters open to the garden" loading="lazy" />
       </figure>
       <div class="offer__copy">
         <p class="offer__n">01</p>
