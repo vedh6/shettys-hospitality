@@ -273,11 +273,30 @@
     if (tabs.length !== panels.length || !tabs.length) return;
 
     var index = 0;
+    // A dot per panel, mirroring the tabs. Same job, but sitting next to the
+    // picture where the eye already is.
+    var dotWrap = root.querySelector('[data-mangdots]');
+    var dots = [];
+    if (dotWrap) {
+      dots = panels.map(function (p, i) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.setAttribute('role', 'tab');
+        b.setAttribute('aria-label', tabs[i].textContent.trim());
+        b.addEventListener('click', function () { slowDown(); show(i); restart(); });
+        dotWrap.appendChild(b);
+        return b;
+      });
+    }
+
     function show(next) {
       index = next;
       tabs.forEach(function (t, i) {
         t.setAttribute('aria-selected', i === next ? 'true' : 'false');
         t.tabIndex = i === next ? 0 : -1;
+      });
+      dots.forEach(function (d, i) {
+        d.setAttribute('aria-selected', i === next ? 'true' : 'false');
       });
       panels.forEach(function (p, i) {
         p.classList.toggle('is-current', i === next);

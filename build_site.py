@@ -300,8 +300,11 @@ body=f"""
       </div>
 
       <div class="mang__nav">
-        <button type="button" class="mang__arrow" data-mangprev aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m11 18-6-6 6-6"/></svg></button>
-        <button type="button" class="mang__arrow" data-mangnext aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></button>
+        <div class="mang__dots" role="tablist" aria-label="Choose a picture" data-mangdots></div>
+        <div class="mang__arrows">
+          <button type="button" class="mang__arrow" data-mangprev aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m11 18-6-6 6-6"/></svg></button>
+          <button type="button" class="mang__arrow" data-mangnext aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></button>
+        </div>
       </div>
     </div>
   </div>

@@ -558,9 +558,19 @@ a{ color:inherit; }
 .mang__nav{
   grid-area:1/1; align-self:end; justify-self:end;
   position:relative; z-index:2;
-  display:flex; gap:.7rem;
+  display:flex; align-items:center; gap:clamp(14px,1.6vw,24px);
   pointer-events:none;
 }
+.mang__arrows{ display:flex; gap:.7rem; }
+.mang__dots{ display:flex; align-items:center; gap:.7rem; pointer-events:auto; }
+.mang__dots button{
+  width:8px; height:8px; padding:0; border:0; border-radius:999px; cursor:pointer;
+  background:color-mix(in srgb, var(--ink) 26%, transparent);
+  transition:background var(--d-tint) var(--ease-tint), transform var(--d-tint) var(--ease-tint);
+}
+.mang__dots button:hover{ background:color-mix(in srgb, var(--ink) 45%, transparent); }
+.mang__dots button[aria-selected="true"]{ background:var(--tile); transform:scale(1.25); }
+.mang__dots button:focus-visible{ outline:2px solid var(--sage); outline-offset:3px; }
 .mang__arrow{
   pointer-events:auto;
   appearance:none; cursor:pointer;
