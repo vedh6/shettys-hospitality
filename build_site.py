@@ -256,6 +256,11 @@ body=f"""
       <button type="button" role="tab" data-mangtab aria-controls="mang-town" aria-selected="false">The older town</button>
     </div>
     <div class="mang__stage">
+      <div class="mang__overlay" aria-hidden="false">
+        <div class="mang__overlay-inner">
+          <div class="mang__dots" role="tablist" aria-label="Choose a picture" data-mangdots></div>
+        </div>
+      </div>
       <div class="mang__panel is-current" id="mang-coast" role="tabpanel" data-mangpanel>
         <figure class="mang__figure">
           <img src="assets/img/tannirbhavi.jpg?v={BUILD_ID}" alt="Surf and casuarinas on the sand at Tannirbhavi beach, Mangalore" fetchpriority="high" />
@@ -300,7 +305,6 @@ body=f"""
       </div>
 
       <div class="mang__nav">
-        <div class="mang__dots" role="tablist" aria-label="Choose a picture" data-mangdots></div>
         <div class="mang__arrows">
           <button type="button" class="mang__arrow" data-mangprev aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m11 18-6-6 6-6"/></svg></button>
           <button type="button" class="mang__arrow" data-mangnext aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></button>
