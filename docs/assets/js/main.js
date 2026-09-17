@@ -325,10 +325,10 @@
     // section or anything inside has focus, which matters more here than on
     // the other panels: these paragraphs take far longer than 4s to read, so
     // hovering is what lets you actually finish one.
-    // 3s while it is only cycling past. The first time someone reaches for an
-    // arrow they have shown they are actually looking, so it drops to 5.5s and
-    // stays there for the rest of the visit.
-    var everyMs = 3000;
+    // 4s while it is only cycling past. The first time someone reaches for an
+    // arrow or a dot they have shown they are actually looking, so it drops to
+    // 5.5s and stays there for the rest of the visit.
+    var everyMs = 4000;
     function slowDown() { everyMs = 5500; }
 
     var prev = root.querySelector('[data-mangprev]');
