@@ -354,7 +354,7 @@ body=f"""
     </li>
     <li class="offer__row reveal">
       <figure class="offer__media">
-        <img src="assets/img/cards/rides.jpg?v={BUILD_ID}" alt="The road ahead from the back seat of a car on the coast road" loading="lazy" />
+        <img src="assets/img/cards/rides.jpg?v={BUILD_ID}" alt="The coast road ahead, seen from the second row of a seven-seater" loading="lazy" />
       </figure>
       <div class="offer__copy">
         <p class="offer__n">03</p>
