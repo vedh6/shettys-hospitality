@@ -277,10 +277,10 @@ body=f"""
       </div>
       <div class="mang__panel" id="mang-temples" role="tabpanel" data-mangpanel>
         <figure class="mang__figure">
-          <img src="assets/img/temples-wide.jpg?v={BUILD_ID}" alt="The lamp-lit stone colonnade of a coastal Karnataka temple at dawn" loading="lazy" />
-          <figcaption>First light, before the queues</figcaption>
+          <img src="assets/img/temples-wide.jpg?v={BUILD_ID}" alt="The carved pillars of the Thousand Pillar Jain basadi at Moodabidri" loading="lazy" />
+          <figcaption>The Thousand Pillar basadi at Moodabidri &mdash; no two pillars alike</figcaption>
         </figure>
-        <p class="mang__text">Kadri and Mangaladevi are inside the city and take an hour between them. Kateel sits on an island in the middle of the Nandini, which is worth the trip on its own. Dharmasthala, Kukke Subrahmanya and the Krishna Matha at Udupi are each a morning&rsquo;s drive, and each worth doing properly rather than in a rush. The difference between a good darshan and three hours in a queue is knowing which line to join, which seva to book ahead, and what time the doors actually close — which is most of what we do for you.</p>
+        <p class="mang__text">Kadri and Mangaladevi are inside the city and take an hour between them. Kateel sits on an island in the middle of the Nandini. Dharmasthala, Kukke Subrahmanya and the Krishna Matha at Udupi are each a morning&rsquo;s drive. Inland at Moodabidri stands the Thousand Pillar basadi, a Jain temple whose carved pillars are said to be all different, and which most visitors to the coast never hear about. The difference between a good darshan and three hours in a queue is knowing which line to join, which seva to book ahead, and what time the doors actually close — which is most of what we do for you.</p>
       </div>
       <div class="mang__panel" id="mang-table" role="tabpanel" data-mangpanel>
         <figure class="mang__figure">
@@ -301,7 +301,7 @@ body=f"""
           <img src="assets/img/sultan-battery.jpg?v={BUILD_ID}" alt="The stone bastion of Sultan Battery on the Gurupura river at Boloor, Mangalore" loading="lazy" />
           <figcaption>Sultan Battery &mdash; Tipu&rsquo;s watchtower at Boloor, on the Gurupura</figcaption>
         </figure>
-        <p class="mang__text">The tile factories here roofed half of south India, which is why every old building from Bombay to Colombo wears the same terracotta. The Jain bastis at Moodabidri and the standing figure at Karkala are an easy half day inland. St Aloysius has a chapel painted floor to ceiling by an Italian Jesuit in the 1890s that almost nobody outside the city has heard of. And the old trade with Arabia and Portugal still shows in the street names, the doorways and the food, if somebody points it out.</p>
+        <p class="mang__text">The tile factories here roofed half of south India, which is why every old building from Bombay to Colombo wears the same terracotta. The standing figure at Karkala is an easy half day inland. St Aloysius has a chapel painted floor to ceiling by an Italian Jesuit in the 1890s that almost nobody outside the city has heard of. And the old trade with Arabia and Portugal still shows in the street names, the doorways and the food, if somebody points it out.</p>
       </div>
 
       <div class="mang__nav">
