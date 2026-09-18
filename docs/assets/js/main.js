@@ -283,7 +283,7 @@
         b.type = 'button';
         b.setAttribute('role', 'tab');
         b.setAttribute('aria-label', tabs[i].textContent.trim());
-        b.addEventListener('click', function () { slowDown(); show(i); restart(); });
+        b.addEventListener('click', function () { slowDown(); firstDone = true; show(i); restart(); });
         dotWrap.appendChild(b);
         return b;
       });
@@ -325,21 +325,37 @@
     // section or anything inside has focus, which matters more here than on
     // the other panels: these paragraphs take far longer than 4s to read, so
     // hovering is what lets you actually finish one.
-    // 4s while it is only cycling past. The first time someone reaches for an
-    // arrow or a dot they have shown they are actually looking, so it drops to
-    // 5.5s and stays there for the rest of the visit.
-    var everyMs = 4000;
-    function slowDown() { everyMs = 5500; }
+    // Three paces. The very first change after the section comes into view is
+    // quick, at 2s, so a reader sees straight away that there is more than one
+    // picture here. Everything after that is 4s, including the wrap back round
+    // to the first tab. Reaching for an arrow or a dot is a sign of actually
+    // reading, so that drops it to 5.5s for the rest of the visit.
+    var FIRST = 2000, BASE = 4000, SLOW = 5500;
+    var everyMs = FIRST;
+    var firstDone = false, slowed = false;
+
+    function slowDown() { slowed = true; everyMs = SLOW; }
+
+    // Wraps advance() so the one-off 2s is spent and the timer re-armed at 4s.
+    function pacedAdvance() {
+      advance();
+      if (!firstDone) {
+        firstDone = true;
+        if (!slowed) { everyMs = BASE; restart(); }
+      }
+    }
 
     var prev = root.querySelector('[data-mangprev]');
     var next = root.querySelector('[data-mangnext]');
     if (prev) prev.addEventListener('click', function () {
       slowDown();
+      firstDone = true;
       show((index - 1 + tabs.length) % tabs.length);
       restart();
     });
     if (next) next.addEventListener('click', function () {
       slowDown();
+      firstDone = true;
       advance();
       restart();
     });
@@ -347,7 +363,7 @@
     // autoRotate re-reads this on every restart, so the slower pace takes hold
     // from the press onward. It also holds while the pointer is over the
     // section or anything inside has focus.
-    var restart = autoRotate(root, advance, function () { return everyMs; }, null);
+    var restart = autoRotate(root, pacedAdvance, function () { return everyMs; }, null);
   });
 
   // Video player. Custom controls so the review sits in the site's own language
