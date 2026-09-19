@@ -238,7 +238,7 @@ body=f"""
 <section class="section">
   <header class="section__head reveal">
     <p class="eyebrow">The coast you have landed on</p>
-    <h2>Mangalore is not a stopover.</h2>
+    <h2>What there is to see and do here.</h2>
     <p class="section__lede">
       Most people arrive for a wedding or a temple and leave the next morning having seen the
       airport road and not much else. The coast, the ghats behind it and the kitchens in between
@@ -317,7 +317,7 @@ body=f"""
 <section class="section">
   <header class="section__head reveal">
     <p class="eyebrow">What we look after</p>
-    <h2>Six services, one phone number.</h2>
+    <h2>Six services, arranged by one person.</h2>
     <p class="section__lede">
       Mangalore has no shortage of good drivers, good cooks and good houses. What it lacks is
       someone holding them together. That is the whole job.
@@ -566,7 +566,7 @@ body=f"""
   </figure>
   <div class="split__copy reveal">
     <p class="eyebrow">Why one contact matters</p>
-    <h2>Nobody wants four vendors on speaker.</h2>
+    <h2>One person arranges the whole trip.</h2>
     <p>
       The usual trip means a booking site, a driver who calls at midnight, a cook who cancels,
       and a temple queue nobody warned you about. We put one person between you and all of it,
@@ -591,7 +591,7 @@ body=f"""
 PAGES["stays.html"] = dict(
 title="Stays — Shetty&rsquo;s Hospitality, Mangalore",
 desc="Managed homestays and service apartments in Mangalore. Cleaned before every arrival, stocked kitchen, cook on request, airport pickup arranged.",
-body=phero("Shetty&rsquo;s Stays", "Homes, not room numbers.",
+body=phero("Shetty&rsquo;s Stays", "Managed homestays<br>across Mangalore.",
   "Every house on our list is one we manage. We know which geyser is slow, which room catches the "
   "afternoon sun, and how long the drive to the airport really takes at 6am.",
   [("Stay length", "One night to several months"), ("Group size", "2 to 20 guests"), ("Ready", "Cleaned before every arrival")],
@@ -599,7 +599,7 @@ body=phero("Shetty&rsquo;s Stays", "Homes, not room numbers.",
 <section class="section">
   <header class="section__head section__head--left reveal">
     <p class="eyebrow">The houses</p>
-    <h2>Where you would actually stay.</h2>
+    <h2>Each one managed by us.</h2>
     <p class="section__lede">Each of these is a house we manage ourselves. Details are being
     collected &mdash; names, sizes and neighbourhoods go in below.</p>
   </header>
@@ -649,7 +649,7 @@ body=phero("Shetty&rsquo;s Stays", "Homes, not room numbers.",
 <section class="section">
   <header class="section__head section__head--left reveal">
     <p class="eyebrow">In every house</p>
-    <h2>The list we check before you arrive.</h2>
+    <h2>Checked before every arrival.</h2>
   </header>
 
   <div class="bento reveal">
@@ -697,7 +697,7 @@ body=phero("Shetty&rsquo;s Stays", "Homes, not room numbers.",
     <div class="cone__grid">
       <div class="cone__copy reveal">
         <p class="eyebrow eyebrow--light">New line of work</p>
-        <h2>Lately we have started building the rooms, not only filling them.</h2>
+        <h2>We build cone houses too.</h2>
         <p class="section__lede">
           Cone houses &mdash; triangular A-frame cabins, framed and finished from scratch on
           site. We build them for other people&rsquo;s land: layouts, resorts and estates that
@@ -721,7 +721,7 @@ body=phero("Shetty&rsquo;s Stays", "Homes, not room numbers.",
 <section class="section">
   <header class="section__head reveal">
     <p class="eyebrow">Kinds of stay</p>
-    <h2>Pick the one that sounds like your trip.</h2>
+    <h2>Stays for different kinds of trip.</h2>
   </header>
   <ul class="cards cards--3">
     <li class="card reveal">
@@ -745,7 +745,7 @@ body=phero("Shetty&rsquo;s Stays", "Homes, not room numbers.",
 <section class="section">
   <header class="section__head reveal">
     <p class="eyebrow">Add on request</p>
-    <h2>Things people ask for, and get.</h2>
+    <h2>What you can add to a stay.</h2>
   </header>
   <ul class="chips reveal">
     <li>Cook, Mangalorean or your family&rsquo;s usual</li>
@@ -768,7 +768,7 @@ body=phero("Shetty&rsquo;s Stays", "Homes, not room numbers.",
 PAGES["celebrations.html"] = dict(
 title="Celebrations at home — Shetty&rsquo;s Hospitality, Mangalore",
 desc="Naming ceremonies, house warmings, birthdays and intimate weddings hosted at home in Mangalore. Kitchen, decor, staff and clean-up handled.",
-body=phero("Celebrations at home", "The house fills up.<br>You get to enjoy it.",
+body=phero("Celebrations at home", "Celebrations hosted<br>in your own home.",
   "A house party is only relaxing for the people who did not plan it. We take the planning &mdash; the cooks, "
   "the pandal, the chairs, the flowers, the parking, the plates going back to the rental at midnight &mdash; "
   "and hand you back the evening.",
@@ -779,7 +779,7 @@ body=phero("Celebrations at home", "The house fills up.<br>You get to enjoy it."
   <article class="occ__slide split is-current" data-occasion aria-label="Birthdays">
     <div class="split__copy">
       <p class="eyebrow">Birthdays</p>
-      <h2>A first birthday is not a small wedding.</h2>
+      <h2>Smaller parties, planned properly.</h2>
         <p>Most of what we are asked for is not a hundred and fifty people. It is twenty or thirty, in a courtyard, on a Sunday evening &mdash; a child&rsquo;s birthday, a first birthday, an anniversary the family never wanted to move to a hall in the first place.</p>
         <p>Those need less building and more judgement. How much food actually gets eaten. Where the children will end up running once the cake is cut. How loud is too loud in a house with neighbours on both sides. We scale the evening down properly rather than shrinking a package meant for a crowd.</p>
       <a class="link" href="contact.html">Tell us about the occasion <span aria-hidden="true">&rarr;</span></a>
@@ -797,7 +797,7 @@ body=phero("Celebrations at home", "The house fills up.<br>You get to enjoy it."
   <article class="occ__slide split" data-occasion aria-label="Family reunions">
     <div class="split__copy">
       <p class="eyebrow">Family reunions</p>
-      <h2>A week is not a long evening.</h2>
+      <h2>A week of family under one roof.</h2>
         <p>When three families land at once and stay for a week, the hard part is not the welcome dinner. It is the seventh morning, when everyone wants breakfast at a different hour and two people have decided to fast.</p>
         <p>So we staff it as a household rather than an event. The kitchen keeps going between meals, diets are written down instead of guessed at, and the cleaning and the airport runs happen without anybody having to ask. Nobody spends their holiday cooking for twenty.</p>
       <a class="link" href="contact.html">Tell us about the occasion <span aria-hidden="true">&rarr;</span></a>
@@ -815,7 +815,7 @@ body=phero("Celebrations at home", "The house fills up.<br>You get to enjoy it."
   <article class="occ__slide split" data-occasion aria-label="Corporate offsites">
     <div class="split__copy">
       <p class="eyebrow">Corporate offsites</p>
-      <h2>A house that behaves like a venue.</h2>
+      <h2>Team dinners and small offsites.</h2>
         <p>Team dinners and small offsites work better in a house than in a banquet room &mdash; right up until somebody needs the timings held to the minute, or a proper invoice at the end.</p>
         <p>So we run those parts like a venue and leave the rest feeling like a house. Fixed serving times, power and space sorted before anyone arrives, a setup that stays out of the way of whatever the session is, and a single invoice for your accounts team.</p>
       <a class="link" href="contact.html">Tell us about the occasion <span aria-hidden="true">&rarr;</span></a>
@@ -837,7 +837,7 @@ body=phero("Celebrations at home", "The house fills up.<br>You get to enjoy it."
 <section class="section">
   <header class="section__head reveal">
     <p class="eyebrow">Occasions</p>
-    <h2>What we usually get called for.</h2>
+    <h2>The occasions we take on.</h2>
   </header>
   <ul class="bento2 reveal">
     <li class="bcard bcard--span-4 reveal">
@@ -901,7 +901,7 @@ body=phero("Celebrations at home", "The house fills up.<br>You get to enjoy it."
   <div class="band__in">
     <header class="section__head section__head--left reveal">
       <p class="eyebrow eyebrow--light">What we bring</p>
-      <h2>Three parts, all of them ours to worry about.</h2>
+      <h2>Kitchen, setting and staff.</h2>
     </header>
     <div class="incl reveal">
       <div><h4>Kitchen</h4><p>Mangalorean, Udupi or North Indian menus with cooks we work with regularly. Tasting before you commit, and enough food that nobody counts.</p></div>
@@ -914,7 +914,7 @@ body=phero("Celebrations at home", "The house fills up.<br>You get to enjoy it."
 <section class="section">
   <header class="section__head reveal">
     <p class="eyebrow">How the day runs</p>
-    <h2>You have one person to look for.</h2>
+    <h2>One coordinator, start to finish.</h2>
   </header>
   <ol class="steps">
     <li class="reveal"><span class="steps__n">01</span><h3>A walkthrough</h3><p>We see the house, count the seats, find the power points and work out where the food goes.</p></li>
@@ -933,7 +933,7 @@ body=phero("Celebrations at home", "The house fills up.<br>You get to enjoy it."
 PAGES["journeys.html"] = dict(
 title="Journeys — temples, rides &amp; Hidden Mangalore | Shetty&rsquo;s Hospitality",
 desc="Temple journeys to Dharmasthala, Kukke and Udupi, airport transfers and day cars, plus curated local experiences around Mangalore.",
-body=phero("Journeys", "Everything that happens<br>outside the house.",
+body=phero("Journeys", "Temples, cars<br>and days out.",
   "Temples, transport and the parts of Mangalore that never make it onto a list. Booked as one plan, "
   "with one person answering the phone.",
   [("Temples", "Dharmasthala &middot; Kukke &middot; Udupi"), ("Cars", "Fixed fares, verified drivers"), ("Local", "Half-day walks with a host")],
@@ -941,7 +941,7 @@ body=phero("Journeys", "Everything that happens<br>outside the house.",
 <section class="section" id="temples">
   <header class="section__head reveal">
     <p class="eyebrow">Temple &amp; spiritual travel</p>
-    <h2>Darshan, without the guesswork.</h2>
+    <h2>Temple trips, arranged properly.</h2>
     <p class="section__lede">
       The drive is the easy part. Knowing which queue to join, when the doors close, which seva to book
       ahead and where elders can sit down &mdash; that is what we handle.
@@ -992,7 +992,7 @@ body=phero("Journeys", "Everything that happens<br>outside the house.",
   <div class="band__in">
     <header class="section__head section__head--left reveal">
       <p class="eyebrow eyebrow--light">Shetty&rsquo;s Rides</p>
-      <h2>The fare is agreed before you get in.</h2>
+      <h2>Cars and drivers at a fixed fare.</h2>
       <p class="section__lede">
         Drivers we know by name, cars we have sat in, and no surprise at the end of the day.
       </p>
@@ -1026,7 +1026,7 @@ body=phero("Journeys", "Everything that happens<br>outside the house.",
 <section class="section" id="hidden">
   <header class="section__head reveal">
     <p class="eyebrow">Hidden Mangalore</p>
-    <h2>The half day you didn&rsquo;t know to ask for.</h2>
+    <h2>Half days out with a local host.</h2>
     <p class="section__lede">
       Led by someone who lives here, not a script. Pick one, or let us build a morning around what you like.
     </p>
@@ -1043,7 +1043,7 @@ body=phero("Journeys", "Everything that happens<br>outside the house.",
   </ul>
 </section>
 
-{cta("One trip, one plan.",
+{cta("Plan the whole trip with us.",
      "Tell us who&rsquo;s travelling and what matters most. We&rsquo;ll sequence the temples, the cars and the free afternoons.",
      "Plan a journey")}
 """)
@@ -1052,7 +1052,7 @@ body=phero("Journeys", "Everything that happens<br>outside the house.",
 PAGES["about.html"] = dict(
 title="About — Shetty&rsquo;s Hospitality, Mangalore",
 desc="Why Shetty's Hospitality exists, how we work, and what we promise. A single point of contact for stays, celebrations, temples and travel in Mangalore.",
-body=phero("About us", "One contact.<br>Complete hospitality.",
+body=phero("About us", "One contact for<br>the whole trip.",
   "Mangalore&rsquo;s hospitality is fragmented. Good people, working separately, with nobody joining them up. "
   "Shetty&rsquo;s Hospitality is the join.",
   [("Founded by", "Rithesh Shetty"), ("Based in", "Mangalore"), ("Model", "Aggregator and operator")],
@@ -1060,7 +1060,7 @@ body=phero("About us", "One contact.<br>Complete hospitality.",
 <section class="section split">
   <div class="split__copy reveal">
     <p class="eyebrow">The problem</p>
-    <h2>Four vendors, four standards, one exhausted guest.</h2>
+    <h2>Booking a trip here means four separate vendors.</h2>
     <p>
       Travellers arriving in Mangalore juggle a booking site, a driver, a cook and a temple queue,
       with no coordination between any of them. Quality changes from one to the next, planning eats
@@ -1069,7 +1069,7 @@ body=phero("About us", "One contact.<br>Complete hospitality.",
   </div>
   <div class="split__copy reveal">
     <p class="eyebrow">The solution</p>
-    <h2>Someone whose job is the whole trip.</h2>
+    <h2>We take on the whole trip instead.</h2>
     <p>
       We handle the entire journey &mdash; the house, the cars, the temples, the table and the celebration
       &mdash; to one standard, under one plan. We onboard and manage local vendors, and we stay in the room
@@ -1082,7 +1082,7 @@ body=phero("About us", "One contact.<br>Complete hospitality.",
   <div class="band__in">
     <header class="section__head section__head--left reveal">
       <p class="eyebrow eyebrow--light">How we work</p>
-      <h2>Aggregator on the supply side. Operator on yours.</h2>
+      <h2>We manage the people we use.</h2>
     </header>
     <div class="incl reveal">
       <div><h4>Local network</h4><p>We onboard houses, drivers, cooks and staff in Mangalore, and keep working with the ones who hold the standard.</p></div>
@@ -1095,7 +1095,7 @@ body=phero("About us", "One contact.<br>Complete hospitality.",
 <section class="section">
   <header class="section__head reveal">
     <p class="eyebrow">How it works for you</p>
-    <h2>Four steps, and then it&rsquo;s handled.</h2>
+    <h2>Four steps from first call to arrival.</h2>
   </header>
   <ol class="steps">
     <li class="reveal"><span class="steps__n">01</span><h3>You call once</h3><p>Phone, WhatsApp or the enquiry form. One person picks it up and stays with you for the whole trip.</p></li>
@@ -1108,7 +1108,7 @@ body=phero("About us", "One contact.<br>Complete hospitality.",
 <section class="section split">
   <div class="split__copy reveal">
     <p class="eyebrow">Who we look after</p>
-    <h2>Mostly people coming home.</h2>
+    <h2>Who books with us.</h2>
     <ul class="ticks">
       <li>Families and NRIs returning to Mangalore</li>
       <li>Pilgrimage travellers</li>
@@ -1119,7 +1119,7 @@ body=phero("About us", "One contact.<br>Complete hospitality.",
   </div>
   <div class="split__copy reveal">
     <p class="eyebrow">Where we&rsquo;re going</p>
-    <h2>Deeper here first, then outward.</h2>
+    <h2>Mangalore first, the rest of the coast after.</h2>
     <p>
       The immediate work is depth in Mangalore: more houses, more trusted partners, tighter standards.
       After that, the same system in nearby cities &mdash; a structured vendor network is easier to
