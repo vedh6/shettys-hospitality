@@ -424,7 +424,9 @@ a{ color:inherit; }
   .houses{ grid-template-columns:repeat(2,1fr); }
 }
 @media (max-width:620px){
-  .bento2{ grid-template-columns:1fr; }
+  /* .bento2 goes single-column on phones - that rule lives with the other
+     bento breakpoints further down, because it has to come after the 860px
+     block or the two-column rule wins on equal specificity. */
 
   /* Phone only: the rotating panel carries two full paragraphs, which at the
      shared 16px runs long on a narrow column. Laptops keep the 16px. */
@@ -952,6 +954,19 @@ a{ color:inherit; }
   .tsplit{ grid-template-columns:1fr; gap:clamp(34px,6vw,48px); }
   .tsplit__visual{ width:100%; max-width:400px; }
   .tsplit__quote{ max-width:none; }
+}
+
+/* Phones: one card at a time. Two columns leaves each card 156px wide, which
+   is narrower than the -84px the copy panel rides up by, so the text covered
+   most of the photograph and every card ran 600px tall for a 115px picture. */
+@media (max-width:620px){
+  .bento2{ grid-template-columns:1fr; gap:clamp(16px,4vw,22px); }
+  .bento2 .bcard--span-2,.bento2 .bcard--span-3,.bento2 .bcard--span-4{ grid-column:1 / -1; }
+  /* A little wider than tall, so six stacked cards do not run the page long. */
+  .bcard__media img{ aspect-ratio:3/2; }
+  .bcard__body{ margin-top:-72px; padding:20px; }
+  .bcard__body h3{ font-size:1.18rem; }
+  .bcard__body p{ font-size:.92rem; line-height:1.58; }
 }
 
 /* ---- video player ---- */
