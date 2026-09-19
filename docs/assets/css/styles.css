@@ -6,9 +6,12 @@
 
 :root{
   /* The two typefaces are declared once, here. Swapping the pair is a
-     two-line change plus the Google Fonts link in build_site.py. */
-  --font-display: "Fraunces", Georgia, serif;
-  --font-body:    "Karla", ui-sans-serif, system-ui, sans-serif;
+     two-line change plus the Google Fonts link in build_site.py.
+     Previous pair, if this one is not kept:
+       --font-display: "Fraunces", Georgia, serif;
+       --font-body:    "Karla", ui-sans-serif, system-ui, sans-serif;  */
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body:    "Spectral", Georgia, serif;
 
   --ink:      #16261D;
   --ink-2:    #1E3326;
@@ -1262,3 +1265,26 @@ a{ color:inherit; }
   html{ scroll-behavior:auto; }
   .js .reveal{ opacity:1; transform:none; }
 }
+
+/* --------------------------------------------------------------------------
+   Corrections for the Cormorant Garamond / Spectral pair.
+
+   Cormorant has a far smaller x-height than Fraunces, so at the same pixel
+   size it reads a size or two down; font-size-adjust normalises the x-height
+   instead of making us retune every clamp() in the file. Cormorant is also
+   drawn light, so display weight goes up a step, and Garamonds want air where
+   Fraunces wanted tightening. Spectral ships static weights only, so the 550
+   used for the small uppercase labels has to resolve to a real one.
+
+   Everything the pair change touches is in this one block, so putting the old
+   pair back is this block plus the two tokens plus the Google Fonts link.
+   -------------------------------------------------------------------------- */
+h1,h2,h3,h4{
+  font-size-adjust:ex-height 0.46;
+  font-weight:500;
+  letter-spacing:-.004em;
+}
+body{ font-size-adjust:ex-height 0.46; }
+:root{ --w-label:600; }
+/* 350 was a Fraunces weight; Cormorant at 350 is too faint to carry a pull quote. */
+.tsplit__quote{ font-weight:400; }
