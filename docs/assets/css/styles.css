@@ -5,6 +5,11 @@
    ========================================================================== */
 
 :root{
+  /* The two typefaces are declared once, here. Swapping the pair is a
+     two-line change plus the Google Fonts link in build_site.py. */
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body:    "Karla", ui-sans-serif, system-ui, sans-serif;
+
   --ink:      #16261D;
   --ink-2:    #1E3326;
   --sage:     #5C745C;
@@ -51,7 +56,7 @@ body{
   margin:0;
   background:var(--paper);
   color:var(--ink);
-  font-family:"Karla", ui-sans-serif, system-ui, sans-serif;
+  font-family:var(--font-body);
   font-size:clamp(16px,1.02vw,17.5px);
   line-height:1.65;
   font-weight:400;
@@ -59,7 +64,7 @@ body{
 }
 img{ max-width:100%; display:block; }
 h1,h2,h3,h4{
-  font-family:"Fraunces", Georgia, serif;
+  font-family:var(--font-display);
   font-weight:400;
   font-variation-settings:"opsz" 72;
   line-height:1.06;
@@ -143,7 +148,7 @@ a{ color:inherit; }
 .brand__mark{ width:38px; height:38px; color:var(--sage); flex:none; }
 .brand__mark--sm{ width:30px; height:30px; }
 .brand__name{
-  display:block; font-family:"Fraunces",serif; font-size:1.18rem; font-weight:600;
+  display:block; font-family:var(--font-display); font-size:1.18rem; font-weight:600;
   letter-spacing:-.01em; line-height:1.1;
 }
 .brand__tag{
@@ -551,7 +556,7 @@ a{ color:inherit; }
 .mang__tabs button{
   appearance:none; background:none; border:0; cursor:pointer;
   padding:.85em clamp(14px,1.6vw,24px);
-  font-family:"Karla",sans-serif;
+  font-family:var(--font-body);
   font-size:var(--label-lg); letter-spacing:var(--track-label); font-weight:var(--w-label);
   text-transform:uppercase;
   color:color-mix(in srgb, var(--ink) 52%, var(--sage));
@@ -577,7 +582,7 @@ a{ color:inherit; }
   display:block; width:100%; aspect-ratio:21/9; object-fit:cover; border-radius:var(--r);
 }
 .mang__figure figcaption{
-  margin-top:.85rem; font-family:"Karla",sans-serif;
+  margin-top:.85rem; font-family:var(--font-body);
   font-size:var(--label); letter-spacing:var(--track-label); font-weight:var(--w-label);
   text-transform:uppercase; color:var(--sage);
 }
@@ -647,7 +652,7 @@ a{ color:inherit; }
 }
 .offer__copy{ min-width:0; }
 .offer__n{
-  margin:0 0 .9rem; font-family:"Karla",sans-serif;
+  margin:0 0 .9rem; font-family:var(--font-body);
   font-size:var(--label); letter-spacing:var(--track-label); font-weight:var(--w-label);
   text-transform:uppercase; color:var(--sage);
 }
@@ -667,7 +672,7 @@ a{ color:inherit; }
   font-size:1rem; line-height:1.55; padding:.95em 0 .95em 1.9em;
 }
 .offer__copy .ticks li b{
-  font-family:"Fraunces",serif; font-weight:600;
+  font-family:var(--font-display); font-weight:600;
   font-variation-settings:"opsz" 36; letter-spacing:-.006em;
   font-size:1.08em; color:var(--ink);
 }
@@ -676,7 +681,7 @@ a{ color:inherit; }
   margin:0 0 1.4rem; display:flex; flex-wrap:wrap; gap:.5rem;
 }
 .offer__meta span{
-  font-family:"Karla",sans-serif;
+  font-family:var(--font-body);
   font-size:var(--label); letter-spacing:var(--track-label); font-weight:var(--w-label);
   text-transform:uppercase; color:var(--sage-dp);
   border:1px solid var(--rule-strong); border-radius:999px;
@@ -740,7 +745,7 @@ a{ color:inherit; }
 .incl > div::before{
   counter-increment:incl;
   content:counter(incl, decimal-leading-zero);
-  font-family:"Fraunces",serif; font-weight:400;
+  font-family:var(--font-display); font-weight:400;
   font-variation-settings:"opsz" 96;
   font-size:clamp(2rem,4.2vw,3.5rem); line-height:.9;
   color:color-mix(in srgb, var(--brass) 78%, transparent);
@@ -762,7 +767,7 @@ a{ color:inherit; }
 }
 .occasions li span{
   display:block; margin-bottom:.55rem;
-  font-family:"Fraunces",serif; font-size:clamp(1.1rem,1.55vw,1.35rem); line-height:1.2;
+  font-family:var(--font-display); font-size:clamp(1.1rem,1.55vw,1.35rem); line-height:1.2;
 }
 .occasions li p{
   margin:0; font-size:.95rem; line-height:1.6;
@@ -829,7 +834,7 @@ a{ color:inherit; }
 .chips li{
   position:relative; padding:1.1em 0 1.1em 1.6em;
   border-bottom:1px solid var(--rule);
-  font-family:"Fraunces", Georgia, serif;
+  font-family:var(--font-display);
   font-size:clamp(1.05rem,1.45vw,1.24rem);
   line-height:1.35;
 }
@@ -843,7 +848,7 @@ a{ color:inherit; }
 .steps li{ position:relative; padding-top:2.4rem; border-top:2px solid var(--sage); }
 .steps__n{
   position:absolute; top:-.9rem; left:0; background:var(--paper); padding-right:12px;
-  font-family:"Fraunces",serif; font-size:.9rem; letter-spacing:.14em; color:var(--sage); font-weight:600;
+  font-family:var(--font-display); font-size:.9rem; letter-spacing:.14em; color:var(--sage); font-weight:600;
 }
 .steps h3{ font-size:1.3rem; margin-bottom:.6rem; }
 .steps p{ font-size:.93rem; color:color-mix(in srgb, var(--ink) 82%, var(--sage)); margin:0; }
@@ -854,7 +859,7 @@ a{ color:inherit; }
   padding:clamp(64px,8vw,110px) var(--gut); text-align:center;
 }
 .promise__words{
-  font-family:"Fraunces",serif; font-size:clamp(1.9rem,5.4vw,4rem); line-height:1.12;
+  font-family:var(--font-display); font-size:clamp(1.9rem,5.4vw,4rem); line-height:1.12;
   margin:0 0 1.6rem;
 }
 .promise__words span{ display:inline-block; margin:0 .18em; }
@@ -884,7 +889,7 @@ a{ color:inherit; }
 
 .tsplit__quote{
   margin:0 0 clamp(26px,3vw,38px); max-width:24ch;
-  font-family:"Fraunces", Georgia, serif; font-weight:350;
+  font-family:var(--font-display); font-weight:350;
   font-variation-settings:"opsz" 144;
   font-size:clamp(1.9rem,4.1vw,3.15rem); line-height:1.22; letter-spacing:-.028em;
   color:var(--ink); text-wrap:balance;
@@ -1105,11 +1110,11 @@ a{ color:inherit; }
   gap:clamp(28px,5vw,64px); align-items:flex-start; }
 .foot__brand{ display:flex; align-items:center; gap:12px; margin-right:auto; }
 .foot__brand .brand__mark{ color:var(--sage); }
-.foot__brand p{ margin:0; font-family:"Fraunces",serif; font-size:1rem; color:var(--paper); line-height:1.3; }
-.foot__brand span{ font-family:"Karla",sans-serif; font-size:.64rem; letter-spacing:.18em;
+.foot__brand p{ margin:0; font-family:var(--font-display); font-size:1rem; color:var(--paper); line-height:1.3; }
+.foot__brand span{ font-family:var(--font-body); font-size:.64rem; letter-spacing:.18em;
   text-transform:uppercase; color:var(--mist); }
 .foot__cols{ display:flex; gap:clamp(28px,5vw,72px); flex-wrap:wrap; }
-.foot__cols h4{ font-family:"Karla",sans-serif; font-size:.64rem; letter-spacing:.18em;
+.foot__cols h4{ font-family:var(--font-body); font-size:.64rem; letter-spacing:.18em;
   text-transform:uppercase; color:var(--mist); font-weight:var(--w-label); margin:0 0 .9em; }
 .foot__cols a{ display:block; text-decoration:none; font-size:.86rem; padding:.18em 0; }
 .foot__cols a:hover{ color:var(--paper); }
