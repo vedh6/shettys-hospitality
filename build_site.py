@@ -697,24 +697,27 @@ body=phero("Shetty&rsquo;s Stays", "Managed homestays<br>across Mangalore.",
     <div class="cone__grid">
       <div class="cone__copy reveal">
         <p class="eyebrow eyebrow--light">In development</p>
-        <h2>Small cabins, on land we take on with the owner.</h2>
+        <h2>Small cabins, coming to the coast.</h2>
         <p class="section__lede">
-          Compact A-frame cabins of three to four hundred square feet, each with a deck of its
-          own. We design them, build them and then run them ourselves &mdash; the land belongs
-          to a partner, the standard is the same one we keep in the houses.
+          Compact A-frame cabins on land we take on with the owner. We design them, build them
+          and run them ourselves.
         </p>
         <ul class="ticks ticks--light">
-          <li><b>300 to 400 sq ft</b> &mdash; private, with its own deck, built for two</li>
-          <li><b>A proper room</b> &mdash; king bed, good linen, air conditioning, hot water and an attached bathroom</li>
-          <li><b>Wi-Fi and a smart TV</b> &mdash; for the afternoons the rain does not let up</li>
-          <li><b>Coastal Karnataka and Chikkamagaluru</b> &mdash; the first sites we are looking at</li>
+          <li>300 to 400 sq ft, private, with a deck of its own</li>
+          <li>King bed, good linen, air conditioning, hot water, attached bathroom</li>
+          <li>First sites on the coast and around Chikkamagaluru</li>
         </ul>
         <p class="cone__note">
-          The first sites are still in development, and the picture here is a concept rather than
-          a finished build. If you own land on the coast or in the hills and think it might suit,
-          we would like to hear from you.
+          Still in development. The picture is a concept, not a finished build.
         </p>
-        <a class="link link--light" href="contact.html">Talk to us about a site <span aria-hidden="true">&rarr;</span></a>
+        <div class="cone__contact">
+          <p>For more on the cabins, or if you have land that might suit:</p>
+          <p class="cone__lines">
+            <a href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a>
+            <a href="https://wa.me/{PHONE_WA}" target="_blank" rel="noopener">WhatsApp</a>
+            <a href="mailto:{EMAIL}">{EMAIL}</a>
+          </p>
+        </div>
       </div>
       <figure class="cone__media reveal">
         <img src="assets/img/cone-houses.jpg?v={BUILD_ID}"

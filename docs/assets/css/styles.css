@@ -519,6 +519,19 @@ a{ color:inherit; }
   padding-left:1rem; max-width:34rem;
 }
 .ticks--light li b{ color:var(--paper); font-weight:600; }
+.cone__contact{ margin-top:1.5rem; }
+.cone__contact > p{
+  margin:0 0 .75rem; font-size:.95rem;
+  color:color-mix(in srgb, var(--paper) 72%, transparent);
+}
+.cone__lines{ display:flex; flex-wrap:wrap; gap:.55rem 1.5rem; margin:0; }
+.cone__lines a{
+  color:var(--paper); text-decoration:none;
+  border-bottom:1px solid color-mix(in srgb, var(--brass) 60%, transparent);
+  padding-bottom:2px; font-size:.97rem;
+  transition:color var(--d-tint) var(--ease-tint), border-color var(--d-tint) var(--ease-tint);
+}
+.cone__lines a:hover{ color:var(--brass); border-bottom-color:var(--brass); }
 .ticks--light li{ border-bottom-color:var(--rule-inv);
   color:color-mix(in srgb, var(--paper) 88%, transparent); }
 .ticks--light li::before{ background:var(--brass); }
