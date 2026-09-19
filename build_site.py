@@ -703,8 +703,11 @@ body=phero("Shetty&rsquo;s Stays", "Managed homestays<br>across Mangalore.",
           and run them ourselves.
         </p>
         <ul class="ticks ticks--light">
-          <li>300 to 400 sq ft, private, with a deck of its own</li>
-          <li>King bed, good linen, air conditioning, hot water, attached bathroom</li>
+          <li>300 to 400 sq ft, built for two, private, with a deck of its own</li>
+          <li>King bed, good linen, air conditioning, hot water and an attached bathroom</li>
+          <li>Wi-Fi and a smart TV, for the afternoons the rain does not let up</li>
+          <li>Turned over against a written checklist between stays, linen changed and kept separate</li>
+          <li>Fire extinguishers, first aid and emergency lighting. Cameras in the common areas only, never inside a cabin</li>
           <li>First sites on the coast and around Chikkamagaluru</li>
         </ul>
         <p class="cone__note">
