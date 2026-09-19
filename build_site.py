@@ -395,7 +395,7 @@ body=f"""
     </li>
     <li class="offer__row reveal">
       <figure class="offer__media">
-        <img src="assets/img/cards/hidden.jpg?v={BUILD_ID}" alt="A quiet local corner of coastal Mangalore" loading="lazy" />
+        <img src="assets/img/cards/hidden.jpg?v={BUILD_ID}" alt="First light at the Bunder fish market, the old port in Mangalore, the night&rsquo;s catch being sorted on the quay" loading="lazy" />
       </figure>
       <div class="offer__copy">
         <p class="offer__n">05</p>
