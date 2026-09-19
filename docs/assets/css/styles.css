@@ -512,6 +512,13 @@ a{ color:inherit; }
 .cone__media img{
   display:block; width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:var(--r);
 }
+.cone__note{
+  margin:1.4rem 0 1.6rem; font-size:.92rem; line-height:1.6;
+  color:color-mix(in srgb, var(--paper) 62%, transparent);
+  border-left:2px solid color-mix(in srgb, var(--brass) 55%, transparent);
+  padding-left:1rem; max-width:34rem;
+}
+.ticks--light li b{ color:var(--paper); font-weight:600; }
 .ticks--light li{ border-bottom-color:var(--rule-inv);
   color:color-mix(in srgb, var(--paper) 88%, transparent); }
 .ticks--light li::before{ background:var(--brass); }

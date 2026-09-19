@@ -696,23 +696,29 @@ body=phero("Shetty&rsquo;s Stays", "Managed homestays<br>across Mangalore.",
   <div class="band__in">
     <div class="cone__grid">
       <div class="cone__copy reveal">
-        <p class="eyebrow eyebrow--light">New line of work</p>
-        <h2>We build cone houses too.</h2>
+        <p class="eyebrow eyebrow--light">In development</p>
+        <h2>Small cabins, on land we take on with the owner.</h2>
         <p class="section__lede">
-          Cone houses &mdash; triangular A-frame cabins, framed and finished from scratch on
-          site. We build them for other people&rsquo;s land: layouts, resorts and estates that
-          want rooms up without putting up a block.
+          Compact A-frame cabins of three to four hundred square feet, each with a deck of its
+          own. We design them, build them and then run them ourselves &mdash; the land belongs
+          to a partner, the standard is the same one we keep in the houses.
         </p>
         <ul class="ticks ticks--light">
-          <li>Designed, framed and finished by our own team</li>
-          <li>Built on your site, in your layout or resort</li>
-          <li>Sizes, timeline and what a unit costs &mdash; to follow</li>
+          <li><b>300 to 400 sq ft</b> &mdash; private, with its own deck, built for two</li>
+          <li><b>A proper room</b> &mdash; king bed, good linen, air conditioning, hot water and an attached bathroom</li>
+          <li><b>Wi-Fi and a smart TV</b> &mdash; for the afternoons the rain does not let up</li>
+          <li><b>Coastal Karnataka and Chikkamagaluru</b> &mdash; the first sites we are looking at</li>
         </ul>
-        <a class="link link--light" href="contact.html">Ask about a build <span aria-hidden="true">&rarr;</span></a>
+        <p class="cone__note">
+          The first sites are still in development, and the picture here is a concept rather than
+          a finished build. If you own land on the coast or in the hills and think it might suit,
+          we would like to hear from you.
+        </p>
+        <a class="link link--light" href="contact.html">Talk to us about a site <span aria-hidden="true">&rarr;</span></a>
       </div>
       <figure class="cone__media reveal">
         <img src="assets/img/cone-houses.jpg?v={BUILD_ID}"
-             alt="A-frame cone house cabins in a palm clearing" loading="lazy" />
+             alt="A concept view of A-frame cabins in a palm clearing" loading="lazy" />
       </figure>
     </div>
   </div>
