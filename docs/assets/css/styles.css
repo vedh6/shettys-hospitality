@@ -1266,6 +1266,82 @@ a{ color:inherit; }
   .js .reveal{ opacity:1; transform:none; }
 }
 
+/* ---------- jump cards (Home, above the promise band) ---------- */
+/* Ported from a React/Tailwind component. What carries over is the behaviour:
+   hovering the row dims and softens every card, and the one under the cursor
+   comes back to full. Square corners rather than the original's rounded-xl,
+   because --r is 0 across this site, and the veil is mixed from --ink rather
+   than pure black so it sits in the palette.
+   Everything for this component, breakpoints included, is in this one block -
+   no rule for it lives anywhere else in the file. */
+.jump{
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:clamp(12px,1.4vw,20px);
+}
+.jcard{
+  position:relative; z-index:1; display:block; overflow:hidden;
+  height:clamp(300px,30vw,380px);
+  border-radius:var(--r); background:var(--ink);
+  text-decoration:none; color:var(--paper);
+  transition:transform var(--d-tint) var(--ease),
+             opacity var(--d-tint) var(--ease-tint),
+             filter var(--d-tint) var(--ease-tint);
+}
+.jcard__img{
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; object-position:center;
+}
+/* Dark at the foot, clear at the head, so the words hold against any picture. */
+.jcard__veil{
+  position:absolute; inset:0;
+  background:linear-gradient(to top,
+    color-mix(in srgb, var(--ink) 88%, transparent) 0%,
+    color-mix(in srgb, var(--ink) 46%, transparent) 42%,
+    transparent 78%);
+}
+.jcard__body{
+  position:absolute; left:0; right:0; bottom:0;
+  padding:clamp(20px,2.2vw,28px);
+}
+.jcard__sub{
+  display:block;
+  font-size:var(--label); letter-spacing:var(--track-label);
+  text-transform:uppercase; font-weight:var(--w-label);
+  color:color-mix(in srgb, var(--paper) 78%, transparent);
+}
+.jcard__title{
+  display:block; margin-top:.4rem;
+  font-family:var(--font-display); font-weight:500;
+  font-size:clamp(1.5rem,2.2vw,2rem); line-height:1.1;
+  letter-spacing:-.004em; color:var(--paper);
+}
+
+/* The effect, only where a real pointer can hover. On a touch screen there is
+   no un-hover, so a tapped card would stay scaled and its neighbours blurred. */
+@media (hover:hover){
+  .jump:hover .jcard{ transform:scale(.97); opacity:.6; filter:blur(2px); }
+  .jump:hover .jcard:hover{ transform:scale(1.04); opacity:1; filter:none; z-index:2; }
+}
+/* Keyboard gets the same highlight, and beats the dimming above it. */
+.jcard:focus-visible,.jump:hover .jcard:focus-visible{
+  transform:scale(1.04); opacity:1; filter:none; z-index:2;
+  outline:2px solid var(--brass); outline-offset:3px;
+}
+
+@media (max-width:760px){
+  .jump{ grid-template-columns:1fr; gap:clamp(14px,3.5vw,20px); }
+  .jcard{ height:clamp(200px,46vw,280px); }
+}
+/* Scale and blur are the whole effect, so under reduced motion there is
+   nothing worth keeping - drop it rather than snapping it on instantly. */
+@media (prefers-reduced-motion:reduce){
+  .jump:hover .jcard,.jump:hover .jcard:hover,
+  .jcard:focus-visible,.jump:hover .jcard:focus-visible{
+    transform:none; opacity:1; filter:none;
+  }
+  .jcard:focus-visible{ outline:2px solid var(--brass); outline-offset:3px; }
+}
+
 /* --------------------------------------------------------------------------
    Corrections for the Cormorant Garamond / Spectral pair.
 

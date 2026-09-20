@@ -436,6 +436,40 @@ body=f"""
   </p>
 </section>
 
+<section class="section">
+  <header class="section__head reveal">
+    <p class="eyebrow">Where to next</p>
+    <h2>Read about each one in full.</h2>
+  </header>
+
+  <nav class="jump reveal" aria-label="The three main pages">
+    <a class="jcard" href="stays.html">
+      <img class="jcard__img" src="assets/img/cards/stays.jpg?v={BUILD_ID}" alt="" loading="lazy" />
+      <span class="jcard__veil" aria-hidden="true"></span>
+      <span class="jcard__body">
+        <span class="jcard__sub">Homestays and service apartments</span>
+        <span class="jcard__title">Stays</span>
+      </span>
+    </a>
+    <a class="jcard" href="celebrations.html">
+      <img class="jcard__img" src="assets/img/cards/celebrations.jpg?v={BUILD_ID}" alt="" loading="lazy" />
+      <span class="jcard__veil" aria-hidden="true"></span>
+      <span class="jcard__body">
+        <span class="jcard__sub">Functions hosted at home</span>
+        <span class="jcard__title">Celebrations</span>
+      </span>
+    </a>
+    <a class="jcard" href="journeys.html">
+      <img class="jcard__img" src="assets/img/cards/temples.jpg?v={BUILD_ID}" alt="" loading="lazy" />
+      <span class="jcard__veil" aria-hidden="true"></span>
+      <span class="jcard__body">
+        <span class="jcard__sub">Temples, rides and the coast</span>
+        <span class="jcard__title">Journeys</span>
+      </span>
+    </a>
+  </nav>
+</section>
+
 <section class="promise">
   <p class="eyebrow eyebrow--light">Our promise</p>
   <p class="promise__words reveal"><span>Reliable.</span> <span>Coordinated.</span> <span>Complete.</span></p>
