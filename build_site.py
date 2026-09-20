@@ -554,7 +554,10 @@ body=f"""
     </div>
 
     <div class="tsplit__visual">
-    <figure class="vplayer" data-vplayer style="--poster:url(assets/img/review-poster.jpg?v={BUILD_ID})">
+    <!-- The path is relative to styles.css, not to this page: a url() carried in a custom
+     property resolves against the stylesheet that USES it, and the only consumer is
+     .vplayer::before. Written page-relative it resolved to /assets/css/assets/img/ and 404d. -->
+    <figure class="vplayer" data-vplayer style="--poster:url(../img/review-poster.jpg?v={BUILD_ID})">
     <video class="vplayer__video" playsinline preload="metadata"
     poster="assets/img/review-poster.jpg?v={BUILD_ID}"
     aria-label="A guest talking about their stay">
