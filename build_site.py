@@ -1055,13 +1055,14 @@ body=phero("Journeys", "Temples, cars<br>and days out.",
         Drivers we know by name, cars we have sat in, and no surprise at the end of the day.
       </p>
     </header>
-    <div class="incl reveal">
+    <div class="incl incl--pics reveal">
       <div>
         <h4>Airport transfers</h4>
         <p>Mangalore International, at any hour. The driver&rsquo;s name, number and vehicle
         reach you the night before, so nobody is scanning a crowd at three in the morning.
         We watch the flight rather than the clock &mdash; if you land two hours late, the car
         is still there and the fare is still the one we quoted.</p>
+        <img class="incl__pic" src="assets/img/rides/airport.jpg?v={BUILD_ID}" alt="A driver loading a suitcase into a waiting car at an airport kerb at night" loading="lazy" />
       </div>
       <div>
         <h4>Day cars</h4>
@@ -1069,6 +1070,7 @@ body=phero("Journeys", "Temples, cars<br>and days out.",
         Sedans for two or three, SUVs for a family with luggage, tempo travellers for a group
         travelling together. The driver stays with you between stops, so there is no rebooking
         after lunch and no waiting at a temple gate for something to turn up.</p>
+        <img class="incl__pic" src="assets/img/rides/daycar.jpg?v={BUILD_ID}" alt="A car and driver waiting in the shade on a quiet temple road" loading="lazy" />
       </div>
       <div>
         <h4>Outstation</h4>
@@ -1076,6 +1078,7 @@ body=phero("Journeys", "Temples, cars<br>and days out.",
         rather than per kilometre. Tolls, parking and the driver&rsquo;s allowance are inside the
         number we give you, and on overnight runs so is his stay. The figure you agree at the
         start is the figure at the end.</p>
+        <img class="incl__pic" src="assets/img/rides/outstation.jpg?v={BUILD_ID}" alt="A car pulled in at a hill viewpoint above the coast, ridges going blue with distance" loading="lazy" />
       </div>
     </div>
   </div>

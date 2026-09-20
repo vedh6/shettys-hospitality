@@ -789,6 +789,19 @@ a{ color:inherit; }
 .incl p{ font-size:clamp(1rem,1.15vw,1.08rem); line-height:1.65;
   color:color-mix(in srgb, var(--paper) 78%, transparent); margin:0; }
 
+/* A fourth column for a picture, on the Journeys rows only. About and
+   Celebrations share .incl and have no pictures, so this is a modifier rather
+   than a change to the base - a fourth track there would leave a trailing gap
+   with nothing in it. */
+.incl--pics > div{
+  grid-template-columns:auto minmax(0,.86fr) minmax(0,1.9fr) clamp(116px,13vw,180px);
+}
+.incl__pic{
+  width:100%; aspect-ratio:4/3; object-fit:cover;
+  border-radius:var(--r); border:1px solid var(--rule-inv);
+}
+
+
 /* ---------- occasions ---------- */
 .occasions{ list-style:none; margin:0; padding:0;
   display:grid; grid-template-columns:repeat(3,1fr); gap:0;
@@ -1285,6 +1298,10 @@ a{ color:inherit; }
   /* numeral above, then word, then copy */
   .incl > div{ grid-template-columns:1fr; gap:.5rem; }
   .incl > div::before{ font-size:2rem; }
+  /* Stacked, the picture lands under the copy. Wide and short so a row is
+     still a row rather than three screens of car. */
+  .incl--pics > div{ grid-template-columns:1fr; }
+  .incl__pic{ aspect-ratio:16/9; margin-top:.5rem; }
   .phero__meta{ grid-template-columns:1fr; }
   .phero__meta > div{ border-right:0; width:100%; padding:14px 0 0; }
   .phero__meta > div + div{ padding-left:0; }
