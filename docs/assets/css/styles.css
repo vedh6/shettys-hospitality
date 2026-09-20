@@ -465,29 +465,42 @@ a{ color:inherit; }
   color:color-mix(in srgb, var(--ink) 82%, var(--sage));
 }
 
-.bento__cell--hero{
+/* The lead cell carries the headline claim ON the housekeeping photograph
+   rather than beside it. As two cells it said one thing twice and, stacked on a
+   phone, took two full blocks to do it. Same construction as the .jcard row on
+   the Home page: image, gradient veil, words at the foot. */
+.bento__cell--lead{
   grid-column:span 2; grid-row:span 2;
+  position:relative; overflow:hidden; padding:0;
   background:var(--ink); color:var(--paper);
+  min-height:clamp(300px,30vw,400px);
 }
-.bento__cell--hero:hover{ background:var(--ink); }
-.bento__cell--hero h3{
+.bento__cell--lead:hover{ background:var(--ink); }
+.bento__img{
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; display:block;
+}
+/* The photograph is bright white linen, so the foot has to go genuinely dark
+   for the words to hold. */
+.bento__veil{
+  position:absolute; inset:0;
+  background:linear-gradient(to top,
+    color-mix(in srgb, var(--ink) 93%, transparent) 0%,
+    color-mix(in srgb, var(--ink) 66%, transparent) 42%,
+    color-mix(in srgb, var(--ink) 18%, transparent) 100%);
+}
+.bento__lead{
+  position:relative; z-index:2; margin-top:auto;
+  padding:clamp(22px,2.4vw,34px);
+}
+.bento__lead h3{
   font-size:clamp(1.5rem,2.3vw,2.05rem); font-variation-settings:"opsz" 72;
-  letter-spacing:-.02em; color:var(--paper);
+  letter-spacing:-.02em; color:var(--paper); margin:0;
 }
-.bento__cell--hero p{
-  font-size:.95rem; max-width:34ch;
-  color:color-mix(in srgb, var(--paper) 78%, transparent);
+.bento__lead p{
+  font-size:.95rem; max-width:34ch; margin:.55rem 0 0;
+  color:color-mix(in srgb, var(--paper) 82%, transparent);
 }
-
-.bento__cell--img{
-  grid-column:span 2; grid-row:span 2; padding:0; overflow:hidden; background:var(--ink);
-}
-/* A half-height photo cell. The full 2x2 gave a bedroom the same weight as the
-   headline claim next to it; this is a detail shot, so it takes one row and the
-   text cells flow up into the space it leaves. */
-.bento__cell--img-sm{ grid-row:span 1; }
-.bento__cell--img-sm img{ aspect-ratio:16/9; height:100%; }
-.bento__cell--img img{ width:100%; height:100%; object-fit:cover; display:block; }
 
 /* The five that follow: wide, wide, narrow-narrow, then full width.
    nth-child, not nth-of-type: the photo cell is a <figure> and the rest are
@@ -495,29 +508,35 @@ a{ color:inherit; }
    The last one spans all four because the photo above takes one row now - at
    span 2 it left the bottom-right quarter of the grid empty. Only the Stays
    page uses .bento, so these counts describe one known grid. */
-.bento__cell:nth-child(3),
-.bento__cell:nth-child(4){ grid-column:span 2; }
-.bento__cell:nth-child(7){ grid-column:span 4; }
+/* Six cells now that the headline and the photograph are one. Four columns:
+     row 1  [ lead 2x2 ][ fresh linen 2 ]
+     row 2  [          ][ stocked kitchen 2 ]
+     row 3  [ wifi 1 ][ parking 1 ][ airport pickup 2 ]  */
+.bento__cell:nth-child(2),
+.bento__cell:nth-child(3){ grid-column:span 2; }
+.bento__cell:nth-child(6){ grid-column:span 2; }
 
 .bento__after{ margin:clamp(26px,3vw,40px) 0 0; }
 
 @media (max-width:1000px){
   .bento{ grid-template-columns:repeat(2,1fr); }
-  .bento__cell--hero,.bento__cell--img{ grid-column:span 2; grid-row:span 1; }
-  .bento__cell--img{ aspect-ratio:16/9; }
-  .bento__cell:nth-child(3),
-  .bento__cell:nth-child(4){ grid-column:span 1; }
-  /* Two columns, seven cells: the last goes full width so the grid does not
+  /* Full width, one row: a picture with a headline on it. */
+  .bento__cell--lead{ grid-column:span 2; grid-row:span 1; aspect-ratio:16/9; min-height:0; }
+  .bento__cell:nth-child(2),
+  .bento__cell:nth-child(3){ grid-column:span 1; }
+  /* Two columns, six cells: the last goes full width so the grid does not
      finish on a hole. */
-  .bento__cell:nth-child(7){ grid-column:span 2; }
+  .bento__cell:nth-child(6){ grid-column:span 2; }
 }
 @media (max-width:620px){
   .bento{ grid-template-columns:1fr; }
   .bento__cell,
-  .bento__cell--hero,.bento__cell--img,
-    .bento__cell:nth-child(3),
-  .bento__cell:nth-child(4),
-  .bento__cell:nth-child(7){ grid-column:span 1; }
+  .bento__cell--lead,
+  .bento__cell:nth-child(2),
+  .bento__cell:nth-child(3),
+  .bento__cell:nth-child(6){ grid-column:span 1; }
+  /* Taller than 16/9 on a phone, or the words crowd the picture out. */
+  .bento__cell--lead{ aspect-ratio:4/5; }
 }
 
 /* ---------- cone houses (Home) ---------- */

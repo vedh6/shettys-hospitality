@@ -699,14 +699,14 @@ body=phero("Shetty&rsquo;s Stays", "Managed homestays<br>across Mangalore.",
   </header>
 
   <div class="bento reveal">
-    <div class="bento__cell bento__cell--hero">
-      <h3>Cleaned and inspected before every arrival</h3>
-      <p>Room by room, against the same written checklist every time &mdash; by someone who has
-      been in the house before.</p>
-    </div>
-
-    <figure class="bento__cell bento__cell--img bento__cell--img-sm">
-      <img src="assets/img/pages/stays-housekeeping.jpg?v={BUILD_ID}" alt="Housekeeping drawing a fresh sheet taut across a bed, folded towels waiting on a stool beside it" loading="lazy" />
+    <figure class="bento__cell bento__cell--lead">
+      <img class="bento__img" src="assets/img/pages/stays-housekeeping.jpg?v={BUILD_ID}" alt="Housekeeping drawing a fresh sheet taut across a bed, folded towels waiting on a stool beside it" loading="lazy" />
+      <span class="bento__veil" aria-hidden="true"></span>
+      <figcaption class="bento__lead">
+        <h3>Cleaned and inspected before every arrival</h3>
+        <p>Room by room, against the same written checklist every time &mdash; by someone who has
+        been in the house before.</p>
+      </figcaption>
     </figure>
 
     <div class="bento__cell">
