@@ -325,18 +325,18 @@
     // section or anything inside has focus, which matters more here than on
     // the other panels: these paragraphs take far longer than 4s to read, so
     // hovering is what lets you actually finish one.
-    // Three paces. The very first change after the section comes into view is
-    // quick, at 2s, so a reader sees straight away that there is more than one
-    // picture here. Everything after that is 4s, including the wrap back round
+    // Three paces. The first change after the section comes into view is 3.5s -
+    // long enough to take the opening picture in, short enough to show there is
+    // more than one. Everything after that is 4s, including the wrap back round
     // to the first tab. Reaching for an arrow or a dot is a sign of actually
     // reading, so that drops it to 5.5s for the rest of the visit.
-    var FIRST = 2000, BASE = 4000, SLOW = 5500;
+    var FIRST = 3500, BASE = 4000, SLOW = 5500;
     var everyMs = FIRST;
     var firstDone = false, slowed = false;
 
     function slowDown() { slowed = true; everyMs = SLOW; }
 
-    // Wraps advance() so the one-off 2s is spent and the timer re-armed at 4s.
+    // Wraps advance() so the one-off 3.5s is spent and the timer re-armed at 4s.
     function pacedAdvance() {
       advance();
       if (!firstDone) {
