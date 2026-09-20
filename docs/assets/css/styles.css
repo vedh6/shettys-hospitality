@@ -482,14 +482,22 @@ a{ color:inherit; }
 .bento__cell--img{
   grid-column:span 2; grid-row:span 2; padding:0; overflow:hidden; background:var(--ink);
 }
+/* A half-height photo cell. The full 2x2 gave a bedroom the same weight as the
+   headline claim next to it; this is a detail shot, so it takes one row and the
+   text cells flow up into the space it leaves. */
+.bento__cell--img-sm{ grid-row:span 1; }
+.bento__cell--img-sm img{ aspect-ratio:16/9; height:100%; }
 .bento__cell--img img{ width:100%; height:100%; object-fit:cover; display:block; }
 
-/* the five that follow: two wide, then narrow-narrow-wide */
-/* nth-child, not nth-of-type: the photo cell is a <figure> and the rest are
-   <div>, so nth-of-type counts them in two separate sequences. */
+/* The five that follow: wide, wide, narrow-narrow, then full width.
+   nth-child, not nth-of-type: the photo cell is a <figure> and the rest are
+   <div>, so nth-of-type counts them in two separate sequences.
+   The last one spans all four because the photo above takes one row now - at
+   span 2 it left the bottom-right quarter of the grid empty. Only the Stays
+   page uses .bento, so these counts describe one known grid. */
 .bento__cell:nth-child(3),
-.bento__cell:nth-child(4),
-.bento__cell:nth-child(7){ grid-column:span 2; }
+.bento__cell:nth-child(4){ grid-column:span 2; }
+.bento__cell:nth-child(7){ grid-column:span 4; }
 
 .bento__after{ margin:clamp(26px,3vw,40px) 0 0; }
 
@@ -497,9 +505,11 @@ a{ color:inherit; }
   .bento{ grid-template-columns:repeat(2,1fr); }
   .bento__cell--hero,.bento__cell--img{ grid-column:span 2; grid-row:span 1; }
   .bento__cell--img{ aspect-ratio:16/9; }
-    .bento__cell:nth-child(3),
-  .bento__cell:nth-child(4),
-  .bento__cell:nth-child(7){ grid-column:span 1; }
+  .bento__cell:nth-child(3),
+  .bento__cell:nth-child(4){ grid-column:span 1; }
+  /* Two columns, seven cells: the last goes full width so the grid does not
+     finish on a hole. */
+  .bento__cell:nth-child(7){ grid-column:span 2; }
 }
 @media (max-width:620px){
   .bento{ grid-template-columns:1fr; }
@@ -1234,13 +1244,22 @@ a{ color:inherit; }
   .steps{ grid-template-columns:repeat(2,1fr); row-gap:44px; }
 }
 @media (max-width:860px){
+  .split,.plan__grid,.phero__in{ grid-template-columns:1fr; }
+  .phero__figure{ margin-top:36px; }
+  .split__media{ order:2; margin-bottom:34px; }
+}
+
+/* The nav collapses at 1100px, not 860. Measured in the browser: with six
+   links the row needs about 1100px before the wordmark and the Plan a stay
+   button stop wrapping - at 1010 the nav was 108px tall with the wordmark on
+   three lines beside a two-line button, and at 1120 it is 74px with both on
+   one. The drawer is better than the wrapped version. Kept separate from the
+   860 block above, which governs layout rules that should not move with it. */
+@media (max-width:1100px){
   .nav__links{ display:none; }
   .nav__toggle{ display:flex; }
   .nav .btn--sm{ display:none; }
   .nav__drawer:not([hidden]){ display:flex; }
-  .split,.plan__grid,.phero__in{ grid-template-columns:1fr; }
-  .phero__figure{ margin-top:36px; }
-  .split__media{ order:2; margin-bottom:34px; }
 }
 @media (max-width:620px){
   .cards,.cards--3,.occasions,.steps,.chips{ grid-template-columns:1fr; }
@@ -1275,7 +1294,7 @@ a{ color:inherit; }
    Everything for this component, breakpoints included, is in this one block -
    no rule for it lives anywhere else in the file. */
 .jump{
-  display:grid; grid-template-columns:repeat(3,1fr);
+  display:grid; grid-template-columns:repeat(4,1fr);
   gap:clamp(12px,1.4vw,20px);
 }
 .jcard{
@@ -1328,9 +1347,28 @@ a{ color:inherit; }
   outline:2px solid var(--brass); outline-offset:3px;
 }
 
-@media (max-width:760px){
-  .jump{ grid-template-columns:1fr; gap:clamp(14px,3.5vw,20px); }
-  .jcard{ height:clamp(200px,46vw,280px); }
+@media (max-width:1000px){
+  .jump{ grid-template-columns:repeat(2,1fr); }
+}
+/* Phones get two by two rather than a stack. Four full-width cards ran most of
+   a screen each, which is a lot of scrolling to find out there are only four
+   things. At this size all four are in view at once, so the choice is the whole
+   picture rather than something you discover on the way down. The subtitle goes:
+   at ~150px wide it wrapped to four lines, and the titles are the same four
+   words as the nav, so it was not carrying anything. */
+@media (max-width:620px){
+  .jump{ gap:10px; }
+  .jcard{ height:clamp(132px,38vw,168px); }
+  .jcard__sub{ display:none; }
+  .jcard__body{ padding:14px; }
+  .jcard__title{ margin-top:0; font-size:1.12rem; }
+  /* Less picture is showing, so the words need a firmer ground under them. */
+  .jcard__veil{
+    background:linear-gradient(to top,
+      color-mix(in srgb, var(--ink) 92%, transparent) 0%,
+      color-mix(in srgb, var(--ink) 52%, transparent) 52%,
+      transparent 92%);
+  }
 }
 /* Scale and blur are the whole effect, so under reduced motion there is
    nothing worth keeping - drop it rather than snapping it on instantly. */

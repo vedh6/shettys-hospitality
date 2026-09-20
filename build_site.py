@@ -20,6 +20,7 @@ NAV = [
     ("stays.html",        "Stays"),
     ("celebrations.html", "Celebrations"),
     ("journeys.html",     "Journeys"),
+    ("manpower.html",     "Manpower"),
     ("about.html",        "About"),
 ]
 
@@ -263,8 +264,8 @@ body=f"""
       </div>
       <div class="mang__panel is-current" id="mang-coast" role="tabpanel" data-mangpanel>
         <figure class="mang__figure">
-          <img src="assets/img/tannirbhavi.jpg?v={BUILD_ID}" alt="Surf and casuarinas on the sand at Tannirbhavi beach, Mangalore" fetchpriority="high" />
-          <figcaption>Tannirbhavi &mdash; a ferry ride across the river, and the sand runs for miles</figcaption>
+          <img src="assets/img/coast-road.jpg?v={BUILD_ID}" alt="The coast highway from the air, the Arabian Sea and its breakwaters on one side and a river on the other" fetchpriority="high" />
+          <figcaption>The coast road &mdash; the sea on one side, a river on the other, most of the way up</figcaption>
         </figure>
         <p class="mang__text">Panambur and Tannirbhavi are the ones everybody knows, and Tannirbhavi is best reached the old way, on the ferry across the Gurupura rather than the long road round. Sasihithlu, where two rivers meet the sea, and Someshwara, where the rocks begin, are quieter and better. Surathkal has the lighthouse; Ullal has the longest stretch of empty sand. Between June and September the sea here is not for swimming and nobody local pretends otherwise — but the light on a monsoon evening is the best of the year. The sunset is the same at all of them; the crowd is not.</p>
       </div>
@@ -442,9 +443,9 @@ body=f"""
     <h2>Read about each one in full.</h2>
   </header>
 
-  <nav class="jump reveal" aria-label="The three main pages">
+  <nav class="jump reveal" aria-label="The four service pages">
     <a class="jcard" href="stays.html">
-      <img class="jcard__img" src="assets/img/cards/stays.jpg?v={BUILD_ID}" alt="" loading="lazy" />
+      <img class="jcard__img" src="assets/img/cards/stays-card.jpg?v={BUILD_ID}" alt="" loading="lazy" />
       <span class="jcard__veil" aria-hidden="true"></span>
       <span class="jcard__body">
         <span class="jcard__sub">Homestays and service apartments</span>
@@ -452,7 +453,7 @@ body=f"""
       </span>
     </a>
     <a class="jcard" href="celebrations.html">
-      <img class="jcard__img" src="assets/img/cards/celebrations.jpg?v={BUILD_ID}" alt="" loading="lazy" />
+      <img class="jcard__img" src="assets/img/cards/celebrations-card.jpg?v={BUILD_ID}" alt="" loading="lazy" />
       <span class="jcard__veil" aria-hidden="true"></span>
       <span class="jcard__body">
         <span class="jcard__sub">Functions hosted at home</span>
@@ -460,11 +461,19 @@ body=f"""
       </span>
     </a>
     <a class="jcard" href="journeys.html">
-      <img class="jcard__img" src="assets/img/cards/temples.jpg?v={BUILD_ID}" alt="" loading="lazy" />
+      <img class="jcard__img" src="assets/img/cards/journeys-card.jpg?v={BUILD_ID}" alt="" loading="lazy" />
       <span class="jcard__veil" aria-hidden="true"></span>
       <span class="jcard__body">
-        <span class="jcard__sub">Temples, rides and the coast</span>
+        <span class="jcard__sub">Temples, cars and days out</span>
         <span class="jcard__title">Journeys</span>
+      </span>
+    </a>
+    <a class="jcard" href="manpower.html">
+      <img class="jcard__img" src="assets/img/cards/manpower-card.jpg?v={BUILD_ID}" alt="" loading="lazy" />
+      <span class="jcard__veil" aria-hidden="true"></span>
+      <span class="jcard__body">
+        <span class="jcard__sub">Cooks, servers and setup crews</span>
+        <span class="jcard__title">Manpower</span>
       </span>
     </a>
   </nav>
@@ -696,8 +705,8 @@ body=phero("Shetty&rsquo;s Stays", "Managed homestays<br>across Mangalore.",
       been in the house before.</p>
     </div>
 
-    <figure class="bento__cell bento__cell--img">
-      <img src="assets/img/pages/stays.jpg?v={BUILD_ID}" alt="A bedroom in one of our managed homes" loading="lazy" />
+    <figure class="bento__cell bento__cell--img bento__cell--img-sm">
+      <img src="assets/img/pages/stays-housekeeping.jpg?v={BUILD_ID}" alt="Housekeeping drawing a fresh sheet taut across a bed, folded towels waiting on a stool beside it" loading="lazy" />
     </figure>
 
     <div class="bento__cell">
@@ -1095,6 +1104,89 @@ body=phero("Journeys", "Temples, cars<br>and days out.",
 {cta("Plan the whole trip with us.",
      "Tell us who&rsquo;s travelling and what matters most. We&rsquo;ll sequence the temples, the cars and the free afternoons.",
      "Plan a journey")}
+""")
+
+# ------------------------------------------------------------------ MANPOWER
+# Everything on this page comes from what service 06 on the Home page already
+# claims - cooks, waiters, cleaners, decor crews, the team that clears after,
+# for your own event or someone else's, rates to follow. No rates, no headcounts
+# and no guarantees have been invented here; Rithesh has not given us any.
+PAGES["manpower.html"] = dict(
+title="Staff by the day &mdash; cooks, servers and setup crews | Shetty&rsquo;s Hospitality",
+desc="Cooks, waiters, cleaners, decorators and setup crews in Mangalore, booked by the day. The same people we use on our own events.",
+body=phero("Staff, by the day", "The people, without<br>the whole event.",
+  "The same cooks, servers and decorators we use on our own functions, available on yours &mdash; "
+  "whether you are running the day yourself or just short of hands.",
+  [("Roles", "Kitchen &middot; service &middot; decor &middot; clearing"),
+   ("Booked by", "The day"),
+   ("Rates", "To follow")],
+  image="manpower.jpg",
+  alt="Service staff waiting along the veranda of a heritage house in the last half hour before a private dinner",
+  variant="below") + f"""
+<section class="section">
+  <header class="section__head reveal">
+    <p class="eyebrow">Who you can book</p>
+    <h2>Three kinds of hands.</h2>
+    <p class="section__lede">
+      Take one of them or all three. Most people who call us have the house and the guest list
+      already, and are short of the part that actually runs the day.
+    </p>
+  </header>
+  <ul class="cards cards--3">
+    <li class="card reveal">
+      <h3>Kitchen</h3>
+      <p>Cooks, and the hands that work under them. These are the same people we put on our own
+      functions, so what comes out of your kitchen is what we would have served ourselves.</p>
+      <p class="card__meta">By the day</p>
+    </li>
+    <li class="card reveal">
+      <h3>Service</h3>
+      <p>Waiters for the tables and cleaners for during and after. Enough of them that nobody
+      queues for food and nobody ends up clearing their own plate.</p>
+      <p class="card__meta">By the day</p>
+    </li>
+    <li class="card reveal">
+      <h3>Decor and setup</h3>
+      <p>The crews who put up the pandal, the lights and the flowers &mdash; and the team that
+      takes all of it down again the next morning.</p>
+      <p class="card__meta">By the day</p>
+    </li>
+  </ul>
+</section>
+
+<section class="section">
+  <header class="section__head section__head--left reveal">
+    <p class="eyebrow">How it works</p>
+    <h2>Four steps, one phone number.</h2>
+  </header>
+  <ol class="steps">
+    <li class="reveal"><span class="steps__n">01</span><h3>You tell us the day</h3><p>The date, what the function is, roughly how many people, and whose house or hall it is in.</p></li>
+    <li class="reveal"><span class="steps__n">02</span><h3>We tell you what it needs</h3><p>How many in the kitchen, how many on the floor, how many for setup. If you already know, we will just send who you asked for.</p></li>
+    <li class="reveal"><span class="steps__n">03</span><h3>They arrive briefed</h3><p>They know the house, the timings and what the day is before they get there, so you are not explaining it at the gate.</p></li>
+    <li class="reveal"><span class="steps__n">04</span><h3>And they clear after</h3><p>The part everyone forgets to book. Rentals back, rubbish out, kitchen returned to how you had it.</p></li>
+  </ol>
+</section>
+
+<section class="section band">
+  <div class="band__in reveal">
+    <p class="eyebrow eyebrow--light">Before you ask</p>
+    <h2>On what it costs.</h2>
+    <p class="section__lede">
+      A day depends on how many people, for how long, and how far out of town the house is, so
+      there is no price list to put up. Tell us the day and we will give you the number for it
+      before you commit to anything.
+    </p>
+    <p class="cone__lines">
+      <a href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a>
+      <a href="https://wa.me/{PHONE_WA}" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="mailto:{EMAIL}">{EMAIL}</a>
+    </p>
+  </div>
+</section>
+
+{cta("Tell us what the day needs.",
+     "The date, the rough count and what you are already covering yourselves. We will come back with who we would send and what it costs.",
+     "Ask about staff")}
 """)
 
 # ------------------------------------------------------------------ ABOUT
