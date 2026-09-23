@@ -490,72 +490,73 @@ body=f"""
     <div class="tsplit__copy">
 
       <article class="tsplit__item is-active" data-testimonial>
-        <p class="tsplit__tag"><span class="tsplit__hr" aria-hidden="true"></span>A stay</p>
+        <p class="tsplit__tag"><span class="tsplit__hr" aria-hidden="true"></span>In every house</p>
 
         <blockquote class="tsplit__quote">
-          <span class="tsplit__brk" aria-hidden="true">[</span>A family who stayed here. Their own words, printed whole.<span class="tsplit__brk" aria-hidden="true">]</span>
+          Cleaned and checked against the same written list. Every arrival, not most of them.
         </blockquote>
 
         <div class="tsplit__by">
           <span class="tsplit__hr" aria-hidden="true"></span>
           <div>
-            <p class="tsplit__name">Name to follow</p>
-            <p class="tsplit__role">Four nights, Kadri &middot; month to follow</p>
+            <p class="tsplit__name">By someone who has been in the house before</p>
+            <p class="tsplit__role">Linen changed and kept separate between stays</p>
           </div>
         </div>
       </article>
 
       <article class="tsplit__item" data-testimonial>
-        <p class="tsplit__tag"><span class="tsplit__hr" aria-hidden="true"></span>A celebration</p>
+        <p class="tsplit__tag"><span class="tsplit__hr" aria-hidden="true"></span>Your privacy</p>
 
         <blockquote class="tsplit__quote">
-          <span class="tsplit__brk" aria-hidden="true">[</span>Whoever hosted the evening. What they said once it was over.<span class="tsplit__brk" aria-hidden="true">]</span>
+          Cameras in the common areas only. Never inside a room.
         </blockquote>
 
         <div class="tsplit__by">
           <span class="tsplit__hr" aria-hidden="true"></span>
           <div>
-            <p class="tsplit__name">Name to follow</p>
-            <p class="tsplit__role">House warming, 60 guests &middot; month to follow</p>
+            <p class="tsplit__name">The same rule in every property we run</p>
+            <p class="tsplit__role">Fire extinguishers, first aid and emergency lighting on site</p>
           </div>
         </div>
       </article>
 
       <article class="tsplit__item" data-testimonial>
-        <p class="tsplit__tag"><span class="tsplit__hr" aria-hidden="true"></span>A temple journey</p>
+        <p class="tsplit__tag"><span class="tsplit__hr" aria-hidden="true"></span>On the road</p>
 
         <blockquote class="tsplit__quote">
-          <span class="tsplit__brk" aria-hidden="true">[</span>The people who travelled. Unedited, as they sent it.<span class="tsplit__brk" aria-hidden="true">]</span>
+          The figure you agree at the start is the figure at the end.
         </blockquote>
 
         <div class="tsplit__by">
           <span class="tsplit__hr" aria-hidden="true"></span>
           <div>
-            <p class="tsplit__name">Name to follow</p>
-            <p class="tsplit__role">Dharmasthala and Kukke &middot; month to follow</p>
+            <p class="tsplit__name">Tolls, parking and the driver&rsquo;s allowance are inside it</p>
+            <p class="tsplit__role">On overnight runs, so is his stay</p>
           </div>
         </div>
       </article>
 
       <article class="tsplit__item" data-testimonial>
-        <p class="tsplit__tag"><span class="tsplit__hr" aria-hidden="true"></span>A homecoming</p>
+        <p class="tsplit__tag"><span class="tsplit__hr" aria-hidden="true"></span>One number</p>
 
         <blockquote class="tsplit__quote">
-          <span class="tsplit__brk" aria-hidden="true">[</span>A family back for the season. Their account of the month.<span class="tsplit__brk" aria-hidden="true">]</span>
+          One person arranges all of it, and stays on the phone from the first call to the last drop.
         </blockquote>
 
         <div class="tsplit__by">
           <span class="tsplit__hr" aria-hidden="true"></span>
           <div>
-            <p class="tsplit__name">Name to follow</p>
-            <p class="tsplit__role">Two weeks &middot; month to follow</p>
+            <p class="tsplit__name">Stay, rides, temples, table</p>
+            <p class="tsplit__role">A few hours to reply, every day</p>
           </div>
         </div>
       </article>
 
       <p class="tsplit__note">
-        Guests send these after they get home. We ask before printing one, we print it whole, and
-        we set out what was actually arranged beside it.
+        These are what we hold ourselves to, not things we have been told. Guest words will go here
+        once we have asked the people who said them, printed whole, with what was actually arranged
+        set out beside them.
         <a class="link" href="contact.html">Stayed with us? Send us yours <span aria-hidden="true">&rarr;</span></a>
       </p>
 
