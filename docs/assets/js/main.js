@@ -516,4 +516,46 @@
       note.textContent = 'Opening WhatsApp with your details. If nothing happens, email info@shettyshospitality.com.';
     });
   }
+
+  /* ---- the note on the name (Home) ----------------------------------------
+     A native <dialog>. showModal() gives us focus trapping, Esc to close and
+     inertness behind the dialog for free, so none of that is reimplemented
+     here. Deliberately never auto-opened - see the note in the stylesheet.
+     Clicking the backdrop closes it, which people expect; the check is that
+     the click landed on the dialog element itself rather than its panel. */
+  var bunt = document.querySelector('[data-bunt]');
+  if (bunt && typeof bunt.showModal === 'function') {
+    var openers = document.querySelectorAll('[data-bunt-open]');
+    var lastOpener = null;
+
+    for (var i = 0; i < openers.length; i++) {
+      openers[i].addEventListener('click', function (e) {
+        lastOpener = e.currentTarget;
+        bunt.showModal();
+      });
+    }
+
+    var closer = bunt.querySelector('[data-bunt-close]');
+    if (closer) closer.addEventListener('click', function () { bunt.close(); });
+
+    bunt.addEventListener('click', function (e) {
+      if (e.target === bunt) bunt.close();
+    });
+
+    /* Esc belt and braces. showModal() already closes on Esc in every current
+       browser, and close() on a closed dialog is a no-op, so if the native
+       behaviour fires first this never runs. It is here because the native
+       path is the one thing about this dialog we could not verify from the
+       automation harness, and an unclosable modal is not a failure mode worth
+       risking to save three lines. */
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && bunt.open) bunt.close();
+    });
+
+    /* Send focus back where it came from, or a keyboard user is dropped at the
+       top of the document with no idea what just happened. */
+    bunt.addEventListener('close', function () {
+      if (lastOpener && document.contains(lastOpener)) lastOpener.focus();
+    });
+  }
 })();

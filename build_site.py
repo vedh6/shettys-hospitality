@@ -483,7 +483,42 @@ body=f"""
   <p class="eyebrow eyebrow--light">Our promise</p>
   <p class="promise__words reveal"><span>Reliable.</span> <span>Coordinated.</span> <span>Complete.</span></p>
   <p class="promise__by">A vision by Rithesh Shetty</p>
+  <p class="promise__note">
+    <button type="button" class="promise__link" data-bunt-open>On the name Shetty <span aria-hidden="true">&rarr;</span></button>
+  </p>
 </section>
+
+<!-- A note on the Bunt community. Sourced rather than written from memory:
+     Tuluva community of Tulu Nadu, Tulu-speaking, Aliyasantana matrilineal
+     descent, guthu ancestral houses, landholding cultivators, patrons of bhuta
+     kola and Yakshagana. The shreshthi etymology is well attested. Two things
+     are deliberately absent because they are asserted casually online but not
+     carried by a reliable source: that Bunts founded the Mumbai hotel trade,
+     and that guthu houses specifically funded kambala. -->
+<dialog class="bunt" data-bunt aria-labelledby="bunt-title">
+  <div class="bunt__in">
+    <button type="button" class="bunt__x" data-bunt-close aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.5"/></svg>
+    </button>
+
+    <p class="eyebrow">On the name</p>
+    <h2 id="bunt-title">Shetty is a Bunt name.</h2>
+
+    <p>The Bunts are a Tuluva community from Tulu Nadu &mdash; the strip of coast running from
+    Dakshina Kannada and Udupi down into Kasaragod &mdash; and they speak Tulu.</p>
+
+    <p>They were landholders and cultivators, and the seat of a family was its
+    <em>guthu</em>: a manor house at the centre of the estate, run as its administrative heart.
+    The house at the top of this page is that kind of house.</p>
+
+    <p>Descent ran through the women. Under <em>Aliyasantana</em>, property and lineage passed
+    down the female line, and the eldest man in that line headed the household.</p>
+
+    <p>The name itself comes from the Sanskrit <em>shreshthi</em> &mdash; headman, or merchant.
+    Bhuta kola through the night and Yakshagana in the season were held and paid for by houses
+    like these, and a few kilometres inland they still are.</p>
+  </div>
+</dialog>
 
 <section class="wordof">
   <div class="tsplit" data-tsplit>
@@ -1103,6 +1138,35 @@ body=phero("Journeys", "Temples, cars<br>and days out.",
     <li>Cashew and coffee buying, properly</li>
     <li>Yakshagana, in season</li>
   </ul>
+</section>
+
+<!-- ON THE WATER
+     Everything stated here is either sourced regional fact (the season, the
+     monsoon break) or a claim Rithesh already makes elsewhere (that he books
+     things with local operators). NOTHING about the operator itself is here
+     yet - no name, no prices, no instructor credentials, no safety claims -
+     because we have not been given any and their Instagram is login-walled.
+     Fill those in from the client, do not infer them. -->
+<section class="section" id="water">
+  <header class="section__head reveal">
+    <p class="eyebrow">On the water</p>
+    <h2>Surfing, and the rest of it.</h2>
+    <p class="section__lede">
+      Booked for you with an operator on the beach rather than run by us. Lessons for people
+      who have never stood on a board, and boards for people who have.
+    </p>
+  </header>
+  <ul class="chips reveal">
+    <li>Surf lessons, first time on a board</li>
+    <li>Board hire, if you already surf</li>
+    <li>Stand-up paddleboarding on flat water</li>
+    <li>Kayaking where the river meets the sea</li>
+  </ul>
+  <p class="section__note reveal">
+    The beginner season runs from about October to March and is calmest between December and
+    February. July and August are out entirely &mdash; that is the monsoon, and the sea here is
+    not for swimming then, let alone learning.
+  </p>
 </section>
 
 {cta("Plan the whole trip with us.",
