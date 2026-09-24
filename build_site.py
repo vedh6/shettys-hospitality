@@ -1151,25 +1151,65 @@ body=phero("Activities", "Temples, cars, water<br>and days out.",
      yet - no name, no prices, no instructor credentials, no safety claims -
      because we have not been given any and their Instagram is login-walled.
      Fill those in from the client, do not infer them. -->
+<!-- OUT ON THE COAST
+     Seasons and places here are sourced, not guessed: Netrani sits about 19km
+     off Murudeshwar and dives October to May with the best visibility from
+     December to February; Kumara Parvatha is 1712m and 15km from Kukke, which
+     is already a temple card further up this page; the surf beginner season is
+     October to March. Still nothing about the operator - no name, no prices,
+     no instructor credentials, no safety claims - because none has been given.
+     Fill those in from the client, do not infer them. -->
 <section class="section" id="water">
   <header class="section__head reveal">
-    <p class="eyebrow">On the water</p>
-    <h2>Surfing, and the rest of it.</h2>
+    <p class="eyebrow">Out on the coast</p>
+    <h2>Things worth getting wet for.</h2>
     <p class="section__lede">
-      Booked for you with an operator on the beach rather than run by us. Lessons for people
-      who have never stood on a board, and boards for people who have.
+      Booked for you with the people who run them, not by us. Say what you fancy and we will
+      tell you honestly whether the season is right for it.
     </p>
   </header>
-  <ul class="chips reveal">
-    <li>Surf lessons, first time on a board</li>
-    <li>Board hire, if you already surf</li>
-    <li>Stand-up paddleboarding on flat water</li>
-    <li>Kayaking where the river meets the sea</li>
+
+  <ul class="acts reveal">
+    <li class="act">
+      <figure class="act__media">
+        <img src="assets/img/acts/surf.jpg?v={BUILD_ID}" alt="A beginner up on their feet on a soft-top longboard in small whitewater, instructor behind" loading="lazy" />
+        <figcaption class="act__label">Surfing</figcaption>
+      </figure>
+      <p class="act__text">Beach breaks that are small and forgiving, which is exactly what you want the first time. Lessons from scratch, boards to hire if you already know what you are doing.</p>
+      <p class="act__meta">October to March &middot; calmest December to February</p>
+    </li>
+
+    <li class="act">
+      <figure class="act__media">
+        <img src="assets/img/acts/scuba.jpg?v={BUILD_ID}" alt="A diver above a coral-covered boulder reef with fusiliers and parrotfish in clear blue water" loading="lazy" />
+        <figcaption class="act__label">Scuba diving</figcaption>
+      </figure>
+      <p class="act__text">Netrani, a heart-shaped rock about nineteen kilometres off Murudeshwar and the best diving on this coast. Coral, parrotfish, groupers, turtles if you are lucky.</p>
+      <p class="act__meta">October to May &middot; 25&ndash;30m visibility, December to February</p>
+    </li>
+
+    <li class="act">
+      <figure class="act__media">
+        <img src="assets/img/acts/trek.jpg?v={BUILD_ID}" alt="Three walkers on a grassland ridge in the Western Ghats with cloud sitting in the valleys below" loading="lazy" />
+        <figcaption class="act__label">Trekking</figcaption>
+      </figure>
+      <p class="act__text">The Ghats start an hour inland. Kumara Parvatha is the hard one &mdash; 1712m, two days, and fifteen kilometres from Kukke if you are going to the temple anyway. Kudremukh is the kinder day out.</p>
+      <p class="act__meta">October to February &middot; greenest just after the rains</p>
+    </li>
+
+    <li class="act">
+      <figure class="act__media">
+        <img src="assets/img/acts/kayak.jpg?v={BUILD_ID}" alt="Two kayaks on glassy backwater at dawn with mist on the surface and palms along the bank" loading="lazy" />
+        <figcaption class="act__label">Kayak and paddleboard</figcaption>
+      </figure>
+      <p class="act__text">Flat flat water where the river meets the sea, best at first light before the wind gets up. No experience needed and nothing to fall off, which is the appeal.</p>
+      <p class="act__meta">Most of the year, outside the monsoon</p>
+    </li>
   </ul>
+
   <p class="section__note reveal">
-    The beginner season runs from about October to March and is calmest between December and
-    February. July and August are out entirely &mdash; that is the monsoon, and the sea here is
-    not for swimming then, let alone learning.
+    July and August are out for all of it. That is the monsoon: the sea here is not for
+    swimming, the boats to Netrani do not run, and the ridges are in cloud.
   </p>
 </section>
 

@@ -1506,6 +1506,63 @@ a{ color:inherit; }
 .bunt p:last-child{ margin-bottom:0; }
 .bunt em{ font-style:italic; color:var(--ink); }
 
+/* ---------- activities grid (Activities page) ---------- */
+/* This was a ruled text list, which is a dull way to sell things people do for
+   fun. Picture-led now: the photograph carries the excitement, the name sits on
+   it, and the practical detail - what it is, when it runs - lives underneath
+   where it can be read rather than skimmed. */
+.acts{
+  list-style:none; margin:0; padding:0;
+  display:grid; grid-template-columns:repeat(4,1fr);
+  gap:clamp(18px,2.2vw,32px);
+}
+.act{ display:flex; flex-direction:column; min-width:0; }
+.act__media{
+  position:relative; margin:0 0 clamp(14px,1.4vw,20px);
+  overflow:hidden; border-radius:var(--r); background:var(--ink);
+}
+.act__media img{
+  display:block; width:100%; aspect-ratio:4/3; object-fit:cover;
+  transition:transform var(--d-move) var(--ease);
+}
+.act:hover .act__media img{ transform:scale(1.05); }
+/* The name sits on the picture, on a gradient rather than a bar, so the image
+   is not cut in half by a block of colour. */
+.act__label{
+  position:absolute; left:0; right:0; bottom:0;
+  padding:clamp(28px,3vw,40px) clamp(14px,1.4vw,18px) clamp(12px,1.2vw,16px);
+  font-family:var(--font-display); font-weight:500;
+  font-size:clamp(1.15rem,1.5vw,1.4rem); line-height:1.15;
+  color:var(--paper);
+  background:linear-gradient(to top,
+    color-mix(in srgb, var(--ink) 88%, transparent) 0%,
+    color-mix(in srgb, var(--ink) 40%, transparent) 62%,
+    transparent 100%);
+}
+.act__text{
+  margin:0; font-size:.93rem; line-height:1.62;
+  color:color-mix(in srgb, var(--ink) 82%, var(--sage));
+}
+.act__meta{
+  margin:auto 0 0; padding-top:clamp(12px,1.2vw,16px);
+  font-size:var(--label); letter-spacing:var(--track-label);
+  text-transform:uppercase; font-weight:var(--w-label);
+  color:var(--sage);
+}
+
+@media (max-width:1000px){
+  .acts{ grid-template-columns:repeat(2,1fr); }
+}
+@media (max-width:620px){
+  /* One at a time on a phone. Two across leaves the copy in a 150px column,
+     and these carry real detail rather than a label. */
+  .acts{ grid-template-columns:1fr; gap:clamp(26px,6vw,34px); }
+  .act__media img{ aspect-ratio:16/9; }
+}
+@media (prefers-reduced-motion:reduce){
+  .act:hover .act__media img{ transform:none; }
+}
+
 /* --------------------------------------------------------------------------
    Corrections for the Cormorant Garamond / Spectral pair.
 
