@@ -246,7 +246,7 @@ body=f"""
       are worth a good deal longer than that.
     </p>
     <p class="section__head-link">
-      <button type="button" class="link link--btn" data-bunt-open>On the name Shetty <span aria-hidden="true">&rarr;</span></button>
+      <button type="button" class="btn btn--ghost btn--quiet" data-bunt-open>On the name Shetty</button>
     </p>
   </header>
 
