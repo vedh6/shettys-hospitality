@@ -1442,10 +1442,32 @@ a{ color:inherit; }
    are the browser's job rather than ours. It does NOT open by itself: an
    interstitial on arrival is the fastest way to lose the visitor who just
    landed, and Google treats one on mobile as an intrusive interstitial. */
-/* The trigger sits at the foot of the first section after the hero - the one
-   about this coast - so it comes after the reading rather than interrupting
-   the run from the lede into the tabs. Centred to match that section's head. */
-.mang__after{ margin:clamp(32px,4vw,52px) 0 0; text-align:center; }
+/* A margin note, not a call to action. It sits off to the left at the foot of
+   the section so it is caught out of the corner of the eye rather than aimed
+   at - no box, no fill, no uppercase. The asterisk does the work of saying
+   "aside" and the sentence does the work of making someone curious. */
+.aside-note{
+  margin:clamp(30px,3.6vw,46px) 0 0;
+  display:flex; align-items:baseline; gap:.6em;
+}
+.aside-note__mark{
+  color:var(--tile); font-size:1.15rem; line-height:1; flex:none;
+  transform:translateY(.12em);
+}
+.aside-note__link{
+  font-family:var(--font-display); font-style:italic; font-weight:400;
+  font-size:clamp(1rem,1.25vw,1.15rem); line-height:1.4;
+  color:color-mix(in srgb, var(--ink) 76%, var(--sage));
+  background:none; border:0; padding:0 0 .18em; text-align:left; cursor:pointer;
+  border-bottom:1px dotted color-mix(in srgb, var(--sage) 70%, transparent);
+  transition:color var(--d-tint) var(--ease-tint), border-bottom-color var(--d-tint) var(--ease-tint);
+}
+.aside-note__link:hover,.aside-note__link:focus-visible{
+  color:var(--ink); border-bottom-color:var(--tile); border-bottom-style:solid;
+}
+/* Match the focus ring used on the card row rather than leaving the browser
+   default, which lands as a red rectangle against this palette. */
+.aside-note__link:focus-visible{ outline:2px solid var(--brass); outline-offset:4px; }
 
 .bunt{
   border:0; padding:0; background:transparent;

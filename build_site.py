@@ -314,8 +314,9 @@ body=f"""
     </div>
   </div>
 
-  <p class="mang__after reveal">
-    <button type="button" class="btn btn--ghost btn--quiet" data-bunt-open>On the name Shetty</button>
+  <p class="aside-note reveal">
+    <span class="aside-note__mark" aria-hidden="true">&lowast;</span>
+    <button type="button" class="aside-note__link" data-bunt-open>Shetty was a job before it was a name.</button>
   </p>
 </section>
 
@@ -503,20 +504,21 @@ body=f"""
     </button>
 
     <p class="eyebrow">On the name</p>
-    <h2 id="bunt-title">Shetty is a Bunt name.</h2>
+    <h2 id="bunt-title">Shetty was a title before it was a surname.</h2>
 
-    <p>The Bunts are a Tuluva community from Tulu Nadu &mdash; the strip of coast running from
-    Dakshina Kannada and Udupi down into Kasaragod &mdash; and they speak Tulu.</p>
+    <p>It comes from the Sanskrit <em>shreshthi</em> &mdash; headman, or merchant. A rank in a
+    village, held by a person, that hardened into something a whole family carried.</p>
 
-    <p>They were landholders and cultivators, and the seat of a family was its
-    <em>guthu</em>: a manor house at the centre of the estate, run as its administrative heart.
-    The house at the top of this page is that kind of house.</p>
+    <p>It is a Bunt name. The Bunts are a Tuluva community from Tulu Nadu &mdash; the strip of
+    coast running from Dakshina Kannada and Udupi down into Kasaragod &mdash; and they speak
+    Tulu. They were landholders and cultivators, and the seat of a family was its <em>guthu</em>:
+    a manor house at the centre of the estate, run as its administrative heart. The house at the
+    top of this page is that kind of house.</p>
 
     <p>Descent ran through the women. Under <em>Aliyasantana</em>, property and lineage passed
     down the female line, and the eldest man in that line headed the household.</p>
 
-    <p>The name itself comes from the Sanskrit <em>shreshthi</em> &mdash; headman, or merchant.
-    Bhuta kola through the night and Yakshagana in the season were held and paid for by houses
+    <p>Bhuta kola through the night and Yakshagana in the season were held and paid for by houses
     like these, and a few kilometres inland they still are.</p>
   </div>
 </dialog>
