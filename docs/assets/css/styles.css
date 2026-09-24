@@ -1442,10 +1442,10 @@ a{ color:inherit; }
    are the browser's job rather than ours. It does NOT open by itself: an
    interstitial on arrival is the fastest way to lose the visitor who just
    landed, and Google treats one on mobile as an intrusive interstitial. */
-/* The trigger sits under the lede of the first section after the hero - the
-   one about this coast - rather than in the promise band far below, where it
-   was small, late and easily scrolled past. */
-.section__head-link{ margin:clamp(24px,2.6vw,32px) 0 0; }
+/* The trigger sits at the foot of the first section after the hero - the one
+   about this coast - so it comes after the reading rather than interrupting
+   the run from the lede into the tabs. Centred to match that section's head. */
+.mang__after{ margin:clamp(32px,4vw,52px) 0 0; text-align:center; }
 
 .bunt{
   border:0; padding:0; background:transparent;

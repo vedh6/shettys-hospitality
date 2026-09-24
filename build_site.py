@@ -245,9 +245,6 @@ body=f"""
       airport road and not much else. The coast, the ghats behind it and the kitchens in between
       are worth a good deal longer than that.
     </p>
-    <p class="section__head-link">
-      <button type="button" class="btn btn--ghost btn--quiet" data-bunt-open>On the name Shetty</button>
-    </p>
   </header>
 
   <div class="mang reveal" data-mang>
@@ -316,6 +313,10 @@ body=f"""
       </div>
     </div>
   </div>
+
+  <p class="mang__after reveal">
+    <button type="button" class="btn btn--ghost btn--quiet" data-bunt-open>On the name Shetty</button>
+  </p>
 </section>
 
 <section class="section">
