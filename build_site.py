@@ -504,10 +504,11 @@ body=f"""
     </button>
 
     <p class="eyebrow">On the name</p>
-    <h2 id="bunt-title">Shetty was a title before it was a surname.</h2>
+    <h2 id="bunt-title">Headman, or merchant.</h2>
 
-    <p>It comes from the Sanskrit <em>shreshthi</em> &mdash; headman, or merchant. A rank in a
-    village, held by a person, that hardened into something a whole family carried.</p>
+    <p>That is what <em>shreshthi</em> meant in Sanskrit, and Shetty is what became of it &mdash;
+    a rank held by one person in a village, which hardened into something a whole family
+    carried.</p>
 
     <p>It is a Bunt name. The Bunts are a Tuluva community from Tulu Nadu &mdash; the strip of
     coast running from Dakshina Kannada and Udupi down into Kasaragod &mdash; and they speak
