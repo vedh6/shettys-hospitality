@@ -19,7 +19,7 @@ NAV = [
     ("index.html",        "Home"),
     ("stays.html",        "Stays"),
     ("celebrations.html", "Celebrations"),
-    ("journeys.html",     "Journeys"),
+    ("journeys.html",     "Activities"),
     ("manpower.html",     "Manpower"),
     ("about.html",        "About"),
 ]
@@ -92,7 +92,7 @@ FOOTER = f"""<footer class="foot">
         <h4>Pages</h4>
         <a href="stays.html">Stays</a>
         <a href="celebrations.html">Celebrations</a>
-        <a href="journeys.html">Journeys</a>
+        <a href="journeys.html">Activities</a>
         <a href="about.html">About</a>
       </div>
       <div>
@@ -316,7 +316,7 @@ body=f"""
 
   <p class="aside-note reveal">
     <span class="aside-note__mark" aria-hidden="true">&lowast;</span>
-    <button type="button" class="aside-note__link" data-bunt-open>You know the name. Hardly anyone knows what it meant.</button>
+    <button type="button" class="aside-note__link" data-bunt-open>You have met a Shetty. This is the coast the name came from.</button>
   </p>
 </section>
 
@@ -469,8 +469,8 @@ body=f"""
       <img class="jcard__img" src="assets/img/cards/journeys-card.jpg?v={BUILD_ID}" alt="" loading="lazy" />
       <span class="jcard__veil" aria-hidden="true"></span>
       <span class="jcard__body">
-        <span class="jcard__sub">Temples, cars and days out</span>
-        <span class="jcard__title">Journeys</span>
+        <span class="jcard__sub">Temples, cars, water and days out</span>
+        <span class="jcard__title">Activities</span>
       </span>
     </a>
     <a class="jcard" href="manpower.html">
@@ -1029,9 +1029,9 @@ body=phero("Celebrations at home", "Celebrations hosted<br>in your own home.",
 
 # ------------------------------------------------------------------ JOURNEYS
 PAGES["journeys.html"] = dict(
-title="Journeys — temples, rides &amp; Hidden Mangalore | Shetty&rsquo;s Hospitality",
-desc="Temple journeys to Dharmasthala, Kukke and Udupi, airport transfers and day cars, plus curated local experiences around Mangalore.",
-body=phero("Journeys", "Temples, cars<br>and days out.",
+title="Activities — temples, cars, water &amp; Hidden Mangalore | Shetty&rsquo;s Hospitality",
+desc="Temple journeys to Dharmasthala, Kukke and Udupi, airport transfers and day cars, surfing and water activities, plus curated local experiences around Mangalore.",
+body=phero("Activities", "Temples, cars, water<br>and days out.",
   "Temples, transport and the parts of Mangalore that never make it onto a list. Booked as one plan, "
   "with one person answering the phone.",
   [("Temples", "Dharmasthala &middot; Kukke &middot; Udupi"), ("Cars", "Fixed fares, verified drivers"), ("Local", "Half-day walks with a host")],
