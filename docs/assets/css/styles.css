@@ -1429,19 +1429,15 @@ a{ color:inherit; }
    are the browser's job rather than ours. It does NOT open by itself: an
    interstitial on arrival is the fastest way to lose the visitor who just
    landed, and Google treats one on mobile as an intrusive interstitial. */
-.promise__note{ margin:clamp(22px,2.4vw,30px) 0 0; }
-.promise__link{
-  font-family:var(--font-body); font-size:var(--label);
-  letter-spacing:var(--track-label); text-transform:uppercase;
-  font-weight:var(--w-label);
-  color:color-mix(in srgb, var(--paper) 78%, transparent);
-  background:none; border:0; padding:0 0 .35em; cursor:pointer;
-  border-bottom:1px solid color-mix(in srgb, var(--paper) 34%, transparent);
-  transition:color var(--d-tint) var(--ease-tint), border-color var(--d-tint) var(--ease-tint);
+/* The trigger sits under the lede of the first section after the hero - the
+   one about this coast - rather than in the promise band far below, where it
+   was small, late and easily scrolled past. */
+.section__head-link{ margin:clamp(24px,2.6vw,32px) 0 0; }
+/* .link assumes an anchor; this is a button, so reset what a button brings. */
+.link--btn{
+  font-family:var(--font-body); background:none; border:0;
+  border-bottom:1px solid var(--sage); cursor:pointer;
 }
-.promise__link:hover{ color:var(--paper); border-bottom-color:var(--paper); }
-.promise__link span{ display:inline-block; transition:transform .3s var(--ease); }
-.promise__link:hover span{ transform:translateX(4px); }
 
 .bunt{
   border:0; padding:0; background:transparent;

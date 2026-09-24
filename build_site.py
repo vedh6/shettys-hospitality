@@ -245,6 +245,9 @@ body=f"""
       airport road and not much else. The coast, the ghats behind it and the kitchens in between
       are worth a good deal longer than that.
     </p>
+    <p class="section__head-link">
+      <button type="button" class="link link--btn" data-bunt-open>On the name Shetty <span aria-hidden="true">&rarr;</span></button>
+    </p>
   </header>
 
   <div class="mang reveal" data-mang>
@@ -483,9 +486,6 @@ body=f"""
   <p class="eyebrow eyebrow--light">Our promise</p>
   <p class="promise__words reveal"><span>Reliable.</span> <span>Coordinated.</span> <span>Complete.</span></p>
   <p class="promise__by">A vision by Rithesh Shetty</p>
-  <p class="promise__note">
-    <button type="button" class="promise__link" data-bunt-open>On the name Shetty <span aria-hidden="true">&rarr;</span></button>
-  </p>
 </section>
 
 <!-- A note on the Bunt community. Sourced rather than written from memory:
