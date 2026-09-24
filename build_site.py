@@ -316,7 +316,7 @@ body=f"""
 
   <p class="aside-note reveal">
     <span class="aside-note__mark" aria-hidden="true">&lowast;</span>
-    <button type="button" class="aside-note__link" data-bunt-open>Shetty was a job before it was a name.</button>
+    <button type="button" class="aside-note__link" data-bunt-open>You know the name. Hardly anyone knows what it meant.</button>
   </p>
 </section>
 
