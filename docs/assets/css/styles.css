@@ -1442,31 +1442,34 @@ a{ color:inherit; }
    are the browser's job rather than ours. It does NOT open by itself: an
    interstitial on arrival is the fastest way to lose the visitor who just
    landed, and Google treats one on mobile as an intrusive interstitial. */
-/* A margin note, not a call to action. It sits off to the left at the foot of
-   the section so it is caught out of the corner of the eye rather than aimed
-   at - no box, no fill, no uppercase. The asterisk does the work of saying
-   "aside" and the sentence does the work of making someone curious. */
+/* A margin note that still has to look clickable. The quiet version - italic
+   text, dotted underline, nothing else - read as a caption, and on a phone
+   there is no hover to discover otherwise. Four cues now, none of them a box:
+   the left rule says "aside", the solid underline says "link", the arrow says
+   "there is more", and the copy is a question, which asks to be answered.
+
+   The words are sage-dp, not terracotta: terracotta on paper measures 4.36:1
+   and AA wants 4.5 at this size. The terracotta goes on the rule, the
+   underline and the arrow, which carry no reading and so no contrast floor. */
 .aside-note{
   margin:clamp(30px,3.6vw,46px) 0 0;
-  display:flex; align-items:baseline; gap:.6em;
-}
-.aside-note__mark{
-  color:var(--tile); font-size:1.15rem; line-height:1; flex:none;
-  transform:translateY(.12em);
+  border-left:2px solid color-mix(in srgb, var(--tile) 55%, transparent);
+  padding-left:1.1rem;
 }
 .aside-note__link{
   font-family:var(--font-display); font-style:italic; font-weight:400;
   font-size:clamp(1rem,1.25vw,1.15rem); line-height:1.4;
-  color:color-mix(in srgb, var(--ink) 76%, var(--sage));
+  color:var(--sage-dp);
   background:none; border:0; padding:0 0 .18em; text-align:left; cursor:pointer;
-  border-bottom:1px dotted color-mix(in srgb, var(--sage) 70%, transparent);
+  border-bottom:1px solid var(--tile);
   transition:color var(--d-tint) var(--ease-tint), border-bottom-color var(--d-tint) var(--ease-tint);
 }
-.aside-note__link:hover,.aside-note__link:focus-visible{
-  color:var(--ink); border-bottom-color:var(--tile); border-bottom-style:solid;
+.aside-note__link::after{
+  content:" \2192"; font-style:normal; color:var(--tile);
 }
-/* Match the focus ring used on the card row rather than leaving the browser
-   default, which lands as a red rectangle against this palette. */
+.aside-note__link:hover,.aside-note__link:focus-visible{
+  color:var(--ink); border-bottom-color:var(--ink);
+}
 .aside-note__link:focus-visible{ outline:2px solid var(--brass); outline-offset:4px; }
 
 .bunt{

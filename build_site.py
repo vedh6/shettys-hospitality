@@ -315,8 +315,7 @@ body=f"""
   </div>
 
   <p class="aside-note reveal">
-    <span class="aside-note__mark" aria-hidden="true">&lowast;</span>
-    <button type="button" class="aside-note__link" data-bunt-open>You have met a Shetty. This is the coast the name came from.</button>
+    <button type="button" class="aside-note__link" data-bunt-open>You have met a Shetty. Do you know where the name came from?</button>
   </p>
 </section>
 
