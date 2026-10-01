@@ -964,6 +964,14 @@ a{ color:inherit; }
 
 .tsplit__by{ display:flex; align-items:center; gap:1rem; }
 .tsplit__name{ margin:0; font-size:1.02rem; font-weight:600; color:var(--ink); }
+/* The guests sent a headline and a paragraph. The headline carries the pull
+   quote, which is set large; the paragraph goes here at reading size, because
+   forty words at 3rem would fill the screen. */
+.tsplit__body{
+  margin:0 0 clamp(26px,3vw,36px); max-width:46ch;
+  font-size:1rem; line-height:1.7;
+  color:color-mix(in srgb, var(--ink) 80%, var(--sage));
+}
 .tsplit__role{ margin:.2rem 0 0; font-size:.9rem;
   color:color-mix(in srgb, var(--ink) 82%, var(--sage)); }
 

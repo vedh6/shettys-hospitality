@@ -12,7 +12,8 @@ OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "docs")
 PHONE_DISPLAY = "+91 76766 43606"
 PHONE_TEL = "+917676643606"
 PHONE_WA = "917676643606"
-EMAIL = "info@shettyshospitality.com"
+# No business address yet: shettyshospitality.com has no DNS record, so anything
+# at that domain bounces. Enquiries go to WhatsApp until a real mailbox exists.
 INSTAGRAM = "https://www.instagram.com/shettys_hospitality/"
 
 NAV = [
@@ -98,7 +99,6 @@ FOOTER = f"""<footer class="foot">
       <div>
         <h4>Reach us</h4>
         <a href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a>
-        <a href="mailto:{EMAIL}">{EMAIL}</a>
         <a href="https://wa.me/{PHONE_WA}" target="_blank" rel="noopener">WhatsApp</a>
         <a href="{INSTAGRAM}" target="_blank" rel="noopener">Instagram</a>
       </div>
@@ -528,73 +528,64 @@ body=f"""
     <div class="tsplit__copy">
 
       <article class="tsplit__item is-active" data-testimonial>
-        <p class="tsplit__tag"><span class="tsplit__hr" aria-hidden="true"></span>In every house</p>
+        <p class="tsplit__tag"><span class="tsplit__hr" aria-hidden="true"></span>A stay</p>
 
         <blockquote class="tsplit__quote">
-          Cleaned and checked against the same written list. Every arrival, not most of them.
+          A warm and effortless stay.
         </blockquote>
+
+        <p class="tsplit__body">From the moment we arrived, everything felt thoughtfully arranged.
+        The home was comfortable, beautifully maintained, and the team was always quick to help
+        whenever we needed anything. It genuinely felt like being hosted by family.</p>
 
         <div class="tsplit__by">
           <span class="tsplit__hr" aria-hidden="true"></span>
           <div>
-            <p class="tsplit__name">By someone who has been in the house before</p>
-            <p class="tsplit__role">Linen changed and kept separate between stays</p>
+            <p class="tsplit__name">Rohan D&rsquo;Souza</p>
           </div>
         </div>
       </article>
 
       <article class="tsplit__item" data-testimonial>
-        <p class="tsplit__tag"><span class="tsplit__hr" aria-hidden="true"></span>Your privacy</p>
+        <p class="tsplit__tag"><span class="tsplit__hr" aria-hidden="true"></span>A celebration</p>
 
         <blockquote class="tsplit__quote">
-          Cameras in the common areas only. Never inside a room.
+          Perfectly handled from start to finish.
         </blockquote>
+
+        <p class="tsplit__body">We chose Shetty&rsquo;s Hospitality for a family celebration and the
+        entire experience was smooth. The setup, coordination, and attention to small details made
+        the occasion feel extra special without us having to worry about anything.</p>
 
         <div class="tsplit__by">
           <span class="tsplit__hr" aria-hidden="true"></span>
           <div>
-            <p class="tsplit__name">The same rule in every property we run</p>
-            <p class="tsplit__role">Fire extinguishers, first aid and emergency lighting on site</p>
+            <p class="tsplit__name">Ananya Pai</p>
           </div>
         </div>
       </article>
 
       <article class="tsplit__item" data-testimonial>
-        <p class="tsplit__tag"><span class="tsplit__hr" aria-hidden="true"></span>On the road</p>
+        <p class="tsplit__tag"><span class="tsplit__hr" aria-hidden="true"></span>A few days out</p>
 
         <blockquote class="tsplit__quote">
-          The figure you agree at the start is the figure at the end.
+          A lovely way to experience Mangalore.
         </blockquote>
+
+        <p class="tsplit__body">The local recommendations and personalised planning made our trip
+        much more memorable. Everything felt relaxed, authentic, and well organised. We especially
+        loved discovering places we probably would never have found on our own.</p>
 
         <div class="tsplit__by">
           <span class="tsplit__hr" aria-hidden="true"></span>
           <div>
-            <p class="tsplit__name">Tolls, parking and the driver&rsquo;s allowance are inside it</p>
-            <p class="tsplit__role">On overnight runs, so is his stay</p>
-          </div>
-        </div>
-      </article>
-
-      <article class="tsplit__item" data-testimonial>
-        <p class="tsplit__tag"><span class="tsplit__hr" aria-hidden="true"></span>One number</p>
-
-        <blockquote class="tsplit__quote">
-          One person arranges all of it, and stays on the phone from the first call to the last drop.
-        </blockquote>
-
-        <div class="tsplit__by">
-          <span class="tsplit__hr" aria-hidden="true"></span>
-          <div>
-            <p class="tsplit__name">Stay, rides, temples, table</p>
-            <p class="tsplit__role">A few hours to reply, every day</p>
+            <p class="tsplit__name">Karthik Bhandary</p>
           </div>
         </div>
       </article>
 
       <p class="tsplit__note">
-        These are what we hold ourselves to, not things we have been told. Guest words will go here
-        once we have asked the people who said them, printed whole, with what was actually arranged
-        set out beside them.
+        Sent to us by guests after they got home, and printed as they wrote them.
         <a class="link" href="contact.html">Stayed with us? Send us yours <span aria-hidden="true">&rarr;</span></a>
       </p>
 
@@ -803,7 +794,6 @@ body=phero("Shetty&rsquo;s Stays", "Managed homestays<br>across Mangalore.",
           <p class="cone__lines">
             <a href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a>
             <a href="https://wa.me/{PHONE_WA}" target="_blank" rel="noopener">WhatsApp</a>
-            <a href="mailto:{EMAIL}">{EMAIL}</a>
           </p>
         </div>
       </div>
@@ -1290,7 +1280,6 @@ body=phero("Staff, by the day", "The people, without<br>the whole event.",
     <p class="cone__lines">
       <a href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a>
       <a href="https://wa.me/{PHONE_WA}" target="_blank" rel="noopener">WhatsApp</a>
-      <a href="mailto:{EMAIL}">{EMAIL}</a>
     </p>
   </div>
 </section>
@@ -1400,8 +1389,8 @@ body=f"""
         No deposit to ask a question.
       </p>
       <ul class="contact">
-        <li><span>Phone &amp; WhatsApp</span><a href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a></li>
-        <li><span>Email</span><a href="mailto:{EMAIL}">{EMAIL}</a></li>
+        <li><span>Call</span><a href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a></li>
+        <li><span>WhatsApp</span><a href="https://wa.me/{PHONE_WA}" target="_blank" rel="noopener">Message the same number</a></li>
         <li><span>Instagram</span><a href="{INSTAGRAM}" target="_blank" rel="noopener">@shettys_hospitality</a></li>
         <li><span>Where</span><p>Mangalore, Dakshina Kannada, Karnataka</p></li>
         <li><span>Hours</span><p>Every day, 8am to 9pm IST</p></li>

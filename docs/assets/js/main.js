@@ -513,7 +513,7 @@
       ];
       var url = 'https://wa.me/917676643606?text=' + encodeURIComponent(lines.join('\n'));
       window.open(url, '_blank', 'noopener');
-      note.textContent = 'Opening WhatsApp with your details. If nothing happens, email info@shettyshospitality.com.';
+      note.textContent = 'Opening WhatsApp with your details. If nothing happens, message or call +91 76766 43606.';
     });
   }
 
