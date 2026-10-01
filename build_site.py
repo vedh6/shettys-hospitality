@@ -637,7 +637,7 @@ body=f"""
 <section class="section split">
   <figure class="split__media reveal">
     <div class="ph">
-      <img src="assets/img/detail-wide.jpg" alt="Interior of a managed homestay" />
+      <img src="assets/img/detail-wide.jpg?v={BUILD_ID}" alt="Someone on a veranda taking a call with an open notebook in hand, car keys and coffee on the ledge beside him" loading="lazy" />
     </div>
   </figure>
   <div class="split__copy reveal">
@@ -1266,22 +1266,6 @@ body=phero("Staff, by the day", "The people, without<br>the whole event.",
     <li class="reveal"><span class="steps__n">03</span><h3>They arrive briefed</h3><p>They know the house, the timings and what the day is before they get there, so you are not explaining it at the gate.</p></li>
     <li class="reveal"><span class="steps__n">04</span><h3>And they clear after</h3><p>The part everyone forgets to book. Rentals back, rubbish out, kitchen returned to how you had it.</p></li>
   </ol>
-</section>
-
-<section class="section band">
-  <div class="band__in reveal">
-    <p class="eyebrow eyebrow--light">Before you ask</p>
-    <h2>On what it costs.</h2>
-    <p class="section__lede">
-      A day depends on how many people, for how long, and how far out of town the house is, so
-      there is no price list to put up. Tell us the day and we will give you the number for it
-      before you commit to anything.
-    </p>
-    <p class="cone__lines">
-      <a href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a>
-      <a href="https://wa.me/{PHONE_WA}" target="_blank" rel="noopener">WhatsApp</a>
-    </p>
-  </div>
 </section>
 
 {cta("Tell us what the day needs.",
