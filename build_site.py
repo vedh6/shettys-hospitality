@@ -637,7 +637,7 @@ body=f"""
 <section class="section split">
   <figure class="split__media reveal">
     <div class="ph">
-      <img src="assets/img/detail-wide.jpg?v={BUILD_ID}" alt="Someone on a veranda taking a call with an open notebook in hand, car keys and coffee on the ledge beside him" loading="lazy" />
+      <img src="assets/img/detail-wide.jpg?v={BUILD_ID}" alt="Someone taking a call on the lamplit teak veranda of a heritage house, a folio open in his free hand" loading="lazy" />
     </div>
   </figure>
   <div class="split__copy reveal">
